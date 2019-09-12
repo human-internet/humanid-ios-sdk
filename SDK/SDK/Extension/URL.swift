@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension URL {
+internal extension URL {
     static var base: URL {
         return URL(string: "https://humanid.herokuapp.com/mobile/")!
     }
