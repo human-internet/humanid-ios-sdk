@@ -20,4 +20,8 @@ internal extension String {
     static var notificationTokenKey: String {
         return "NotificationTokenKeyForKeyChain"
     }
+    
+    static var deviceID: String {
+        return "DeviceIDKeyForKeyChain"
+    }
 }

@@ -19,6 +19,10 @@ open class HumanID {
         KeyChain.isStoreSuccess(key: .appSecretKey, value: appSecret)
     }
     
+    open func registerNotification(token: String) {
+        KeyChain.isStoreSuccess(key: .notificationTokenKey, value: token)
+    }
+    
     open func verifyPhone(phoneNumber: String, countryCode: String, completion: @escaping (_ success: Bool, _ object: String) -> ()) {
         guard let appID = KeyChain.retrieveString(key: .appIDKey), let appSecret = KeyChain.retrieveString(key: .appSecretKey) else {
             completion(false, "appID or appSecret not found")
@@ -55,8 +59,20 @@ open class HumanID {
         } else {
             //TODO: Generate deviceID try to communicate with humanid app
         }
+        var deviceID = UUID().uuidString
         
         let data = UserRegistration(countryCode: countryCode, phone: phoneNumber, deviceId: deviceID, verificationCode: verificationCode, notifId: notifID, appId: appID, appSecret: appSecret)
+        let jsonData = try? JSONEncoder().encode(data)
+        
+        Rest.post(url: .userRegistration, data: jsonData, completion: {
+            success, object in
+            guard let object = object else {
+                completion(success, "no message")
+                return
+            }
+
+            completion(success, object["message"] as? String ?? "")
+        })
         
     }
 }
