@@ -38,4 +38,25 @@ open class HumanID {
             completion(success, object["message"] as? String ?? "")
         })
     }
+    
+    open func userRegistration(phoneNumber: String, countryCode: String, verificationCode: String, completion: @escaping (_ success: Bool, _ object: String) -> ()) {
+        guard
+            let appID = KeyChain.retrieveString(key: .appIDKey),
+            let appSecret = KeyChain.retrieveString(key: .appSecretKey),
+            let notifID = KeyChain.retrieveString(key: .notificationTokenKey)
+        else {
+            completion(false, "appID or appSecret or notification token not found")
+            return
+        }
+        
+        var deviceID = ""
+        if let id = KeyChain.retrieveString(key: .deviceID) {
+            deviceID = id
+        } else {
+            //TODO: Generate deviceID try to communicate with humanid app
+        }
+        
+        let data = UserRegistration(countryCode: countryCode, phone: phoneNumber, deviceId: deviceID, verificationCode: verificationCode, notifId: notifID, appId: appID, appSecret: appSecret)
+        
+    }
 }

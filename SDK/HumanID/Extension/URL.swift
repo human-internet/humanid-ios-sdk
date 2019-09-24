@@ -10,7 +10,8 @@ import Foundation
 
 internal extension URL {
     static var base: URL {
-        return URL(string: "https://humanid.herokuapp.com/mobile/")!
+        return URL(string: "http://localhost:3000/")!
+//        return URL(string: "https://humanid.herokuapp.com/mobile/")!
     }
     
     static var loginCheck: URL {
