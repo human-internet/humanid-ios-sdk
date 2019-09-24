@@ -8,11 +8,9 @@
 
 import Foundation
 
-
-
 internal class Rest {
     
-    private func dataTask(request: NSMutableURLRequest, method: String, completion: @escaping (_ success: Bool, _ object: AnyObject?) -> ()) {
+    private class func dataTask(request: NSMutableURLRequest, method: String, completion: @escaping (_ success: Bool, _ object: AnyObject?) -> ()) {
         request.httpMethod = method
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
@@ -29,7 +27,7 @@ internal class Rest {
             }.resume()
     }
     
-    internal func post(url: URL, data: Data? = nil, completion: @escaping (_ success: Bool, _ object: AnyObject?) -> ()) {
+    internal class func post(url: URL, data: Data? = nil, completion: @escaping (_ success: Bool, _ object: AnyObject?) -> ()) {
         
         let request = NSMutableURLRequest(url: url)
         
@@ -42,7 +40,7 @@ internal class Rest {
         dataTask(request: request, method: "POST", completion: completion)
     }
     
-    internal func get(url: URL, json: String, request: NSMutableURLRequest, completion: @escaping (_ success: Bool, _ object: AnyObject?) -> ()) {
+    internal class func get(url: URL, json: String, request: NSMutableURLRequest, completion: @escaping (_ success: Bool, _ object: AnyObject?) -> ()) {
         let request = NSMutableURLRequest(url: url)
         dataTask(request: request, method: "GET", completion: completion)
     }
