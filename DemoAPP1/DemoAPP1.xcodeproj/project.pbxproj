@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		800CEEBD2339B46800439180 /* SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 800CEEBC2339B46800439180 /* SDK.framework */; };
+		800CEEBE2339B46800439180 /* SDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 800CEEBC2339B46800439180 /* SDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		805BCA842328E29400421124 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BCA832328E29400421124 /* AppDelegate.swift */; };
 		805BCA862328E29400421124 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BCA852328E29400421124 /* ViewController.swift */; };
 		805BCA8B2328E29500421124 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 805BCA8A2328E29500421124 /* Assets.xcassets */; };
@@ -24,7 +26,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		800CEEBF2339B46800439180 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				800CEEBE2339B46800439180 /* SDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		800CEEBC2339B46800439180 /* SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		805BCA802328E29400421124 /* DemoAPP1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoAPP1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		805BCA832328E29400421124 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		805BCA852328E29400421124 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				800CEEBD2339B46800439180 /* SDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,12 +72,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		800CEEBB2339B46800439180 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				800CEEBC2339B46800439180 /* SDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		805BCA772328E29400421124 = {
 			isa = PBXGroup;
 			children = (
 				805BCA822328E29400421124 /* DemoAPP1 */,
 				805BCA972328E29500421124 /* DemoAPP1Tests */,
 				805BCA812328E29400421124 /* Products */,
+				800CEEBB2339B46800439180 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +130,7 @@
 				805BCA7C2328E29400421124 /* Sources */,
 				805BCA7D2328E29400421124 /* Frameworks */,
 				805BCA7E2328E29400421124 /* Resources */,
+				800CEEBF2339B46800439180 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

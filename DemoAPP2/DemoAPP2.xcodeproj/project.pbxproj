@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		800CEEC22339B47800439180 /* SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 800CEEC12339B47800439180 /* SDK.framework */; };
 		805BCA582328E26A00421124 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BCA572328E26A00421124 /* AppDelegate.swift */; };
 		805BCA5A2328E26A00421124 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BCA592328E26A00421124 /* ViewController.swift */; };
 		805BCA5F2328E26B00421124 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 805BCA5E2328E26B00421124 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		800CEEC12339B47800439180 /* SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		805BCA542328E26A00421124 /* DemoAPP2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoAPP2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		805BCA572328E26A00421124 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		805BCA592328E26A00421124 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				800CEEC22339B47800439180 /* SDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,12 +57,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		800CEEC02339B47800439180 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				800CEEC12339B47800439180 /* SDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		805BCA4B2328E26A00421124 = {
 			isa = PBXGroup;
 			children = (
 				805BCA562328E26A00421124 /* DemoAPP2 */,
 				805BCA6B2328E26B00421124 /* DemoAPP2Tests */,
 				805BCA552328E26A00421124 /* Products */,
+				800CEEC02339B47800439180 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
