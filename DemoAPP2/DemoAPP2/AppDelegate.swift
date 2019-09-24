@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        SDK.HumanID.shared.config(appID: "appid", appSecret: "appsecret")
         
         setupMainWindow()
         return true
