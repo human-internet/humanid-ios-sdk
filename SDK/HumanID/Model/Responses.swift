@@ -21,5 +21,5 @@ public struct DetailResponse: Codable {
     let appId: String
     let hash: String
     let deviceId: String
-    let notifId: String
+    let notifId: String?
 }
