@@ -124,7 +124,7 @@ open class HumanID {
         
         let data = UserLogin(existingHash: hash, notifId: notifID, appId: appID, appSecret: appSecret)
         let jsonData = try? JSONEncoder().encode(data)
-        Rest.post(url: .update, data: jsonData, completion: {
+        Rest.put(url: .update, data: jsonData, completion: {
             success, object, errorMessage in
             guard let body = object, let response = try? JSONDecoder().decode(DetailResponse.self, from: body) else {
                 completion(success, BaseResponse(message: errorMessage, data: nil))

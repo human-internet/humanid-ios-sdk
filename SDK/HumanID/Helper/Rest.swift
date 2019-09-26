@@ -39,6 +39,19 @@ internal class Rest {
         dataTask(request: request, method: "POST", completion: completion)
     }
     
+    internal class func put(url: URL, data: Data? = nil, completion: @escaping (_ success: Bool, _ data: Data?, _ errorMessage: String?) -> ()) {
+        
+        let request = NSMutableURLRequest(url: url)
+        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        if let data = data {
+            request.httpBody = data
+        }
+        
+        dataTask(request: request, method: "PUT", completion: completion)
+    }
+    
     internal class func get(url: URL, json: String, request: NSMutableURLRequest, completion: @escaping (_ success: Bool, _ data: Data?, _ errorMessage: String?) -> ()) {
         let request = NSMutableURLRequest(url: url)
         dataTask(request: request, method: "GET", completion: completion)
