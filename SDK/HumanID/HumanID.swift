@@ -107,4 +107,31 @@ open class HumanID {
             completion(success, BaseResponse(message: success.description, data: response))
         })
     }
+    
+    open func updateNotificationToken(hash: String, completion: @escaping (_ success: Bool, _ data: BaseResponse<DetailResponse>) -> ()) {
+        guard
+            let appID = KeyChain.retrieveString(key: .appIDKey),
+            let appSecret = KeyChain.retrieveString(key: .appSecretKey)
+        else {
+            completion(false, BaseResponse(message: "appID or appSecret not found", data: nil))
+            return
+        }
+        
+        var notifID = ""
+        if let token = KeyChain.retrieveString(key: .notificationTokenKey) {
+            notifID = token
+        }
+        
+        let data = UserLogin(existingHash: hash, notifId: notifID, appId: appID, appSecret: appSecret)
+        let jsonData = try? JSONEncoder().encode(data)
+        Rest.post(url: .update, data: jsonData, completion: {
+            success, object, errorMessage in
+            guard let body = object, let response = try? JSONDecoder().decode(DetailResponse.self, from: body) else {
+                completion(success, BaseResponse(message: errorMessage, data: nil))
+                return
+            }
+            
+            completion(success, BaseResponse(message: success.description, data: response))
+        })
+    }
 }

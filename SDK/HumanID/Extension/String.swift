@@ -24,4 +24,8 @@ internal extension String {
     static var deviceID: String {
         return "DeviceIDKeyForKeyChain"
     }
+    
+    static var userHash: String {
+        return "UserHashKeyForKeyChain"
+    }
 }
