@@ -23,9 +23,9 @@ open class HumanID {
         KeyChain.isStoreSuccess(key: .notificationTokenKey, value: token)
     }
     
-    open func verifyPhone(phoneNumber: String, countryCode: String, completion: @escaping (_ success: Bool, _ object: String) -> ()) {
+    open func verifyPhone(phoneNumber: String, countryCode: String, completion: @escaping (_ success: Bool, _ data: BaseResponse<DefaultResponse>) -> ()) {
         guard let appID = KeyChain.retrieveString(key: .appIDKey), let appSecret = KeyChain.retrieveString(key: .appSecretKey) else {
-            completion(false, "appID or appSecret not found")
+            completion(false, BaseResponse(message: "appID or appSecret not found", data: nil))
             return
         }
         
@@ -33,45 +33,50 @@ open class HumanID {
         
         let jsonData = try? JSONEncoder().encode(data)
         Rest.post(url: .verifyPhone, data: jsonData, completion: {
-            success, object in
-            guard let object = object else {
-                completion(success, "no message")
+            success, object, errormessage in
+            
+            guard let body = object, let response = try? JSONDecoder().decode(DefaultResponse.self, from: body) else {
+                completion(success, BaseResponse(message: errormessage, data: nil))
                 return
             }
-
-            completion(success, object["message"] as? String ?? "")
+            
+            completion(success, BaseResponse(message: success.description, data: response))
         })
     }
     
-    open func userRegistration(phoneNumber: String, countryCode: String, verificationCode: String, completion: @escaping (_ success: Bool, _ object: String) -> ()) {
+    open func userRegistration(phoneNumber: String, countryCode: String, verificationCode: String, completion: @escaping (_ success: Bool, _ data: BaseResponse<DetailResponse>) -> ()) {
         guard
             let appID = KeyChain.retrieveString(key: .appIDKey),
-            let appSecret = KeyChain.retrieveString(key: .appSecretKey),
-            let notifID = KeyChain.retrieveString(key: .notificationTokenKey)
+            let appSecret = KeyChain.retrieveString(key: .appSecretKey)
         else {
-            completion(false, "appID or appSecret or notification token not found")
+            completion(false, BaseResponse(message: "appID or appSecret not found", data: nil))
             return
         }
         
-        var deviceID = ""
+        var notifID = ""
+        if let token = KeyChain.retrieveString(key: .notificationTokenKey) {
+            notifID = token
+        }
+        
+        var deviceID = UUID().uuidString
         if let id = KeyChain.retrieveString(key: .deviceID) {
             deviceID = id
         } else {
+            deviceID = "qwe23w12j3nj12b3j1b2nj3bj1b23jb1j2b3"
             //TODO: Generate deviceID try to communicate with humanid app
         }
-        var deviceID = UUID().uuidString
         
         let data = UserRegistration(countryCode: countryCode, phone: phoneNumber, deviceId: deviceID, verificationCode: verificationCode, notifId: notifID, appId: appID, appSecret: appSecret)
         let jsonData = try? JSONEncoder().encode(data)
         
         Rest.post(url: .userRegistration, data: jsonData, completion: {
-            success, object in
-            guard let object = object else {
-                completion(success, "no message")
+            success, object, errorMessage in
+            guard let body = object, let response = try? JSONDecoder().decode(DetailResponse.self, from: body) else {
+                completion(success, BaseResponse(message: errorMessage, data: nil))
                 return
             }
-
-            completion(success, object["message"] as? String ?? "")
+            
+            completion(success, BaseResponse(message: success.description, data: response))
         })
         
     }
