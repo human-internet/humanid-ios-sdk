@@ -181,4 +181,30 @@ open class HumanID {
             completion(success, BaseResponse(message: success.description, data: response))
         })
     }
+    
+    open func loginCheck(completion: @escaping (_ success: Bool, _ data: BaseResponse<DefaultResponse>) -> ()) {
+        
+        guard let appID = KeyChain.retrieveString(key: .appIDKey), let appSecret = KeyChain.retrieveString(key: .appSecretKey) else {
+            completion(false, BaseResponse(message: "appID or appSecret not found", data: nil))
+            return
+        }
+        
+        let hash = KeyChain.retrieveString(key: .userHash) ?? ""
+            
+        let data = LoginCheck(hash: hash, appId: appID, appSecret: appSecret)
+            
+        let jsonData = try? JSONEncoder().encode(data)
+        Rest.post(url: .updatePhone, data: jsonData, completion: {
+            success, object, errormessage in
+            
+            guard let body = object, let response = try? JSONDecoder().decode(DefaultResponse.self, from: body) else {
+                completion(success, BaseResponse(message: errormessage, data: nil))
+                return
+            }
+            
+            completion(success, BaseResponse(message: success.description, data: response))
+        })
+    }
+    
+    
 }

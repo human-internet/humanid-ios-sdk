@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		800BDA78234227C0003C1A4D /* RejectLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800BDA77234227C0003C1A4D /* RejectLogin.swift */; };
+		800BDA79234227C0003C1A4D /* RejectLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800BDA77234227C0003C1A4D /* RejectLogin.swift */; };
 		805BCA0F2328E21400421124 /* HumanID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805BCA052328E21400421124 /* HumanID.framework */; };
 		805BCA142328E21400421124 /* SDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BCA132328E21400421124 /* SDKTests.swift */; };
 		805BCA162328E21400421124 /* HumanID.h in Headers */ = {isa = PBXBuildFile; fileRef = 805BCA082328E21400421124 /* HumanID.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -47,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		800BDA77234227C0003C1A4D /* RejectLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectLogin.swift; sourceTree = "<group>"; };
 		805BCA052328E21400421124 /* HumanID.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HumanID.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		805BCA082328E21400421124 /* HumanID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HumanID.h; sourceTree = "<group>"; };
 		805BCA092328E21400421124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -154,6 +157,7 @@
 				80D0176B232A256800478FB8 /* UserRegistration.swift */,
 				80D01772232A293A00478FB8 /* VerifyPhone.swift */,
 				80CFD62F233CA19000230833 /* Responses.swift */,
+				800BDA77234227C0003C1A4D /* RejectLogin.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,6 +280,7 @@
 				80D01773232A293A00478FB8 /* VerifyPhone.swift in Sources */,
 				80D01769232A245B00478FB8 /* UserLogin.swift in Sources */,
 				80D01777232A2C5700478FB8 /* Keychain.swift in Sources */,
+				800BDA78234227C0003C1A4D /* RejectLogin.swift in Sources */,
 				80D01766232A241900478FB8 /* UpdateNotifID.swift in Sources */,
 				805BCAA52328EA7E00421124 /* Rest.swift in Sources */,
 				805BCAA92328FB3100421124 /* URL.swift in Sources */,
@@ -296,6 +301,7 @@
 				80D01761232A22FB00478FB8 /* LoginCheck.swift in Sources */,
 				80D01767232A241900478FB8 /* UpdateNotifID.swift in Sources */,
 				80D0176A232A245B00478FB8 /* UserLogin.swift in Sources */,
+				800BDA79234227C0003C1A4D /* RejectLogin.swift in Sources */,
 				805BCAAA2328FB3100421124 /* URL.swift in Sources */,
 				80D01778232A2C5700478FB8 /* Keychain.swift in Sources */,
 				80CFD631233CA19000230833 /* Responses.swift in Sources */,

@@ -23,3 +23,11 @@ public struct DetailResponse: Codable {
     let deviceId: String
     let notifId: String?
 }
+
+public struct RejectLoginSresponse: Codable {
+    let id: String?
+    let appId: String?
+    let type: String?
+    let confirmingAppId: String?
+    let status: String?
+}
