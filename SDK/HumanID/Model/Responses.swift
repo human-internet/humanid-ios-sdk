@@ -24,7 +24,7 @@ public struct DetailResponse: Codable {
     let notifId: String?
 }
 
-public struct RejectLoginSresponse: Codable {
+public struct LoginConfirmationResponse: Codable {
     let id: String?
     let appId: String?
     let type: String?

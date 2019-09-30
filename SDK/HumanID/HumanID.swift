@@ -156,7 +156,7 @@ open class HumanID {
         })
     }
     
-    open func confirmWebLogin(isAllowLogin: Bool, requestingAppId: String, completion: @escaping (_ success: Bool, _ data: BaseResponse<RejectLoginSresponse>) -> ()) {
+    open func confirmWebLogin(isAllowLogin: Bool, requestingAppId: String, completion: @escaping (_ success: Bool, _ data: BaseResponse<LoginConfirmationResponse>) -> ()) {
         guard let appID = KeyChain.retrieveString(key: .appIDKey), let appSecret = KeyChain.retrieveString(key: .appSecretKey) else {
             completion(false, BaseResponse(message: "appID or appSecret not found", data: nil))
             return
@@ -167,13 +167,17 @@ open class HumanID {
         
         let data = RejectLogin(hash: hash, requestingAppId: requestingAppId, type: confirmType, appId: appID, appSecret: appSecret)
             
-        let urlRequest = isAllowLogin ? URL.confirmLogin : URL.rejectLogin
+        var urlRequest = URL.rejectLogin
+        
+        if isAllowLogin {
+            urlRequest = URL.confirmLogin
+        }
         
         let jsonData = try? JSONEncoder().encode(data)
         Rest.post(url: urlRequest, data: jsonData, completion: {
             success, object, errormessage in
             
-            guard let body = object, let response = try? JSONDecoder().decode(RejectLoginSresponse.self, from: body) else {
+            guard let body = object, let response = try? JSONDecoder().decode(LoginConfirmationResponse.self, from: body) else {
                 completion(success, BaseResponse(message: errormessage, data: nil))
                 return
             }
@@ -194,7 +198,8 @@ open class HumanID {
         let data = LoginCheck(hash: hash, appId: appID, appSecret: appSecret)
             
         let jsonData = try? JSONEncoder().encode(data)
-        Rest.post(url: .updatePhone, data: jsonData, completion: {
+        
+        Rest.get(url: .loginCheck, data: jsonData, completion: {
             success, object, errormessage in
             
             guard let body = object, let response = try? JSONDecoder().decode(DefaultResponse.self, from: body) else {

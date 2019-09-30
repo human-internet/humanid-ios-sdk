@@ -52,7 +52,7 @@ internal class Rest {
         dataTask(request: request, method: "PUT", completion: completion)
     }
     
-    internal class func get(url: URL, json: String, request: NSMutableURLRequest, completion: @escaping (_ success: Bool, _ data: Data?, _ errorMessage: String?) -> ()) {
+    internal class func get(url: URL, data: Data? = nil, completion: @escaping (_ success: Bool, _ data: Data?, _ errorMessage: String?) -> ()) {
         let request = NSMutableURLRequest(url: url)
         dataTask(request: request, method: "GET", completion: completion)
     }
