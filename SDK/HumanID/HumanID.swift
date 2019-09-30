@@ -108,7 +108,7 @@ open class HumanID {
         })
     }
     
-    open func updateNotificationToken(hash: String, completion: @escaping (_ success: Bool, _ data: BaseResponse<DetailResponse>) -> ()) {
+    open func updateNotificationToken(token: String, completion: @escaping (_ success: Bool, _ data: BaseResponse<DetailResponse>) -> ()) {
         guard
             let appID = KeyChain.retrieveString(key: .appIDKey),
             let appSecret = KeyChain.retrieveString(key: .appSecretKey)
@@ -117,17 +117,38 @@ open class HumanID {
             return
         }
         
-        var notifID = ""
-        if let token = KeyChain.retrieveString(key: .notificationTokenKey) {
-            notifID = token
-        }
+        let hash = KeyChain.retrieveString(key: .userHash) ?? ""
         
-        let data = UserLogin(existingHash: hash, notifId: notifID, appId: appID, appSecret: appSecret)
+        let data = UserLogin(existingHash: hash, notifId: token, appId: appID, appSecret: appSecret)
         let jsonData = try? JSONEncoder().encode(data)
         Rest.put(url: .update, data: jsonData, completion: {
             success, object, errorMessage in
             guard let body = object, let response = try? JSONDecoder().decode(DetailResponse.self, from: body) else {
                 completion(success, BaseResponse(message: errorMessage, data: nil))
+                return
+            }
+            
+            completion(success, BaseResponse(message: success.description, data: response))
+        })
+    }
+    
+    open func updatePhoneNumber(phoneNumber: String, countryCode: String, verificationCode: String, completion: @escaping (_ success: Bool, _ data: BaseResponse<DefaultResponse>) -> ()) {
+        
+        guard let appID = KeyChain.retrieveString(key: .appIDKey), let appSecret = KeyChain.retrieveString(key: .appSecretKey) else {
+            completion(false, BaseResponse(message: "appID or appSecret not found", data: nil))
+            return
+        }
+        
+        let hash = KeyChain.retrieveString(key: .userHash) ?? ""
+            
+        let data = UpdatePhone(countryCode: countryCode, phone: phoneNumber, verificationCode: verificationCode, existingHash: hash, appId: appID, appSecret: appSecret)
+            
+        let jsonData = try? JSONEncoder().encode(data)
+        Rest.post(url: .updatePhone, data: jsonData, completion: {
+            success, object, errormessage in
+            
+            guard let body = object, let response = try? JSONDecoder().decode(DefaultResponse.self, from: body) else {
+                completion(success, BaseResponse(message: errormessage, data: nil))
                 return
             }
             
