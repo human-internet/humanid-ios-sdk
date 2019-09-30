@@ -155,4 +155,30 @@ open class HumanID {
             completion(success, BaseResponse(message: success.description, data: response))
         })
     }
+    
+    open func confirmWebLogin(isAllowLogin: Bool, requestingAppId: String, completion: @escaping (_ success: Bool, _ data: BaseResponse<RejectLoginSresponse>) -> ()) {
+        guard let appID = KeyChain.retrieveString(key: .appIDKey), let appSecret = KeyChain.retrieveString(key: .appSecretKey) else {
+            completion(false, BaseResponse(message: "appID or appSecret not found", data: nil))
+            return
+        }
+        
+        let hash = KeyChain.retrieveString(key: .userHash) ?? ""
+        let confirmType = "WEB_LOGIN_REQUEST"
+        
+        let data = RejectLogin(hash: hash, requestingAppId: requestingAppId, type: confirmType, appId: appID, appSecret: appSecret)
+            
+        let urlRequest = isAllowLogin ? URL.confirmLogin : URL.rejectLogin
+        
+        let jsonData = try? JSONEncoder().encode(data)
+        Rest.post(url: urlRequest, data: jsonData, completion: {
+            success, object, errormessage in
+            
+            guard let body = object, let response = try? JSONDecoder().decode(RejectLoginSresponse.self, from: body) else {
+                completion(success, BaseResponse(message: errormessage, data: nil))
+                return
+            }
+            
+            completion(success, BaseResponse(message: success.description, data: response))
+        })
+    }
 }
