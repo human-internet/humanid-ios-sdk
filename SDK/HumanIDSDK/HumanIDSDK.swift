@@ -1,5 +1,5 @@
 //
-//  HumanID.swift
+//  HumanIDSDK.swift
 //  SDK
 //
 //  Created by fanni suyuti on 12/09/19.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-open class HumanID {
+open class HumanIDSDK {
     
     private init() {}
     
-    public static let shared = HumanID()
+    public static let shared = HumanIDSDK()
     
     open func config(appID: String, appSecret: String) {
         KeyChain.isStoreSuccess(key: .appIDKey, value: appID)

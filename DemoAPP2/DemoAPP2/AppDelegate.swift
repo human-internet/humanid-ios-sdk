@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import HumanID
+import HumanIDSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,8 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        HumanID.shared.config(appID: "DEMO_APP_IOS", appSecret: "541ec90bf636f0a8847885af37faedc258dcc875481f870d507c64d0e785bc1e")
-        HumanID.shared.registerNotification(token: "asdasdasdasdasd")
+        HumanIDSDK.shared.config(appID: "DEMO_APP_IOS", appSecret: "541ec90bf636f0a8847885af37faedc258dcc875481f870d507c64d0e785bc1e")
+        HumanIDSDK.shared.registerNotification(token: "asdasdasdasdasd")
         
         setupMainWindow()
         return true

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		800CEEBD2339B46800439180 /* SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 800CEEBC2339B46800439180 /* SDK.framework */; };
-		800CEEBE2339B46800439180 /* SDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 800CEEBC2339B46800439180 /* SDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		80496816234B08B200FEEF04 /* HumanIDSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80496815234B08B200FEEF04 /* HumanIDSDK.framework */; };
+		80496817234B08B200FEEF04 /* HumanIDSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 80496815234B08B200FEEF04 /* HumanIDSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		805BCA842328E29400421124 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BCA832328E29400421124 /* AppDelegate.swift */; };
 		805BCA862328E29400421124 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BCA852328E29400421124 /* ViewController.swift */; };
 		805BCA8B2328E29500421124 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 805BCA8A2328E29500421124 /* Assets.xcassets */; };
@@ -27,13 +27,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		800CEEBF2339B46800439180 /* Embed Frameworks */ = {
+		80496818234B08B200FEEF04 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				800CEEBE2339B46800439180 /* SDK.framework in Embed Frameworks */,
+				80496817234B08B200FEEF04 /* HumanIDSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		800CEEBC2339B46800439180 /* SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80496815234B08B200FEEF04 /* HumanIDSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HumanIDSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		805BCA802328E29400421124 /* DemoAPP1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoAPP1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		805BCA832328E29400421124 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		805BCA852328E29400421124 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				800CEEBD2339B46800439180 /* SDK.framework in Frameworks */,
+				80496816234B08B200FEEF04 /* HumanIDSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +76,7 @@
 		800CEEBB2339B46800439180 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				80496815234B08B200FEEF04 /* HumanIDSDK.framework */,
 				800CEEBC2339B46800439180 /* SDK.framework */,
 			);
 			name = Frameworks;
@@ -130,7 +132,7 @@
 				805BCA7C2328E29400421124 /* Sources */,
 				805BCA7D2328E29400421124 /* Frameworks */,
 				805BCA7E2328E29400421124 /* Resources */,
-				800CEEBF2339B46800439180 /* Embed Frameworks */,
+				80496818234B08B200FEEF04 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -379,6 +381,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C3HF5UM96P;
 				INFOPLIST_FILE = DemoAPP1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -397,6 +400,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C3HF5UM96P;
 				INFOPLIST_FILE = DemoAPP1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

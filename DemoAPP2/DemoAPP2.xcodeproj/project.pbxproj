@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		800CEED62339DC6600439180 /* HumanID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 800CEED52339DC6600439180 /* HumanID.framework */; };
+		80496812234B08A200FEEF04 /* HumanIDSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80496811234B08A200FEEF04 /* HumanIDSDK.framework */; };
 		805BCA582328E26A00421124 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BCA572328E26A00421124 /* AppDelegate.swift */; };
 		805BCA5A2328E26A00421124 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BCA592328E26A00421124 /* ViewController.swift */; };
 		805BCA5F2328E26B00421124 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 805BCA5E2328E26B00421124 /* Assets.xcassets */; };
@@ -27,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		800CEED52339DC6600439180 /* HumanID.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HumanID.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80496811234B08A200FEEF04 /* HumanIDSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HumanIDSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		805BCA542328E26A00421124 /* DemoAPP2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoAPP2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		805BCA572328E26A00421124 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		805BCA592328E26A00421124 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				800CEED62339DC6600439180 /* HumanID.framework in Frameworks */,
+				80496812234B08A200FEEF04 /* HumanIDSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +61,7 @@
 		800CEEC02339B47800439180 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				80496811234B08A200FEEF04 /* HumanIDSDK.framework */,
 				800CEED52339DC6600439180 /* HumanID.framework */,
 			);
 			name = Frameworks;

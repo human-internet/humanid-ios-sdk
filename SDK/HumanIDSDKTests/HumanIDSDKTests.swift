@@ -9,7 +9,7 @@
 import XCTest
 @testable import SDK
 
-class SDKTests: XCTestCase {
+class HumanIDSDKTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
