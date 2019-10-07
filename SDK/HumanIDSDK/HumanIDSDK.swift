@@ -23,6 +23,14 @@ open class HumanIDSDK {
         KeyChain.isStoreSuccess(key: .notificationTokenKey, value: token)
     }
     
+    open func setDeviceID(id: String) {
+        KeyChain.isStoreSuccess(key: .deviceID, value: id)
+    }
+    
+    open func getDeviceID() -> String {
+        return KeyChain.retrieveString(key: .deviceID) ?? ""
+    }
+    
     open func verifyPhone(phoneNumber: String, countryCode: String, completion: @escaping (_ success: Bool, _ data: BaseResponse<DefaultResponse>) -> ()) {
         guard let appID = KeyChain.retrieveString(key: .appIDKey), let appSecret = KeyChain.retrieveString(key: .appSecretKey) else {
             completion(false, BaseResponse(message: "appID or appSecret not found", data: nil))

@@ -2,12 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:HumanID/HumanID.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:DemoAPP1/DemoAPP1.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:DemoAPP2/DemoAPP2.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:/Users/fannisuyuti/HumanID/SDK/SDK/HumanID.xcodeproj">
+      location = "group:/Users/fannisuyuti/HumanID/SDK/SDK/HumanIDSDK.xcodeproj">
    </FileRef>
 </Workspace>

@@ -13,6 +13,11 @@
 		80496837234B0A7500FEEF04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80496835234B0A7500FEEF04 /* LaunchScreen.storyboard */; };
 		80496842234B0A7500FEEF04 /* HumanIDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80496841234B0A7500FEEF04 /* HumanIDTests.swift */; };
 		8049684D234B0A7500FEEF04 /* HumanIDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8049684C234B0A7500FEEF04 /* HumanIDUITests.swift */; };
+		8049685F234B14D200FEEF04 /* HumanIDSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8049685E234B14D200FEEF04 /* HumanIDSDK.framework */; };
+		80496860234B14D200FEEF04 /* HumanIDSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8049685E234B14D200FEEF04 /* HumanIDSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		80496863234B15F900FEEF04 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80496862234B15F900FEEF04 /* KeychainHelper.swift */; };
+		80496864234B15F900FEEF04 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80496862234B15F900FEEF04 /* KeychainHelper.swift */; };
+		80496865234B15F900FEEF04 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80496862234B15F900FEEF04 /* KeychainHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +37,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		80496861234B14D200FEEF04 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				80496860234B14D200FEEF04 /* HumanIDSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		80496827234B0A7400FEEF04 /* HumanID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HumanID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8049682A234B0A7400FEEF04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +64,8 @@
 		80496848234B0A7500FEEF04 /* HumanIDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HumanIDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8049684C234B0A7500FEEF04 /* HumanIDUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanIDUITests.swift; sourceTree = "<group>"; };
 		8049684E234B0A7500FEEF04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8049685E234B14D200FEEF04 /* HumanIDSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HumanIDSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80496862234B15F900FEEF04 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8049685F234B14D200FEEF04 /* HumanIDSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +101,7 @@
 				80496840234B0A7500FEEF04 /* HumanIDTests */,
 				8049684B234B0A7500FEEF04 /* HumanIDUITests */,
 				80496828234B0A7400FEEF04 /* Products */,
+				8049685D234B14D200FEEF04 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +123,7 @@
 				80496833234B0A7500FEEF04 /* Assets.xcassets */,
 				80496835234B0A7500FEEF04 /* LaunchScreen.storyboard */,
 				80496838234B0A7500FEEF04 /* Info.plist */,
+				80496862234B15F900FEEF04 /* KeychainHelper.swift */,
 			);
 			path = HumanID;
 			sourceTree = "<group>";
@@ -122,6 +146,14 @@
 			path = HumanIDUITests;
 			sourceTree = "<group>";
 		};
+		8049685D234B14D200FEEF04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8049685E234B14D200FEEF04 /* HumanIDSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +164,7 @@
 				80496823234B0A7400FEEF04 /* Sources */,
 				80496824234B0A7400FEEF04 /* Frameworks */,
 				80496825234B0A7400FEEF04 /* Resources */,
+				80496861234B14D200FEEF04 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8049682F234B0A7400FEEF04 /* ViewController.swift in Sources */,
+				80496863234B15F900FEEF04 /* KeychainHelper.swift in Sources */,
 				8049682B234B0A7400FEEF04 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80496842234B0A7500FEEF04 /* HumanIDTests.swift in Sources */,
+				80496864234B15F900FEEF04 /* KeychainHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8049684D234B0A7500FEEF04 /* HumanIDUITests.swift in Sources */,
+				80496865234B15F900FEEF04 /* KeychainHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

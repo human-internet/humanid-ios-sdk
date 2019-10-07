@@ -19,10 +19,16 @@ class ViewController: UIViewController {
 //            print(message)
 //        }
         
-        HumanIDSDK.shared.userRegistration(phoneNumber: "085659030344", countryCode: "+62", verificationCode: "0000") { success, message in
-            print(success)
-            print(message)
+//        HumanIDSDK.shared.userRegistration(phoneNumber: "085659030344", countryCode: "+62", verificationCode: "0000") { success, message in
+//            print(success)
+//            print(message)
+//        }
+        print("device id => \(HumanIDSDK.shared.getDeviceID())")
+        UIApplication.shared.open(URL(string: "humanidapp:deviceID?urlScheme=demoapptwohumanid")!, options: [:]) { result in
+            print(result)
         }
+        
+        print("device id => \(HumanIDSDK.shared.getDeviceID())")
     }
 
 
