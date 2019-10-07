@@ -24,11 +24,15 @@ class ViewController: UIViewController {
 //            print(message)
 //        }
         print("device id => \(HumanIDSDK.shared.getDeviceID())")
-        UIApplication.shared.open(URL(string: "humanidapp:deviceID?urlScheme=demoapptwohumanid")!, options: [:]) { result in
-            print(result)
+        UIApplication.shared.open(URL(string: "humanidapp:deviceID?urlScheme=demoapptwohumanid")!, options: [:]) {
+            result in
+            
+            if result {
+                print("device id => \(HumanIDSDK.shared.getDeviceID())")
+            }
         }
         
-        print("device id => \(HumanIDSDK.shared.getDeviceID())")
+        
     }
 
 

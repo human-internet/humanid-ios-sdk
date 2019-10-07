@@ -33,8 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         guard let component = URLComponents(url: url, resolvingAgainstBaseURL: true),
             let params = component.queryItems else {
-                print("invalid url")
-                print("")
+//                print("invalid url")
+//                print("")
                 return false
         }
         
@@ -58,14 +58,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func callURLScheme(urlScheme: String, deviceID: String) {
         guard let url = URL(string: "\(urlScheme):deviceID?deviceID=\(deviceID)") else {
-            print("url scheme not valid")
+//            print("url scheme not valid")
             return
         }
         
-        UIApplication.shared.open(url) {
-            result in
-            print(result)
-        }
+        UIApplication.shared.open(url)
     }
 }
 

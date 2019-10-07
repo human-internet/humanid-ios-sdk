@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         guard let component = URLComponents(url: url, resolvingAgainstBaseURL: true),
             let params = component.queryItems else {
-                print("invalid url")
+//                print("invalid url")
                 return false
         }
         
@@ -44,9 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             $0.name == "deviceID"
         })?.value {
                 HumanIDSDK.shared.setDeviceID(id: deviceID)
-                print(deviceID)
             } else {
-            print(url.absoluteString)
+//            print(url.absoluteString)
             return false
         }
         
