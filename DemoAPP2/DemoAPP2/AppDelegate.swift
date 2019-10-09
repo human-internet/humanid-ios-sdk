@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setupMainWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let vc = ViewController()
+        let vc = MainViewController()
         let navCon = UINavigationController(rootViewController: vc)
         window?.rootViewController = navCon
         
