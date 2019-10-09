@@ -45,12 +45,12 @@ class VerifyPhoneViewController: UIViewController {
                                            color: UIColor.black)
        descriptionLabel.attributedText = formattedText
         
-       let tap = UITapGestureRecognizer(target: self, action: #selector(handleTermTapped))
+       let tap = UITapGestureRecognizer(target: self, action: #selector(handleTapOnLabel))
        descriptionLabel.addGestureRecognizer(tap)
        descriptionLabel.isUserInteractionEnabled = true
     }
     
-    @objc func handleTermTapped(gesture: UITapGestureRecognizer) {
+    @objc func handleTapOnLabel(gesture: UITapGestureRecognizer) {
         let termString = descriptionText as NSString
         let termRange = termString.range(of: linkText)
 
@@ -64,6 +64,7 @@ class VerifyPhoneViewController: UIViewController {
     }
     
     func learnMoreAboutHumanID() {
+        //TODO: implement link to learn more about humanid
         print("clicked")
     }
     
@@ -72,8 +73,10 @@ class VerifyPhoneViewController: UIViewController {
     }
 
     @IBAction func downloadButtonAction(_ sender: Any) {
+        //TODO: implement download button
     }
     
     @IBAction func enterButtonAction(_ sender: Any) {
+        //TODO: implement verifiying process
     }
 }
