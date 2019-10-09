@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		800BDA78234227C0003C1A4D /* RejectLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800BDA77234227C0003C1A4D /* RejectLogin.swift */; };
 		800BDA79234227C0003C1A4D /* RejectLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800BDA77234227C0003C1A4D /* RejectLogin.swift */; };
+		8025F3C9234DC55F00587A2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8025F3C8234DC55F00587A2D /* Assets.xcassets */; };
+		8025F3CA234DC55F00587A2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8025F3C8234DC55F00587A2D /* Assets.xcassets */; };
 		80496869234B248700FEEF04 /* VerifyPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80496867234B248700FEEF04 /* VerifyPhoneViewController.swift */; };
 		8049686A234B248700FEEF04 /* VerifyPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80496867234B248700FEEF04 /* VerifyPhoneViewController.swift */; };
 		8049686B234B248700FEEF04 /* VerifyPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80496868234B248700FEEF04 /* VerifyPhoneViewController.xib */; };
@@ -58,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		800BDA77234227C0003C1A4D /* RejectLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectLogin.swift; sourceTree = "<group>"; };
+		8025F3C8234DC55F00587A2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80496867234B248700FEEF04 /* VerifyPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneViewController.swift; sourceTree = "<group>"; };
 		80496868234B248700FEEF04 /* VerifyPhoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyPhoneViewController.xib; sourceTree = "<group>"; };
 		8049686D234B268D00FEEF04 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -101,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8025F3C7234DC53100587A2D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				8025F3C8234DC55F00587A2D /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		80496866234B245800FEEF04 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +142,7 @@
 		805BCA072328E21400421124 /* HumanIDSDK */ = {
 			isa = PBXGroup;
 			children = (
+				8025F3C7234DC53100587A2D /* Resource */,
 				80496866234B245800FEEF04 /* ViewController */,
 				80D0175E232A1E3B00478FB8 /* Model */,
 				805BCAA72328FB0000421124 /* Extension */,
@@ -278,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8025F3C9234DC55F00587A2D /* Assets.xcassets in Resources */,
 				8049686B234B248700FEEF04 /* VerifyPhoneViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8025F3CA234DC55F00587A2D /* Assets.xcassets in Resources */,
 				8049686C234B248700FEEF04 /* VerifyPhoneViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

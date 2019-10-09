@@ -219,5 +219,7 @@ open class HumanIDSDK {
         })
     }
     
-    
+    open func getVerifyPhoneNumberViewController() -> UIViewController {
+        return VerifyPhoneViewController(nibName: "VerifyPhoneViewController", bundle: Bundle(identifier: "org.humanid.HumanIDSDK"))
+    }
 }
