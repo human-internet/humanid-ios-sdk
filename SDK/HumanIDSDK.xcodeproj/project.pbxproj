@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		800BDA78234227C0003C1A4D /* RejectLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800BDA77234227C0003C1A4D /* RejectLogin.swift */; };
 		800BDA79234227C0003C1A4D /* RejectLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800BDA77234227C0003C1A4D /* RejectLogin.swift */; };
+		800E24BA234E0C8800827376 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800E24B9234E0C8800827376 /* UILabel.swift */; };
+		800E24BB234E0C8800827376 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800E24B9234E0C8800827376 /* UILabel.swift */; };
 		8025F3C9234DC55F00587A2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8025F3C8234DC55F00587A2D /* Assets.xcassets */; };
 		8025F3CA234DC55F00587A2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8025F3C8234DC55F00587A2D /* Assets.xcassets */; };
 		80496869234B248700FEEF04 /* VerifyPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80496867234B248700FEEF04 /* VerifyPhoneViewController.swift */; };
@@ -60,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		800BDA77234227C0003C1A4D /* RejectLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectLogin.swift; sourceTree = "<group>"; };
+		800E24B9234E0C8800827376 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		8025F3C8234DC55F00587A2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80496867234B248700FEEF04 /* VerifyPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneViewController.swift; sourceTree = "<group>"; };
 		80496868234B248700FEEF04 /* VerifyPhoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyPhoneViewController.xib; sourceTree = "<group>"; };
@@ -178,6 +181,7 @@
 				805BCAA82328FB3100421124 /* URL.swift */,
 				80D0177F232A478700478FB8 /* String.swift */,
 				80496870234B29FD00FEEF04 /* Array.swift */,
+				800E24B9234E0C8800827376 /* UILabel.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -311,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				800E24BA234E0C8800827376 /* UILabel.swift in Sources */,
 				80D0176C232A256800478FB8 /* UserRegistration.swift in Sources */,
 				80D01780232A478700478FB8 /* String.swift in Sources */,
 				80D01760232A22FB00478FB8 /* LoginCheck.swift in Sources */,
@@ -338,6 +343,7 @@
 				8049686A234B248700FEEF04 /* VerifyPhoneViewController.swift in Sources */,
 				80D01764232A238E00478FB8 /* UpdatePhone.swift in Sources */,
 				80496872234B29FD00FEEF04 /* Array.swift in Sources */,
+				800E24BB234E0C8800827376 /* UILabel.swift in Sources */,
 				80D0177E232A43D300478FB8 /* HumanIDSDK.swift in Sources */,
 				80D01774232A293A00478FB8 /* VerifyPhone.swift in Sources */,
 				805BCAA62328EA7E00421124 /* Rest.swift in Sources */,

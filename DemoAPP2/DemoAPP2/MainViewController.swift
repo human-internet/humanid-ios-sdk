@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func loginWithHumanIDAction(_ sender: Any) {
-        navigationController?.present(HumanIDSDK.shared.getVerifyPhoneNumberViewController(), animated: true, completion: nil)
+        navigationController?.present(HumanIDSDK.shared.getVerifyPhoneNumberViewController(clientImage: UIImage(named: "Antena")!, clientName: "Demo APP 2"), animated: true, completion: nil)
     }
     
     @IBAction func loginWithGoogleAction(_ sender: Any) {
