@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		800BDA78234227C0003C1A4D /* RejectLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800BDA77234227C0003C1A4D /* RejectLogin.swift */; };
 		800BDA79234227C0003C1A4D /* RejectLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800BDA77234227C0003C1A4D /* RejectLogin.swift */; };
+		800E176123507278001BA627 /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800E176023507278001BA627 /* ToolbarPickerView.swift */; };
+		800E176223507278001BA627 /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800E176023507278001BA627 /* ToolbarPickerView.swift */; };
 		800E24BA234E0C8800827376 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800E24B9234E0C8800827376 /* UILabel.swift */; };
 		800E24BB234E0C8800827376 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800E24B9234E0C8800827376 /* UILabel.swift */; };
 		8025F3C9234DC55F00587A2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8025F3C8234DC55F00587A2D /* Assets.xcassets */; };
@@ -62,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		800BDA77234227C0003C1A4D /* RejectLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectLogin.swift; sourceTree = "<group>"; };
+		800E176023507278001BA627 /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
 		800E24B9234E0C8800827376 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		8025F3C8234DC55F00587A2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80496867234B248700FEEF04 /* VerifyPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +110,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		800E175F235071FA001BA627 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				800E176023507278001BA627 /* ToolbarPickerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8025F3C7234DC53100587A2D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +156,7 @@
 		805BCA072328E21400421124 /* HumanIDSDK */ = {
 			isa = PBXGroup;
 			children = (
+				800E175F235071FA001BA627 /* View */,
 				8025F3C7234DC53100587A2D /* Resource */,
 				80496866234B245800FEEF04 /* ViewController */,
 				80D0175E232A1E3B00478FB8 /* Model */,
@@ -321,6 +333,7 @@
 				80D01760232A22FB00478FB8 /* LoginCheck.swift in Sources */,
 				80D0177D232A43D300478FB8 /* HumanIDSDK.swift in Sources */,
 				80CFD630233CA19000230833 /* Responses.swift in Sources */,
+				800E176123507278001BA627 /* ToolbarPickerView.swift in Sources */,
 				80496871234B29FD00FEEF04 /* Array.swift in Sources */,
 				80D01763232A238E00478FB8 /* UpdatePhone.swift in Sources */,
 				80496869234B248700FEEF04 /* VerifyPhoneViewController.swift in Sources */,
@@ -339,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				800E176223507278001BA627 /* ToolbarPickerView.swift in Sources */,
 				805BCA142328E21400421124 /* HumanIDSDKTests.swift in Sources */,
 				8049686A234B248700FEEF04 /* VerifyPhoneViewController.swift in Sources */,
 				80D01764232A238E00478FB8 /* UpdatePhone.swift in Sources */,
