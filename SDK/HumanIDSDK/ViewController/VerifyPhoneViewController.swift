@@ -119,6 +119,14 @@ class VerifyPhoneViewController: UIViewController {
         
     }
     
+    @IBAction func transferPhoneNumberButtonAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func cancelButtonAction(_ sender: Any) {
+        
+    }
+    
     @IBAction func countryCodeFieldChanged(_ sender: UITextField) {
         validatePhoneNumber()
     }
