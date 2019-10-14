@@ -25,6 +25,10 @@
 		8012F02D23541CF70034647F /* CreateNewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012F02A23541CF70034647F /* CreateNewAccountViewController.swift */; };
 		8012F02E23541CF70034647F /* CreateNewAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8012F02B23541CF70034647F /* CreateNewAccountViewController.xib */; };
 		8012F02F23541CF70034647F /* CreateNewAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8012F02B23541CF70034647F /* CreateNewAccountViewController.xib */; };
+		8017D8842354B02E00FE6DAA /* OTPField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8017D8832354B02E00FE6DAA /* OTPField.swift */; };
+		8017D8852354B02E00FE6DAA /* OTPField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8017D8832354B02E00FE6DAA /* OTPField.swift */; };
+		8017D8872354D02400FE6DAA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8017D8862354D02400FE6DAA /* UIView.swift */; };
+		8017D8882354D02400FE6DAA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8017D8862354D02400FE6DAA /* UIView.swift */; };
 		8025F3C9234DC55F00587A2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8025F3C8234DC55F00587A2D /* Assets.xcassets */; };
 		8025F3CA234DC55F00587A2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8025F3C8234DC55F00587A2D /* Assets.xcassets */; };
 		80496869234B248700FEEF04 /* VerifyPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80496867234B248700FEEF04 /* VerifyPhoneViewController.swift */; };
@@ -84,6 +88,8 @@
 		8012F024235408F40034647F /* Comfortaa-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Medium.ttf"; sourceTree = "<group>"; };
 		8012F02A23541CF70034647F /* CreateNewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountViewController.swift; sourceTree = "<group>"; };
 		8012F02B23541CF70034647F /* CreateNewAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewAccountViewController.xib; sourceTree = "<group>"; };
+		8017D8832354B02E00FE6DAA /* OTPField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPField.swift; sourceTree = "<group>"; };
+		8017D8862354D02400FE6DAA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8025F3C8234DC55F00587A2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80496867234B248700FEEF04 /* VerifyPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneViewController.swift; sourceTree = "<group>"; };
 		80496868234B248700FEEF04 /* VerifyPhoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyPhoneViewController.xib; sourceTree = "<group>"; };
@@ -132,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				800E176023507278001BA627 /* ToolbarPickerView.swift */,
+				8017D8832354B02E00FE6DAA /* OTPField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,6 +233,7 @@
 				80D0177F232A478700478FB8 /* String.swift */,
 				80496870234B29FD00FEEF04 /* Array.swift */,
 				800E24B9234E0C8800827376 /* UILabel.swift */,
+				8017D8862354D02400FE6DAA /* UIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -373,11 +381,13 @@
 				8012F02C23541CF70034647F /* CreateNewAccountViewController.swift in Sources */,
 				80D0176C232A256800478FB8 /* UserRegistration.swift in Sources */,
 				80D01780232A478700478FB8 /* String.swift in Sources */,
+				8017D8842354B02E00FE6DAA /* OTPField.swift in Sources */,
 				80D01760232A22FB00478FB8 /* LoginCheck.swift in Sources */,
 				80D0177D232A43D300478FB8 /* HumanIDSDK.swift in Sources */,
 				80CFD630233CA19000230833 /* Responses.swift in Sources */,
 				800E176123507278001BA627 /* ToolbarPickerView.swift in Sources */,
 				80496871234B29FD00FEEF04 /* Array.swift in Sources */,
+				8017D8872354D02400FE6DAA /* UIView.swift in Sources */,
 				80D01763232A238E00478FB8 /* UpdatePhone.swift in Sources */,
 				80496869234B248700FEEF04 /* VerifyPhoneViewController.swift in Sources */,
 				80D01773232A293A00478FB8 /* VerifyPhone.swift in Sources */,
@@ -397,6 +407,7 @@
 			files = (
 				800E176223507278001BA627 /* ToolbarPickerView.swift in Sources */,
 				805BCA142328E21400421124 /* HumanIDSDKTests.swift in Sources */,
+				8017D8882354D02400FE6DAA /* UIView.swift in Sources */,
 				8049686A234B248700FEEF04 /* VerifyPhoneViewController.swift in Sources */,
 				80D01764232A238E00478FB8 /* UpdatePhone.swift in Sources */,
 				80496872234B29FD00FEEF04 /* Array.swift in Sources */,
@@ -411,6 +422,7 @@
 				80D01767232A241900478FB8 /* UpdateNotifID.swift in Sources */,
 				80D0176A232A245B00478FB8 /* UserLogin.swift in Sources */,
 				800BDA79234227C0003C1A4D /* RejectLogin.swift in Sources */,
+				8017D8852354B02E00FE6DAA /* OTPField.swift in Sources */,
 				8049686F234B268D00FEEF04 /* Country.swift in Sources */,
 				805BCAAA2328FB3100421124 /* URL.swift in Sources */,
 				80D01778232A2C5700478FB8 /* Keychain.swift in Sources */,
