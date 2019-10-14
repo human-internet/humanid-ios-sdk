@@ -222,4 +222,8 @@ open class HumanIDSDK {
     open func getVerifyPhoneNumberViewController(clientImage: UIImage, clientName: String) -> UIViewController {
         return VerifyPhoneViewController(clientImage: clientImage, clientName: clientName)
     }
+    
+    open func getCreateNewAccountViewController(phoneNumber: String) -> UIViewController {
+        return CreateNewAccountViewController(phoneNumber: phoneNumber)
+    }
 }
