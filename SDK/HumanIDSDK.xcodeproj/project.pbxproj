@@ -13,6 +13,12 @@
 		800E176223507278001BA627 /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800E176023507278001BA627 /* ToolbarPickerView.swift */; };
 		800E24BA234E0C8800827376 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800E24B9234E0C8800827376 /* UILabel.swift */; };
 		800E24BB234E0C8800827376 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800E24B9234E0C8800827376 /* UILabel.swift */; };
+		800F2A072355EE4800566691 /* AddEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800F2A052355EE4800566691 /* AddEmailViewController.swift */; };
+		800F2A082355EE4800566691 /* AddEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800F2A052355EE4800566691 /* AddEmailViewController.swift */; };
+		800F2A092355EE4800566691 /* AddEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800F2A062355EE4800566691 /* AddEmailViewController.xib */; };
+		800F2A0A2355EE4800566691 /* AddEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800F2A062355EE4800566691 /* AddEmailViewController.xib */; };
+		800F2A0C2355F3E700566691 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 800F2A0B2355F3E700566691 /* Comfortaa-Regular.ttf */; };
+		800F2A0D2355F3E700566691 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 800F2A0B2355F3E700566691 /* Comfortaa-Regular.ttf */; };
 		8012F0052354070B0034647F /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8012EFF0235407090034647F /* Poppins-Medium.ttf */; };
 		8012F0062354070B0034647F /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8012EFF0235407090034647F /* Poppins-Medium.ttf */; };
 		8012F0132354070B0034647F /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8012EFF72354070A0034647F /* Poppins-SemiBold.ttf */; };
@@ -82,6 +88,9 @@
 		800BDA77234227C0003C1A4D /* RejectLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectLogin.swift; sourceTree = "<group>"; };
 		800E176023507278001BA627 /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
 		800E24B9234E0C8800827376 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		800F2A052355EE4800566691 /* AddEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailViewController.swift; sourceTree = "<group>"; };
+		800F2A062355EE4800566691 /* AddEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEmailViewController.xib; sourceTree = "<group>"; };
+		800F2A0B2355F3E700566691 /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
 		8012EFF0235407090034647F /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		8012EFF72354070A0034647F /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		8012F023235408F40034647F /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
@@ -150,6 +159,7 @@
 				8012EFF72354070A0034647F /* Poppins-SemiBold.ttf */,
 				8012F023235408F40034647F /* Comfortaa-Bold.ttf */,
 				8012F024235408F40034647F /* Comfortaa-Medium.ttf */,
+				800F2A0B2355F3E700566691 /* Comfortaa-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -170,6 +180,8 @@
 				80496868234B248700FEEF04 /* VerifyPhoneViewController.xib */,
 				8012F02A23541CF70034647F /* CreateNewAccountViewController.swift */,
 				8012F02B23541CF70034647F /* CreateNewAccountViewController.xib */,
+				800F2A052355EE4800566691 /* AddEmailViewController.swift */,
+				800F2A062355EE4800566691 /* AddEmailViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -349,9 +361,11 @@
 				8012F0132354070B0034647F /* Poppins-SemiBold.ttf in Resources */,
 				8012F02E23541CF70034647F /* CreateNewAccountViewController.xib in Resources */,
 				8012F0052354070B0034647F /* Poppins-Medium.ttf in Resources */,
+				800F2A092355EE4800566691 /* AddEmailViewController.xib in Resources */,
 				8012F025235408F40034647F /* Comfortaa-Bold.ttf in Resources */,
 				8025F3C9234DC55F00587A2D /* Assets.xcassets in Resources */,
 				8012F027235408F40034647F /* Comfortaa-Medium.ttf in Resources */,
+				800F2A0C2355F3E700566691 /* Comfortaa-Regular.ttf in Resources */,
 				8049686B234B248700FEEF04 /* VerifyPhoneViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,9 +377,11 @@
 				8012F0142354070B0034647F /* Poppins-SemiBold.ttf in Resources */,
 				8012F02F23541CF70034647F /* CreateNewAccountViewController.xib in Resources */,
 				8012F0062354070B0034647F /* Poppins-Medium.ttf in Resources */,
+				800F2A0A2355EE4800566691 /* AddEmailViewController.xib in Resources */,
 				8012F026235408F40034647F /* Comfortaa-Bold.ttf in Resources */,
 				8025F3CA234DC55F00587A2D /* Assets.xcassets in Resources */,
 				8012F028235408F40034647F /* Comfortaa-Medium.ttf in Resources */,
+				800F2A0D2355F3E700566691 /* Comfortaa-Regular.ttf in Resources */,
 				8049686C234B248700FEEF04 /* VerifyPhoneViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				800E24BA234E0C8800827376 /* UILabel.swift in Sources */,
+				800F2A072355EE4800566691 /* AddEmailViewController.swift in Sources */,
 				8012F02C23541CF70034647F /* CreateNewAccountViewController.swift in Sources */,
 				80D0176C232A256800478FB8 /* UserRegistration.swift in Sources */,
 				80D01780232A478700478FB8 /* String.swift in Sources */,
@@ -408,6 +425,7 @@
 				800E176223507278001BA627 /* ToolbarPickerView.swift in Sources */,
 				805BCA142328E21400421124 /* HumanIDSDKTests.swift in Sources */,
 				8017D8882354D02400FE6DAA /* UIView.swift in Sources */,
+				800F2A082355EE4800566691 /* AddEmailViewController.swift in Sources */,
 				8049686A234B248700FEEF04 /* VerifyPhoneViewController.swift in Sources */,
 				80D01764232A238E00478FB8 /* UpdatePhone.swift in Sources */,
 				80496872234B29FD00FEEF04 /* Array.swift in Sources */,
