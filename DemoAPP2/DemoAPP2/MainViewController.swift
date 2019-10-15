@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func loginWithGoogleAction(_ sender: Any) {
-        print("google")
+        navigationController?.present(HumanIDSDK.shared.getEmailConfirmationViewController(), animated: true, completion: nil)
     }
     
 }

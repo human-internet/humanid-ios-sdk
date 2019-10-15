@@ -226,4 +226,8 @@ open class HumanIDSDK {
     open func getCreateNewAccountViewController(phoneNumber: String) -> UIViewController {
         return CreateNewAccountViewController(phoneNumber: phoneNumber)
     }
+    
+    open func getEmailConfirmationViewController() -> UIViewController {
+        return ConfirmEmailViewController()
+    }
 }
