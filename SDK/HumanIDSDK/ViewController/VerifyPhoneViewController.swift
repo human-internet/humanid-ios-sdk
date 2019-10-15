@@ -25,6 +25,7 @@ class VerifyPhoneViewController: UIViewController {
     
     var clientImage = UIImage()
     var clientName = ""
+    
     convenience init(clientImage: UIImage, clientName: String) {
         self.init(nibName: "VerifyPhoneViewController", bundle: Bundle(identifier: "org.humanid.HumanIDSDK"))
         

@@ -45,16 +45,16 @@
                     <rect key="frame" x="8" y="64" width="398" height="50"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkv-Fl-cdT">
-                            <rect key="frame" x="111.5" y="0.0" width="175" height="50"/>
+                            <rect key="frame" x="141.5" y="10" width="115" height="30"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HumanIDLogoTransparent" translatesAutoresizingMaskIntoConstraints="NO" id="zY3-BV-dhZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="zY3-BV-dhZ" secondAttribute="height" multiplier="1:1" id="lMD-AL-nad"/>
                                     </constraints>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HumanIDLogoTextTransparent" translatesAutoresizingMaskIntoConstraints="NO" id="tkH-8U-kVq">
-                                    <rect key="frame" x="53" y="12.5" width="122" height="25"/>
+                                    <rect key="frame" x="42" y="7.5" width="73" height="15"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="tkH-8U-kVq" secondAttribute="height" multiplier="127:26" id="Uvd-h8-5ZB"/>
                                     </constraints>
@@ -62,9 +62,9 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="175" id="4aA-bO-7fn"/>
                                 <constraint firstAttribute="trailing" secondItem="tkH-8U-kVq" secondAttribute="trailing" id="9jg-Cr-NX7"/>
                                 <constraint firstItem="zY3-BV-dhZ" firstAttribute="top" secondItem="Rkv-Fl-cdT" secondAttribute="top" id="F5G-06-lHE"/>
+                                <constraint firstItem="tkH-8U-kVq" firstAttribute="leading" secondItem="zY3-BV-dhZ" secondAttribute="trailing" constant="12" id="MQr-M1-pkn"/>
                                 <constraint firstAttribute="bottom" secondItem="zY3-BV-dhZ" secondAttribute="bottom" id="QWi-xh-1DG"/>
                                 <constraint firstItem="zY3-BV-dhZ" firstAttribute="leading" secondItem="Rkv-Fl-cdT" secondAttribute="leading" id="gnn-jS-OuT"/>
                                 <constraint firstItem="tkH-8U-kVq" firstAttribute="centerY" secondItem="zY3-BV-dhZ" secondAttribute="centerY" id="nsQ-aX-eRG"/>
@@ -75,8 +75,8 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="HUu-M1-NTZ"/>
-                        <constraint firstItem="Rkv-Fl-cdT" firstAttribute="top" secondItem="4Ev-9v-D83" secondAttribute="top" id="eDs-Zk-1dh"/>
-                        <constraint firstAttribute="bottom" secondItem="Rkv-Fl-cdT" secondAttribute="bottom" id="hpy-J8-BpD"/>
+                        <constraint firstItem="Rkv-Fl-cdT" firstAttribute="top" secondItem="4Ev-9v-D83" secondAttribute="top" constant="10" id="eDs-Zk-1dh"/>
+                        <constraint firstAttribute="bottom" secondItem="Rkv-Fl-cdT" secondAttribute="bottom" constant="10" id="hpy-J8-BpD"/>
                         <constraint firstItem="Rkv-Fl-cdT" firstAttribute="centerX" secondItem="4Ev-9v-D83" secondAttribute="centerX" id="thx-wg-GdL"/>
                     </constraints>
                 </view>
