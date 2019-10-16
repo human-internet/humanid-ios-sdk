@@ -21,6 +21,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddEmailViewController" customModule="HumanIDSDK" customModuleProvider="target">
             <connections>
+                <outlet property="confirmTitleLabel" destination="VIP-8n-5gT" id="s54-ED-xeU"/>
+                <outlet property="descriptionLabel" destination="vex-sm-3ft" id="l21-b4-bSC"/>
                 <outlet property="emailField" destination="WOE-q8-f9V" id="BI8-jq-y5U"/>
                 <outlet property="saveButton" destination="8Ps-MS-Jbd" id="XGH-7a-dnq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
