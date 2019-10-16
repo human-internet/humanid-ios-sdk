@@ -33,10 +33,10 @@
 		8012F026235408F40034647F /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8012F023235408F40034647F /* Comfortaa-Bold.ttf */; };
 		8012F027235408F40034647F /* Comfortaa-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8012F024235408F40034647F /* Comfortaa-Medium.ttf */; };
 		8012F028235408F40034647F /* Comfortaa-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8012F024235408F40034647F /* Comfortaa-Medium.ttf */; };
-		8012F02C23541CF70034647F /* CreateNewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012F02A23541CF70034647F /* CreateNewAccountViewController.swift */; };
-		8012F02D23541CF70034647F /* CreateNewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012F02A23541CF70034647F /* CreateNewAccountViewController.swift */; };
-		8012F02E23541CF70034647F /* CreateNewAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8012F02B23541CF70034647F /* CreateNewAccountViewController.xib */; };
-		8012F02F23541CF70034647F /* CreateNewAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8012F02B23541CF70034647F /* CreateNewAccountViewController.xib */; };
+		8012F02C23541CF70034647F /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012F02A23541CF70034647F /* OTPViewController.swift */; };
+		8012F02D23541CF70034647F /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012F02A23541CF70034647F /* OTPViewController.swift */; };
+		8012F02E23541CF70034647F /* OTPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8012F02B23541CF70034647F /* OTPViewController.xib */; };
+		8012F02F23541CF70034647F /* OTPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8012F02B23541CF70034647F /* OTPViewController.xib */; };
 		8017D8842354B02E00FE6DAA /* OTPField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8017D8832354B02E00FE6DAA /* OTPField.swift */; };
 		8017D8852354B02E00FE6DAA /* OTPField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8017D8832354B02E00FE6DAA /* OTPField.swift */; };
 		8017D8872354D02400FE6DAA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8017D8862354D02400FE6DAA /* UIView.swift */; };
@@ -110,8 +110,8 @@
 		8012EFF72354070A0034647F /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		8012F023235408F40034647F /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
 		8012F024235408F40034647F /* Comfortaa-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Medium.ttf"; sourceTree = "<group>"; };
-		8012F02A23541CF70034647F /* CreateNewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountViewController.swift; sourceTree = "<group>"; };
-		8012F02B23541CF70034647F /* CreateNewAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewAccountViewController.xib; sourceTree = "<group>"; };
+		8012F02A23541CF70034647F /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		8012F02B23541CF70034647F /* OTPViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OTPViewController.xib; sourceTree = "<group>"; };
 		8017D8832354B02E00FE6DAA /* OTPField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPField.swift; sourceTree = "<group>"; };
 		8017D8862354D02400FE6DAA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8025F3C8234DC55F00587A2D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
@@ -198,8 +198,8 @@
 			children = (
 				80496867234B248700FEEF04 /* VerifyPhoneViewController.swift */,
 				80496868234B248700FEEF04 /* VerifyPhoneViewController.xib */,
-				8012F02A23541CF70034647F /* CreateNewAccountViewController.swift */,
-				8012F02B23541CF70034647F /* CreateNewAccountViewController.xib */,
+				8012F02A23541CF70034647F /* OTPViewController.swift */,
+				8012F02B23541CF70034647F /* OTPViewController.xib */,
 				800F2A052355EE4800566691 /* AddEmailViewController.swift */,
 				800F2A062355EE4800566691 /* AddEmailViewController.xib */,
 				800F2A11235609F700566691 /* ConfirmEmailViewController.swift */,
@@ -383,7 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8012F0132354070B0034647F /* Poppins-SemiBold.ttf in Resources */,
-				8012F02E23541CF70034647F /* CreateNewAccountViewController.xib in Resources */,
+				8012F02E23541CF70034647F /* OTPViewController.xib in Resources */,
 				800F2A15235609F700566691 /* ConfirmEmailViewController.xib in Resources */,
 				804889462356A92300A512FE /* HeaderView.xib in Resources */,
 				8012F0052354070B0034647F /* Poppins-Medium.ttf in Resources */,
@@ -401,7 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8012F0142354070B0034647F /* Poppins-SemiBold.ttf in Resources */,
-				8012F02F23541CF70034647F /* CreateNewAccountViewController.xib in Resources */,
+				8012F02F23541CF70034647F /* OTPViewController.xib in Resources */,
 				800F2A16235609F700566691 /* ConfirmEmailViewController.xib in Resources */,
 				804889472356A92300A512FE /* HeaderView.xib in Resources */,
 				8012F0062354070B0034647F /* Poppins-Medium.ttf in Resources */,
@@ -426,7 +426,7 @@
 				8048894323569F0900A512FE /* UIImage.swift in Sources */,
 				800E24BA234E0C8800827376 /* UILabel.swift in Sources */,
 				800F2A072355EE4800566691 /* AddEmailViewController.swift in Sources */,
-				8012F02C23541CF70034647F /* CreateNewAccountViewController.swift in Sources */,
+				8012F02C23541CF70034647F /* OTPViewController.swift in Sources */,
 				80D0176C232A256800478FB8 /* UserRegistration.swift in Sources */,
 				80D01780232A478700478FB8 /* String.swift in Sources */,
 				8017D8842354B02E00FE6DAA /* OTPField.swift in Sources */,
@@ -463,7 +463,7 @@
 				80D01764232A238E00478FB8 /* UpdatePhone.swift in Sources */,
 				80496872234B29FD00FEEF04 /* Array.swift in Sources */,
 				800F2A10235605BE00566691 /* HeaderView.swift in Sources */,
-				8012F02D23541CF70034647F /* CreateNewAccountViewController.swift in Sources */,
+				8012F02D23541CF70034647F /* OTPViewController.swift in Sources */,
 				800E24BB234E0C8800827376 /* UILabel.swift in Sources */,
 				8048894423569F0900A512FE /* UIImage.swift in Sources */,
 				80D0177E232A43D300478FB8 /* HumanIDSDK.swift in Sources */,

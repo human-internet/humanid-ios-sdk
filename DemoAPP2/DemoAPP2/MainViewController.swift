@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func loginWithFacebookAction(_ sender: Any) {
-        navigationController?.present(HumanIDSDK.shared.getCreateNewAccountViewController(phoneNumber: "+62827182378"), animated: true, completion: nil)
+        navigationController?.present(HumanIDSDK.shared.getOTPViewController(otpType: .newDevice, phoneNumber: "+62827182378"), animated: true, completion: nil)
     }
     
     @IBAction func loginWithHumanIDAction(_ sender: Any) {

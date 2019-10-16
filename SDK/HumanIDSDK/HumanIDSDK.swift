@@ -223,8 +223,8 @@ open class HumanIDSDK {
         return VerifyPhoneViewController(clientImage: clientImage, clientName: clientName)
     }
     
-    open func getCreateNewAccountViewController(phoneNumber: String) -> UIViewController {
-        return CreateNewAccountViewController(phoneNumber: phoneNumber)
+    open func getOTPViewController(otpType:OTPType, phoneNumber: String) -> UIViewController {
+        return OTPViewController(otpType:otpType, phoneNumber: phoneNumber)
     }
     
     open func getEmailConfirmationViewController(email: String, clientName: String) -> UIViewController {

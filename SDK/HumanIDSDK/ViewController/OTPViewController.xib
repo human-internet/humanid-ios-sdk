@@ -13,10 +13,13 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateNewAccountViewController" customModule="HumanIDSDK" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OTPViewController" customModule="HumanIDSDK" customModuleProvider="target">
             <connections>
+                <outlet property="otpDescriptionLabel" destination="9JJ-jE-YbT" id="4dz-tl-DtV"/>
+                <outlet property="otpTitleLabel" destination="tK4-sQ-zu5" id="V4R-TU-WMc"/>
                 <outlet property="otpView" destination="Gk5-6C-bll" id="LO4-O7-FUQ"/>
                 <outlet property="phoneLabel" destination="8vY-uJ-iIh" id="PE3-CX-dBs"/>
+                <outlet property="tryDifferentButton" destination="rrN-7o-4qw" id="qNy-rG-t1Y"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
