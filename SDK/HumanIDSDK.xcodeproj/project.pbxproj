@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80085803235704650057A795 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80085801235704650057A795 /* LoginViewController.swift */; };
+		80085804235704660057A795 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80085802235704650057A795 /* LoginViewController.xib */; };
+		800858052357046B0057A795 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80085801235704650057A795 /* LoginViewController.swift */; };
+		80085806235704710057A795 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80085802235704650057A795 /* LoginViewController.xib */; };
 		800BDA78234227C0003C1A4D /* RejectLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800BDA77234227C0003C1A4D /* RejectLogin.swift */; };
 		800BDA79234227C0003C1A4D /* RejectLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800BDA77234227C0003C1A4D /* RejectLogin.swift */; };
 		800E176123507278001BA627 /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800E176023507278001BA627 /* ToolbarPickerView.swift */; };
@@ -97,6 +101,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		80085801235704650057A795 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		80085802235704650057A795 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		800BDA77234227C0003C1A4D /* RejectLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectLogin.swift; sourceTree = "<group>"; };
 		800E176023507278001BA627 /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
 		800E24B9234E0C8800827376 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -204,6 +210,8 @@
 				800F2A062355EE4800566691 /* AddEmailViewController.xib */,
 				800F2A11235609F700566691 /* ConfirmEmailViewController.swift */,
 				800F2A12235609F700566691 /* ConfirmEmailViewController.xib */,
+				80085801235704650057A795 /* LoginViewController.swift */,
+				80085802235704650057A795 /* LoginViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -390,6 +398,7 @@
 				800F2A092355EE4800566691 /* AddEmailViewController.xib in Resources */,
 				8012F025235408F40034647F /* Comfortaa-Bold.ttf in Resources */,
 				8025F3C9234DC55F00587A2D /* Media.xcassets in Resources */,
+				80085804235704660057A795 /* LoginViewController.xib in Resources */,
 				8012F027235408F40034647F /* Comfortaa-Medium.ttf in Resources */,
 				800F2A0C2355F3E700566691 /* Comfortaa-Regular.ttf in Resources */,
 				8049686B234B248700FEEF04 /* VerifyPhoneViewController.xib in Resources */,
@@ -408,6 +417,7 @@
 				800F2A0A2355EE4800566691 /* AddEmailViewController.xib in Resources */,
 				8012F026235408F40034647F /* Comfortaa-Bold.ttf in Resources */,
 				8025F3CA234DC55F00587A2D /* Media.xcassets in Resources */,
+				80085806235704710057A795 /* LoginViewController.xib in Resources */,
 				8012F028235408F40034647F /* Comfortaa-Medium.ttf in Resources */,
 				800F2A0D2355F3E700566691 /* Comfortaa-Regular.ttf in Resources */,
 				8049686C234B248700FEEF04 /* VerifyPhoneViewController.xib in Resources */,
@@ -421,6 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80085803235704650057A795 /* LoginViewController.swift in Sources */,
 				800F2A13235609F700566691 /* ConfirmEmailViewController.swift in Sources */,
 				804889492356AB1200A512FE /* Bundle.swift in Sources */,
 				8048894323569F0900A512FE /* UIImage.swift in Sources */,
@@ -454,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				800858052357046B0057A795 /* LoginViewController.swift in Sources */,
 				800F2A14235609F700566691 /* ConfirmEmailViewController.swift in Sources */,
 				800E176223507278001BA627 /* ToolbarPickerView.swift in Sources */,
 				805BCA142328E21400421124 /* HumanIDSDKTests.swift in Sources */,
