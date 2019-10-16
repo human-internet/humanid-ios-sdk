@@ -230,4 +230,8 @@ open class HumanIDSDK {
     open func getEmailConfirmationViewController(email: String, clientName: String) -> UIViewController {
         return ConfirmEmailViewController(email: email, clientName: clientName)
     }
+    
+    open func getLoginViewController(clientName: String) -> UIViewController {
+        return LoginViewController(clientName: clientName)
+    }
 }

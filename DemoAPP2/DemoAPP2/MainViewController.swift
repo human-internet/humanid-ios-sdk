@@ -14,7 +14,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Welcome"
-        view.backgroundColor = .green
         // Do any additional setup after loading the view.
     }
 
@@ -23,7 +22,8 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func loginWithHumanIDAction(_ sender: Any) {
-        navigationController?.present(HumanIDSDK.shared.getVerifyPhoneNumberViewController(clientImage: UIImage(named: "Antena")!, clientName: "Demo APP 2"), animated: true, completion: nil)
+        let vc = HumanIDSDK.shared.getLoginViewController(clientName: "Demo APP 2")
+        navigationController?.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func loginWithGoogleAction(_ sender: Any) {
