@@ -41,8 +41,14 @@
 		8017D8852354B02E00FE6DAA /* OTPField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8017D8832354B02E00FE6DAA /* OTPField.swift */; };
 		8017D8872354D02400FE6DAA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8017D8862354D02400FE6DAA /* UIView.swift */; };
 		8017D8882354D02400FE6DAA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8017D8862354D02400FE6DAA /* UIView.swift */; };
-		8025F3C9234DC55F00587A2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8025F3C8234DC55F00587A2D /* Assets.xcassets */; };
-		8025F3CA234DC55F00587A2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8025F3C8234DC55F00587A2D /* Assets.xcassets */; };
+		8025F3C9234DC55F00587A2D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8025F3C8234DC55F00587A2D /* Media.xcassets */; };
+		8025F3CA234DC55F00587A2D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8025F3C8234DC55F00587A2D /* Media.xcassets */; };
+		8048894323569F0900A512FE /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8048894223569F0900A512FE /* UIImage.swift */; };
+		8048894423569F0900A512FE /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8048894223569F0900A512FE /* UIImage.swift */; };
+		804889462356A92300A512FE /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804889452356A92300A512FE /* HeaderView.xib */; };
+		804889472356A92300A512FE /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804889452356A92300A512FE /* HeaderView.xib */; };
+		804889492356AB1200A512FE /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804889482356AB1200A512FE /* Bundle.swift */; };
+		8048894A2356AB1200A512FE /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804889482356AB1200A512FE /* Bundle.swift */; };
 		80496869234B248700FEEF04 /* VerifyPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80496867234B248700FEEF04 /* VerifyPhoneViewController.swift */; };
 		8049686A234B248700FEEF04 /* VerifyPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80496867234B248700FEEF04 /* VerifyPhoneViewController.swift */; };
 		8049686B234B248700FEEF04 /* VerifyPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80496868234B248700FEEF04 /* VerifyPhoneViewController.xib */; };
@@ -108,7 +114,10 @@
 		8012F02B23541CF70034647F /* CreateNewAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewAccountViewController.xib; sourceTree = "<group>"; };
 		8017D8832354B02E00FE6DAA /* OTPField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPField.swift; sourceTree = "<group>"; };
 		8017D8862354D02400FE6DAA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		8025F3C8234DC55F00587A2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8025F3C8234DC55F00587A2D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		8048894223569F0900A512FE /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		804889452356A92300A512FE /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		804889482356AB1200A512FE /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		80496867234B248700FEEF04 /* VerifyPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneViewController.swift; sourceTree = "<group>"; };
 		80496868234B248700FEEF04 /* VerifyPhoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyPhoneViewController.xib; sourceTree = "<group>"; };
 		8049686D234B268D00FEEF04 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -158,6 +167,7 @@
 				800E176023507278001BA627 /* ToolbarPickerView.swift */,
 				8017D8832354B02E00FE6DAA /* OTPField.swift */,
 				800F2A0E235605BE00566691 /* HeaderView.swift */,
+				804889452356A92300A512FE /* HeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,7 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				8012F029235408FA0034647F /* Fonts */,
-				8025F3C8234DC55F00587A2D /* Assets.xcassets */,
+				8025F3C8234DC55F00587A2D /* Media.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -258,6 +268,8 @@
 				80496870234B29FD00FEEF04 /* Array.swift */,
 				800E24B9234E0C8800827376 /* UILabel.swift */,
 				8017D8862354D02400FE6DAA /* UIView.swift */,
+				8048894223569F0900A512FE /* UIImage.swift */,
+				804889482356AB1200A512FE /* Bundle.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -373,10 +385,11 @@
 				8012F0132354070B0034647F /* Poppins-SemiBold.ttf in Resources */,
 				8012F02E23541CF70034647F /* CreateNewAccountViewController.xib in Resources */,
 				800F2A15235609F700566691 /* ConfirmEmailViewController.xib in Resources */,
+				804889462356A92300A512FE /* HeaderView.xib in Resources */,
 				8012F0052354070B0034647F /* Poppins-Medium.ttf in Resources */,
 				800F2A092355EE4800566691 /* AddEmailViewController.xib in Resources */,
 				8012F025235408F40034647F /* Comfortaa-Bold.ttf in Resources */,
-				8025F3C9234DC55F00587A2D /* Assets.xcassets in Resources */,
+				8025F3C9234DC55F00587A2D /* Media.xcassets in Resources */,
 				8012F027235408F40034647F /* Comfortaa-Medium.ttf in Resources */,
 				800F2A0C2355F3E700566691 /* Comfortaa-Regular.ttf in Resources */,
 				8049686B234B248700FEEF04 /* VerifyPhoneViewController.xib in Resources */,
@@ -390,10 +403,11 @@
 				8012F0142354070B0034647F /* Poppins-SemiBold.ttf in Resources */,
 				8012F02F23541CF70034647F /* CreateNewAccountViewController.xib in Resources */,
 				800F2A16235609F700566691 /* ConfirmEmailViewController.xib in Resources */,
+				804889472356A92300A512FE /* HeaderView.xib in Resources */,
 				8012F0062354070B0034647F /* Poppins-Medium.ttf in Resources */,
 				800F2A0A2355EE4800566691 /* AddEmailViewController.xib in Resources */,
 				8012F026235408F40034647F /* Comfortaa-Bold.ttf in Resources */,
-				8025F3CA234DC55F00587A2D /* Assets.xcassets in Resources */,
+				8025F3CA234DC55F00587A2D /* Media.xcassets in Resources */,
 				8012F028235408F40034647F /* Comfortaa-Medium.ttf in Resources */,
 				800F2A0D2355F3E700566691 /* Comfortaa-Regular.ttf in Resources */,
 				8049686C234B248700FEEF04 /* VerifyPhoneViewController.xib in Resources */,
@@ -408,6 +422,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				800F2A13235609F700566691 /* ConfirmEmailViewController.swift in Sources */,
+				804889492356AB1200A512FE /* Bundle.swift in Sources */,
+				8048894323569F0900A512FE /* UIImage.swift in Sources */,
 				800E24BA234E0C8800827376 /* UILabel.swift in Sources */,
 				800F2A072355EE4800566691 /* AddEmailViewController.swift in Sources */,
 				8012F02C23541CF70034647F /* CreateNewAccountViewController.swift in Sources */,
@@ -449,6 +465,7 @@
 				800F2A10235605BE00566691 /* HeaderView.swift in Sources */,
 				8012F02D23541CF70034647F /* CreateNewAccountViewController.swift in Sources */,
 				800E24BB234E0C8800827376 /* UILabel.swift in Sources */,
+				8048894423569F0900A512FE /* UIImage.swift in Sources */,
 				80D0177E232A43D300478FB8 /* HumanIDSDK.swift in Sources */,
 				80D01774232A293A00478FB8 /* VerifyPhone.swift in Sources */,
 				805BCAA62328EA7E00421124 /* Rest.swift in Sources */,
@@ -456,6 +473,7 @@
 				80D01781232A478700478FB8 /* String.swift in Sources */,
 				80D01761232A22FB00478FB8 /* LoginCheck.swift in Sources */,
 				80D01767232A241900478FB8 /* UpdateNotifID.swift in Sources */,
+				8048894A2356AB1200A512FE /* Bundle.swift in Sources */,
 				80D0176A232A245B00478FB8 /* UserLogin.swift in Sources */,
 				800BDA79234227C0003C1A4D /* RejectLogin.swift in Sources */,
 				8017D8852354B02E00FE6DAA /* OTPField.swift in Sources */,
