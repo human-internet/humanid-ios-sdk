@@ -41,6 +41,33 @@ class LoginViewController: UIViewController {
         
     }
     
+    @IBAction func authWithTouchID(_ sender: Any) {
+
+        let context = LAContext()
+        var error: NSError?
+
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            let reason = "Authenticate with HumanID"
+
+            context.localizedFallbackTitle = ""
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
+                (success, error) in
+
+                DispatchQueue.main.async {
+                    if success {
+                        self.showAlertController("Touch ID Authentication Succeeded")
+                    }
+                    else {
+                        
+                        self.configureView(isTooManyAttempt: true)
+                    }
+                }
+            }
+        } else {
+            showAlertController("Touch ID not available")
+        }
+    }
+    
     func showAlertController(_ message: String) {
         let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
