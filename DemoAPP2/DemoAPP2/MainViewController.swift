@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Welcome"
-
+        view.backgroundColor = .green
         // Do any additional setup after loading the view.
     }
 
@@ -27,7 +27,11 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func loginWithGoogleAction(_ sender: Any) {
-        navigationController?.present(HumanIDSDK.shared.getEmailConfirmationViewController(), animated: true, completion: nil)
+        
+        let vc = HumanIDSDK.shared.getEmailConfirmationViewController(email: "john@email.com", clientName: "Demo APP 2")
+        vc.modalPresentationStyle = .overCurrentContext
+        
+        present(vc, animated: true, completion: nil)
     }
     
 }
