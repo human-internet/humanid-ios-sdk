@@ -106,8 +106,8 @@
 			children = (
 				805BCA832328E29400421124 /* AppDelegate.swift */,
 				805BCA852328E29400421124 /* ViewController.swift */,
-				805BCA8A2328E29500421124 /* Assets.xcassets */,
 				805BCA8C2328E29500421124 /* LaunchScreen.storyboard */,
+				805BCA8A2328E29500421124 /* Assets.xcassets */,
 				805BCA8F2328E29500421124 /* Info.plist */,
 			);
 			path = DemoAPP1;

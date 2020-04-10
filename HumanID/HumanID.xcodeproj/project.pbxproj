@@ -120,10 +120,10 @@
 			children = (
 				8049682A234B0A7400FEEF04 /* AppDelegate.swift */,
 				8049682E234B0A7400FEEF04 /* ViewController.swift */,
-				80496833234B0A7500FEEF04 /* Assets.xcassets */,
-				80496835234B0A7500FEEF04 /* LaunchScreen.storyboard */,
-				80496838234B0A7500FEEF04 /* Info.plist */,
 				80496862234B15F900FEEF04 /* KeychainHelper.swift */,
+				80496835234B0A7500FEEF04 /* LaunchScreen.storyboard */,
+				80496833234B0A7500FEEF04 /* Assets.xcassets */,
+				80496838234B0A7500FEEF04 /* Info.plist */,
 			);
 			path = HumanID;
 			sourceTree = "<group>";

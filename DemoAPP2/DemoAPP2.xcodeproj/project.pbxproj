@@ -96,12 +96,12 @@
 			isa = PBXGroup;
 			children = (
 				805BCA572328E26A00421124 /* AppDelegate.swift */,
-				805BCA592328E26A00421124 /* ViewController.swift */,
-				805BCA5E2328E26B00421124 /* Assets.xcassets */,
-				805BCA602328E26B00421124 /* LaunchScreen.storyboard */,
-				805BCA632328E26B00421124 /* Info.plist */,
 				8025F3C1234DB7FF00587A2D /* MainViewController.swift */,
 				8025F3C2234DB7FF00587A2D /* MainViewController.xib */,
+				805BCA592328E26A00421124 /* ViewController.swift */,
+				805BCA602328E26B00421124 /* LaunchScreen.storyboard */,
+				805BCA5E2328E26B00421124 /* Assets.xcassets */,
+				805BCA632328E26B00421124 /* Info.plist */,
 			);
 			path = DemoAPP2;
 			sourceTree = "<group>";
