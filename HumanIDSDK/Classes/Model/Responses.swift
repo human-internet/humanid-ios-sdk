@@ -13,17 +13,15 @@ public struct DefaultResponse: Codable {
 
 public struct DetailResponse: Codable {
 
-    let appId: String
-    let hash: String
-    let deviceId: String
-    let notifId: String?
-}
+    let result: Data?
 
-public struct LoginConfirmationResponse: Codable {
+    struct Data: Codable {
 
-    let id: String?
-    let appId: String?
-    let type: String?
-    let confirmingAppId: String?
-    let status: String?
+        let exchangeToken: String
+        let userHash: String
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case result = "data"
+    }
 }

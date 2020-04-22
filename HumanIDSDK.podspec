@@ -31,18 +31,17 @@ Bluenumber Foundation HumanID SDK for iOS platform.
   s.ios.deployment_target = '11.0'
   s.swift_version         = '5.0'
 
-  s.source_files = 'HumanIDSDK/Classes/**/*'
-
+  s.source_files = 'HumanIDSDK/Classes/**/*.{swift}'
   s.resource_bundles = {
-      'Resources' => [
-        'HumanIDSDK/Assets/Media.xcassets',
-        'HumanIDSDK/Assets/Fonts/*.ttf'
-      ]
+    'HumanIDSDK' => ['HumanIDSDK/Assets/**/*.{xib,xcassets}']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'FlagPhoneNumber', '~> 0.8.0'
+  s.dependency 'VKPinCodeView', '~> 0.4.1'
+  s.dependency 'IQKeyboardManager', '~> 6.5.5'
+  s.dependency 'PodAsset', '~> 1.0.0'
 
   s.pod_target_xcconfig = {
     'PRODUCT_BUNDLE_IDENTIFIER': 'org.humanid.HumanIDSDK'
