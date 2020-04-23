@@ -19,21 +19,51 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIY-4J-CaU">
-                    <rect key="frame" x="20" y="433" width="374" height="30"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asd-qW-acn">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfA-a4-nTe">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message..." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIY-4J-CaU">
+                                    <rect key="frame" x="8" y="116" width="398" height="20.5"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="tIY-4J-CaU" firstAttribute="leading" secondItem="xfA-a4-nTe" secondAttribute="leading" constant="8" id="1zE-z8-qxi"/>
+                                <constraint firstItem="tIY-4J-CaU" firstAttribute="top" secondItem="xfA-a4-nTe" secondAttribute="topMargin" constant="64" id="4gp-Ra-rI5"/>
+                                <constraint firstAttribute="trailing" secondItem="tIY-4J-CaU" secondAttribute="trailing" constant="8" id="Kg4-jK-eiQ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                    <nil key="textColor"/>
-                    <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </label>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="xfA-a4-nTe" firstAttribute="top" secondItem="m9y-lb-04U" secondAttribute="top" id="1qF-88-nEv"/>
+                        <constraint firstItem="xfA-a4-nTe" firstAttribute="bottom" secondItem="m9y-lb-04U" secondAttribute="bottom" id="RsH-qR-jIs"/>
+                        <constraint firstAttribute="trailing" secondItem="xfA-a4-nTe" secondAttribute="trailing" id="Wzi-vL-dej"/>
+                        <constraint firstItem="xfA-a4-nTe" firstAttribute="trailing" secondItem="m9y-lb-04U" secondAttribute="trailing" id="bo4-Xq-cr6"/>
+                        <constraint firstItem="xfA-a4-nTe" firstAttribute="leading" secondItem="m9y-lb-04U" secondAttribute="leading" id="mpc-a4-vkW"/>
+                        <constraint firstAttribute="bottom" secondItem="xfA-a4-nTe" secondAttribute="bottom" id="oT1-Yx-fpf"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="nvQ-8H-PtP"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="m9y-lb-04U"/>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="tIY-4J-CaU" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="52D-t0-33W"/>
-                <constraint firstItem="tIY-4J-CaU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="HG9-xb-S7X"/>
-                <constraint firstItem="tIY-4J-CaU" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="iEI-Hy-xO7"/>
+                <constraint firstItem="asd-qW-acn" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="8nM-JL-mfU"/>
+                <constraint firstItem="asd-qW-acn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="CKV-mE-AYx"/>
+                <constraint firstItem="asd-qW-acn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="K3L-Ri-HSv"/>
+                <constraint firstAttribute="bottom" secondItem="asd-qW-acn" secondAttribute="bottom" id="dbW-OH-usp"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>

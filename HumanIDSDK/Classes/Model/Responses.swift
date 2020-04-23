@@ -13,6 +13,7 @@ public struct DefaultResponse: Codable {
 
 public struct DetailResponse: Codable {
 
+    let message: String
     let result: Data?
 
     struct Data: Codable {
@@ -22,6 +23,7 @@ public struct DetailResponse: Codable {
     }
 
     enum CodingKeys: String, CodingKey {
+        case message
         case result = "data"
     }
 }

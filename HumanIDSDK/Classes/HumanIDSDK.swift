@@ -64,13 +64,9 @@ open class HumanIDSDK {
 
             guard
                 let body = object,
-                let response = try? JSONDecoder().decode(DetailResponse.self, from: body) else {
-                    let errorResponse = try? JSONDecoder().decode(DefaultResponse.self, from: errormessage!.data(using: .utf8)!)
-                    completion(success, BaseResponse(message: errorResponse?.message, data: nil))
-                    return
-            }
+                let response = try? JSONDecoder().decode(DetailResponse.self, from: body) else { return }
 
-            completion(success, BaseResponse(message: success.description, data: response))
+            completion(success, BaseResponse(message: response.message, data: response))
         })
     }
 }
