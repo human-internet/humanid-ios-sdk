@@ -21,12 +21,11 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: AuthorizeDelegate {
 
-    func viewDidSuccess(token: String, hash: String) {
+    func viewDidSuccess(token: String) {
         guard let window = UIApplication.shared.keyWindow else { return }
 
         let rootVC = HomeViewController()
         rootVC.exchangeToken = token
-        rootVC.userHash = hash
 
         let navVC = UINavigationController(rootViewController: rootVC)
         window.rootViewController = navVC

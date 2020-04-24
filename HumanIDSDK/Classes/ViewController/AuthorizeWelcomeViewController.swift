@@ -3,7 +3,7 @@ import FlagPhoneNumber
 
 public protocol AuthorizeDelegate {
 
-    func viewDidSuccess(token: String, hash: String)
+    func viewDidSuccess(token: String)
 }
 
 class AuthorizeWelcomeViewController: UIViewController {
@@ -136,8 +136,8 @@ class AuthorizeWelcomeViewController: UIViewController {
 // MARK: - AuthorizeOTP Delegate
 extension AuthorizeWelcomeViewController: AuthorizeOTPDelegate {
 
-    func viewDidDismiss(token: String, hash: String) {
+    func viewDidDismiss(token: String) {
         dismiss(animated: true)
-        delegate?.viewDidSuccess(token: token, hash: hash)
+        delegate?.viewDidSuccess(token: token)
     }
 }

@@ -3,7 +3,7 @@ import VKPinCodeView
 
 protocol AuthorizeOTPDelegate {
 
-    func viewDidDismiss(token: String, hash: String)
+    func viewDidDismiss(token: String)
 }
 
 class AuthorizeOTPViewController: UIViewController {
@@ -145,7 +145,7 @@ class AuthorizeOTPViewController: UIViewController {
                 }
 
                 self.dismiss(animated: true)
-                self.delegate?.viewDidDismiss(token: data.exchangeToken, hash: data.userHash)
+                self.delegate?.viewDidDismiss(token: data.exchangeToken)
             }
         })
     }
