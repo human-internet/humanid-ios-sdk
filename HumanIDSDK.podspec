@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.homepage              = 'https://github.com/bluenumberfoundation/humanid-ios-sdk'
   s.license               = { :type => 'GPL', :file => 'LICENSE' }
-  s.author                = { 'Bluenumber Foundation' => 'developers@human-id.org' }
+  s.author                = { 'Bluenumber Foundation' => 'budi@human-id.org' }
   s.source                = { :git => 'https://github.com/bluenumberfoundation/humanid-ios-sdk.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '11.0'
