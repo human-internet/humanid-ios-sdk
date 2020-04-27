@@ -1,3 +1,7 @@
+[![Version](https://img.shields.io/cocoapods/v/HumanIDSDK.svg?style=flat)](https://cocoapods.org/pods/HumanIDSDK)
+[![License](https://img.shields.io/cocoapods/l/HumanIDSDK.svg?style=flat)](https://cocoapods.org/pods/HumanIDSDK)
+[![Platform](https://img.shields.io/cocoapods/p/HumanIDSDK.svg?style=flat)](https://cocoapods.org/pods/HumanIDSDK)
+
 # humanID iOS SDK
 
 Meet humanID - An anonymous online identity, enabling platforms to offer the speed and comfort of social logins, while guaranteeing absolute privacy and protecting our communities by permanently blocking bots, spams, and trolls.
