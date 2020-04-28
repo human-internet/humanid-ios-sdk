@@ -1,4 +1,3 @@
-import UIKit
 import VKPinCodeView
 
 protocol AuthorizeOTPDelegate {

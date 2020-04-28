@@ -1,4 +1,3 @@
-import UIKit
 import FlagPhoneNumber
 
 public protocol AuthorizeDelegate {
