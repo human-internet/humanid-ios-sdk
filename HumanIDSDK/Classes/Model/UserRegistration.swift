@@ -1,6 +1,4 @@
-import Foundation
-
-struct UserRegistration: Codable {
+internal struct UserRegistration: Codable {
 
     let countryCode: String
     let phone: String

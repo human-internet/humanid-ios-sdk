@@ -1,5 +1,3 @@
-import Foundation
-
 public struct BaseResponse<T: Codable>: Codable {
 
     let message: String?

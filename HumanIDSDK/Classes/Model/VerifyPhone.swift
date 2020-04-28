@@ -1,6 +1,4 @@
-import Foundation
-
-struct VerifyPhone: Codable {
+internal struct VerifyPhone: Codable {
 
     let countryCode: String
     let phone: String
