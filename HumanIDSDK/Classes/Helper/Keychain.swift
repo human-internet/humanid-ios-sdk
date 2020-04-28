@@ -1,8 +1,24 @@
-import Foundation
-
 internal class KeyChain {
 
-    internal class func isStoreSuccess(key: String, data: Data) -> Bool {
+    internal class func isStoreSuccess(key: String, value: String) -> Bool {
+
+        if let data = value.data(using: .utf8) {
+            return isStoreSuccess(key: key, data: data)
+        } else {
+            return false
+        }
+    }
+
+    internal class func retrieveString(key: String) -> String? {
+
+        if let data = retrieve(key: key) {
+            return String(data: data, encoding: .utf8)
+        } else {
+            return nil
+        }
+    }
+
+    private class func isStoreSuccess(key: String, data: Data) -> Bool {
 
         let query = [
             kSecClass as String       : kSecClassGenericPassword as String,
@@ -18,7 +34,7 @@ internal class KeyChain {
         }
     }
 
-    internal class func retrieve(key: String) -> Data? {
+    private class func retrieve(key: String) -> Data? {
 
         let query = [
             kSecClass as String       : kSecClassGenericPassword,
@@ -29,27 +45,8 @@ internal class KeyChain {
         var dataTypeRef: AnyObject? = nil
 
         let status: OSStatus = SecItemCopyMatching(query as CFDictionary, &dataTypeRef)
-
         if status == noErr {
             return dataTypeRef as! Data?
-        } else {
-            return nil
-        }
-    }
-
-    internal class func isStoreSuccess(key: String, value: String) -> Bool {
-
-        if let data = value.data(using: .utf8) {
-            return isStoreSuccess(key: key, data: data)
-        } else {
-            return false
-        }
-    }
-
-    internal class func retrieveString(key: String) -> String? {
-
-        if let data = retrieve(key: key) {
-            return String(data: data, encoding: .utf8)
         } else {
             return nil
         }

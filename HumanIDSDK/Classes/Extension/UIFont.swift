@@ -1,12 +1,10 @@
-import UIKit
-
-enum FontType {
+internal enum FontType {
     case titiliumWebRegular
     case titiliumWebBold
     case titiliumWebSemiBold
 }
 
-extension UIFont {
+internal extension UIFont {
 
     static func font(type: FontType, size: CGFloat) -> UIFont? {
         switch type {

@@ -1,6 +1,4 @@
-import UIKit
-
-extension UIColor {
+internal extension UIColor {
 
     static let twilightBlue = UIColor(red: 7/255, green: 80/255, blue: 112/255, alpha: 1)
     static let greenyBlue = UIColor(red: 82/255, green: 193/255, blue: 173/255, alpha: 1)

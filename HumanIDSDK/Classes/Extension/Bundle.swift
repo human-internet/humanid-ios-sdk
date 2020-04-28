@@ -1,10 +1,8 @@
-import Foundation
 import PodAsset
 
-extension Bundle {
+internal extension Bundle {
 
     static var humanID: Bundle? {
-        let bundle = PodAsset.bundle(forPod: "HumanIDSDK")
-        return bundle
+        return PodAsset.bundle(forPod: "HumanIDSDK")
     }
 }
