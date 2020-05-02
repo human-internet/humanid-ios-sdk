@@ -21,7 +21,7 @@ internal extension UIFont {
         return font(type: .titiliumWebSemiBold, size: size)!
     }
 
-    private static func customFont(name: String, size: CGFloat) -> UIFont {
+    private func customFont(name: String, size: CGFloat) -> UIFont {
         let font = UIFont(name: name, size: size)
         return font ?? UIFont.systemFont(ofSize: size)
     }
