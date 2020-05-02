@@ -1,4 +1,6 @@
-public extension TimeInterval {
+import UIKit
+
+internal extension TimeInterval {
 
     func toMinutesSeconds() -> String {
         let time = Int(self)
