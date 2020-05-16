@@ -11,7 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let appID = "DEMO_APP"
         let appSecret = "2ee4300fd136ed6796a6a507de7c1f49aecd4a11663352fe54e54403c32bd6a0"
 
-        HumanIDSDK.shared.config(appID: appID, appSecret: appSecret)
+        HumanIDSDK.shared.configure(appID: appID, appSecret: appSecret)
 
         let rootVC = LoginViewController()
         let navVC = UINavigationController(rootViewController: rootVC)

@@ -1,11 +1,11 @@
 import FlagPhoneNumber
 
-public protocol AuthorizeDelegate {
+public protocol VerifyDelegate {
 
-    func viewDidSuccess(token: String)
+    func register(with token: String)
 }
 
-class AuthorizeWelcomeViewController: UIViewController {
+internal class VerifyViewController: UIViewController {
 
     @IBOutlet weak var phoneContainerView: UIView!
     @IBOutlet weak var enterButton: UIButton!
@@ -15,13 +15,16 @@ class AuthorizeWelcomeViewController: UIViewController {
     @IBOutlet weak var welcomeTnc: UILabel!
     @IBOutlet weak var cancelLabel: UIButton!
     @IBOutlet weak var loadingView: UIActivityIndicatorView!
-    
+
     var listController: FPNCountryListViewController = FPNCountryListViewController(style: .grouped)
 
     var appName = ""
     var appImage = ""
 
-    var delegate: AuthorizeDelegate?
+    var delegate: VerifyDelegate?
+    var input: VerifyInteractorInput?
+    var router: VerifyRoutingLogic?
+    var request: Verify.Request?
 
     lazy var phoneNumberTextField: FPNTextField = {
         let phoneNumberTextField = FPNTextField(frame: CGRect(x: 0, y: 0, width: phoneContainerView.bounds.width - 16, height: 30))
@@ -34,10 +37,8 @@ class AuthorizeWelcomeViewController: UIViewController {
         return phoneNumberTextField
     }()
 
-    convenience init(appName: String, appImage: String) {
-        self.init(nibName: "AuthorizeWelcomeViewController", bundle: Bundle.humanID)
-        self.appName = appName
-        self.appImage = appImage
+    convenience init() {
+        self.init(nibName: "VerifyViewController", bundle: Bundle.humanID)
     }
 
     override func viewDidLoad() {
@@ -76,39 +77,18 @@ class AuthorizeWelcomeViewController: UIViewController {
 
     @IBAction func showOTPModal(_ sender: Any) {
         guard
-            let phoneNumber = phoneNumberTextField.getRawPhoneNumber(),
-            let countryCode = phoneNumberTextField.selectedCountry?.phoneCode.replacingOccurrences(of: "+", with: "")
-            else { return }
+            let countryCode = phoneNumberTextField.selectedCountry?.phoneCode.replacingOccurrences(of: "+", with: ""),
+            let phone = phoneNumberTextField.getRawPhoneNumber() else { return }
 
-        // MARK: - Call API verifyPhone
-        showLoading()
-
-        HumanIDSDK.shared.verifyPhone(phoneNumber: phoneNumber, countryCode: countryCode) { (_, response) in
-            DispatchQueue.main.async {
-                self.hideLoading()
-
-                guard let _ = response.data else {
-                    let alertController = UIAlertController(title: nil, message: response.message, preferredStyle: .alert)
-                    let closeAction = UIAlertAction(title: "Close", style: .default)
-                    alertController.addAction(closeAction)
-
-                    self.present(alertController, animated: true)
-                    return
-                }
-
-                let vc = AuthorizeOTPViewController(phoneNumber: phoneNumber, countryCode: countryCode)
-                vc.delegate = self
-
-                if #available(iOS 13.0, *) {
-                    vc.modalPresentationStyle = .automatic
-                } else {
-                    vc.modalPresentationStyle = .formSheet
-                }
-
-                self.view.endEditing(true)
-                self.present(vc, animated: true, completion: nil)
-            }
+        guard
+            let appId = KeyChain.retrieveString(key: .appIDKey),
+            let appSecret = KeyChain.retrieveString(key: .appSecretKey) else {
+                router?.presentAlert(message: "appID or appSecret not found")
+                return
         }
+
+        self.request = .init(countryCode: countryCode, phone: phone, appId: appId, appSecret: appSecret)
+        input?.verify(with: self.request!)
     }
 
     @IBAction func viewDidDismiss(_ sender: Any) {
@@ -116,27 +96,31 @@ class AuthorizeWelcomeViewController: UIViewController {
     }
 
     @objc func viewDidShowTnc(_ sender: UITapGestureRecognizer) {
-        print("Show TnC...")
+        router?.openTnc()
     }
+}
 
-    private func showLoading() {
+// MARK: - Presenter Delegate
+extension VerifyViewController: VerifyPresenterOutput {
+
+    func showLoading() {
         enterButton.isEnabled = false
         cancelLabel.isHidden = true
         loadingView.isHidden = false
     }
 
-    private func hideLoading() {
+    func hideLoading() {
         enterButton.isEnabled = true
         cancelLabel.isHidden = false
         loadingView.isHidden = true
     }
-}
 
-// MARK: - AuthorizeOTP Delegate
-extension AuthorizeWelcomeViewController: AuthorizeOTPDelegate {
+    func success() {
+        self.view.endEditing(true)
+        router?.pushRegisterVC(with: self.request!)
+    }
 
-    func viewDidDismiss(token: String) {
-        dismiss(animated: true)
-        delegate?.viewDidSuccess(token: token)
+    func error(with message: String) {
+        router?.presentAlert(message: message)
     }
 }

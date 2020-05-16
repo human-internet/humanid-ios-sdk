@@ -15,13 +15,13 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func didLogin(_ sender: Any) {
-        HumanIDSDK.shared.authorize(view: self, name: "My Application", image: "logo_mdb")
+        HumanIDSDK.shared.verify(view: self, name: "My Application", image: "logo_mdb")
     }
 }
 
-extension LoginViewController: AuthorizeDelegate {
+extension LoginViewController: VerifyDelegate {
 
-    func viewDidSuccess(token: String) {
+    func register(with token: String) {
         guard let window = UIApplication.shared.keyWindow else { return }
 
         let rootVC = HomeViewController()

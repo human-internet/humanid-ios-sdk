@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
     sources.source_files  = 'HumanIDSDK/Classes/**/*.{swift}'
   end
 
-  s.resource_bundles      = { 'HumanIDSDK' => ['HumanIDSDK/Assets/**/*.{xcassets,xib}'] }
+  s.resource_bundles      = { 'HumanIDSDK' => ['HumanIDSDK/Assets/**/*.{xcassets,xib,ttf}'] }
 
   s.frameworks            = 'UIKit'
   s.dependency 'Swinject', '~> 2.7.1'
