@@ -22,6 +22,9 @@ Pod::Spec.new do |s|
   s.resource_bundles      = { 'HumanIDSDK' => ['HumanIDSDK/Assets/**/*.{xcassets,xib}'] }
 
   s.frameworks            = 'UIKit'
+  s.dependency 'Swinject', '~> 2.7.1'
+  s.dependency 'RxSwift', '~> 5.1.1'
+  s.dependency 'RxAlamofire', '~> 5.2.0'
   s.dependency 'FlagPhoneNumber', '~> 0.8.0'
   s.dependency 'VKPinCodeView', '~> 0.4.1'
   s.dependency 'IQKeyboardManager', '~> 6.5.5'
