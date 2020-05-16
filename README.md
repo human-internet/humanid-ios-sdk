@@ -16,6 +16,9 @@ Meet humanID - An anonymous online identity, enabling platforms to offer the spe
 
 ## Built with
 
+* [Swinject](https://github.com/Swinject/Swinject) - Dependency injection framework for Swift with iOS/macOS/Linux
+* [RxSwift](https://github.com/ReactiveX/RxSwift) - Reactive Programming in Swift
+* [RxAlamofire](https://github.com/RxSwiftCommunity/RxAlamofire) - RxSwift wrapper around the elegant HTTP networking in Swift Alamofire
 * [FlagPhoneNumber](https://github.com/chronotruck/FlagPhoneNumber) - A formatted phone number UITextField with country flag picker.
 * [VKPinCodeView](https://github.com/Sunspension/VKPinCodeView) - VKPinCodeView is simple and elegant UI component for input PIN. You can easily customise appearance and get auto fill (OTP) iOS 12 feature right from the box.
 * [IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager) - Codeless drop-in universal library allows to prevent issues of keyboard sliding up and cover UITextField/UITextView. Neither need to write any code nor any setup required and much more.
@@ -45,7 +48,7 @@ import HumanIDSDK
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-     HumanIDSDK.shared.config(appID: "YOUR_APP_ID", appSecret: "YOUR_APP_SECRET")
+     HumanIDSDK.shared.configure(appID: "YOUR_APP_ID", appSecret: "YOUR_APP_SECRET")
   }
 }
 ```
@@ -60,13 +63,13 @@ import HumanIDSDK
 class YourViewController: UIViewController {
 
   @IBAction func yourLoginAction(_ sender: Any) {
-     HumanIDSDK.shared.authorize(view: self, name: "YOUR_APPLICATION_NAME", image: "YOUR_APPLICATION_LOGO")
+     HumanIDSDK.shared.verify(view: self, name: "YOUR_APPLICATION_NAME", image: "YOUR_APPLICATION_LOGO")
   }
 }
 
-extension YourViewController: AuthorizeDelegate {
+extension YourViewController: VerifyDelegate {
 
-  func viewDidSuccess(token: String) {
+  func register(with token: String) {
      // TODO You can persist our token here.
   }
 }
@@ -74,7 +77,7 @@ extension YourViewController: AuthorizeDelegate {
 
 ## You are set!
 
-Now you can integrate your iOS app to humanID. See the full [sample](Example) here to learn more.
+Now you can integrate your iOS app to humanID. See the full [sample](https://github.com/bluenumberfoundation/humanid-ios-sdk/tree/master/Example) here to learn more.
 
 **Warning!**
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -82,4 +85,4 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## License
 
 Copyright 2019-2020 Bluenumber Foundation\
-Licensed under the GNU General Public License v3.0 [(LICENSE)](LICENSE)
+Licensed under the GNU General Public License v3.0 [(LICENSE)](https://github.com/bluenumberfoundation/humanid-ios-sdk/blob/master/LICENSE)
