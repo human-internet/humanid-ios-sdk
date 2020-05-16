@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = 'HumanIDSDK'
-  s.version               = '0.0.5'
+  s.version               = '1.0.0'
   s.summary               = 'HumanIDSDK for iOS.'
 
   s.description           = <<-DESC
