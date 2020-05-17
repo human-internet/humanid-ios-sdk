@@ -1,5 +1,11 @@
+import Alamofire
 import RxAlamofire
 import RxSwift
+
+internal enum NetworkResult<T> {
+    case success(T)
+    case failure(NSError)
+}
 
 internal final class Network {
 
@@ -54,5 +60,26 @@ internal final class Network {
             })
     }
 
-    func revoke() {}
+    func revoke(url: URL, request: Revoke.Request, completion: @escaping (NetworkResult<Revoke.Response>) -> Void) {
+        let requestBody = try! encoder.encode(request)
+
+        var urlRequest = URLRequest(url: url)
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.method = .put
+        urlRequest.httpBody = requestBody
+
+        AF.request(urlRequest).responseJSON { response in
+            switch response.result {
+            case .success(_):
+                do {
+                    let result = try self.decoder.decode(Revoke.Response.self, from: response.data!)
+                    completion(.success(result))
+                } catch {
+                    completion(.failure(error as NSError))
+                }
+            case .failure(let error):
+                completion(.failure(error as NSError))
+            }
+        }
+    }
 }

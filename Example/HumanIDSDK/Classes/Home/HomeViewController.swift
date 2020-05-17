@@ -14,6 +14,12 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func didLogout(_ sender: Any) {
-        // TODO: - Implement logout sdk
+        HumanIDSDK.shared.revoke()
+
+        guard let window = UIApplication.shared.keyWindow else { return }
+        Cache.shared.clear()
+
+        let rootVC = LoginViewController()
+        window.rootViewController = UINavigationController(rootViewController: rootVC)
     }
 }

@@ -19,4 +19,8 @@ open class HumanIDSDK {
 
         viewController.present(verifyVC, animated: true)
     }
+
+    open func revoke() {
+        HumanIDRouter.shared.resolvedRevoke()
+    }
 }

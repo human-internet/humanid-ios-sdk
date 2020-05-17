@@ -55,7 +55,7 @@ internal class RegisterPresenter: RegisterInteractorOutput {
         case false:
             output?.errorVerify(with: message)
         default:
-            return
+            break
         }
     }
 

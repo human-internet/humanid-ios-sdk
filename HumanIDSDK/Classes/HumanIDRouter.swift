@@ -16,4 +16,20 @@ internal class HumanIDRouter {
 
         return verifyVC
     }
+
+    func resolvedRevoke() {
+        let assembler = Assembler()
+        assembler.apply(assembly: RevokeConfigurator())
+
+        guard
+            let appId = KeyChain.retrieveString(key: .appIDKey),
+            let appSecret = KeyChain.retrieveString(key: .appSecretKey),
+            let deviceHash = KeyChain.retrieveString(key: .deviceHash) else {
+                return
+        }
+
+        let request = Revoke.Request(appId: appId, appSecret: appSecret, userHash: deviceHash)
+        let input = assembler.resolver.resolve(RevokeInteractorInput.self)!
+        input.revoke(with: request)
+    }
 }
