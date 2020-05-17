@@ -130,8 +130,10 @@ extension VerifyViewController: VerifyPresenterOutput {
 extension VerifyViewController: RegisterDelegate {
 
     func register(with viewModel: Register.ViewModel) {
+        let deviceHash = viewModel.hash
+        _ = KeyChain.isStoreSuccess(key: .deviceHash, value: deviceHash)
+
         dismiss(animated: true)
-        // TODO: - Need to persist user hash for revoke access used
         delegate?.register(with: viewModel.token)
     }
 }
