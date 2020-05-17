@@ -20,6 +20,6 @@ internal class RegisterRouter: RegisterRoutingLogic {
     }
 
     func openTnc() {
-        // TODO Show TnC page on browser
+        UIApplication.shared.open(.tnc)
     }
 }

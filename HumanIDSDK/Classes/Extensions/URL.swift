@@ -4,6 +4,10 @@ internal extension URL {
         return URL(string: "https://humanid.herokuapp.com/")!
     }
 
+    static var tnc: URL {
+        return URL(string: "https://www.human-id.org/privacypolicy")!
+    }
+
     static var users: URL {
         return URL(string: "mobile/users/", relativeTo: base)!
     }
