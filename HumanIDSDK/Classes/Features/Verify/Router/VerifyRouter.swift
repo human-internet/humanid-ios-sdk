@@ -1,3 +1,5 @@
+import Swinject
+
 internal protocol VerifyRoutingLogic {
 
     func presentAlert(message: String)
@@ -21,10 +23,13 @@ internal class VerifyRouter: VerifyRoutingLogic {
     }
 
     func pushRegisterVC(with request: Verify.Request) {
-        // TODO Assembler configure not yet implemented
+        let assembler = Assembler()
+        assembler.apply(assembly: RegisterConfigurator())
 
-        let registerVC = RegisterViewController(phoneNumber: request.phone, countryCode: request.countryCode)
-        // TODO Implement delegate protocol
+        let registerVC = assembler.resolver.resolve(RegisterViewController.self)!
+        registerVC.countryCode = request.countryCode
+        registerVC.phoneNumber = request.phone
+        registerVC.delegate = self.view
 
         if #available(iOS 13.0, *) {
             registerVC.modalPresentationStyle = .automatic

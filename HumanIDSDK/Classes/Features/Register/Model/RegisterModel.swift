@@ -6,7 +6,6 @@ internal struct Register {
         let phone: String
         let deviceId: String
         let verificationCode: String
-        let notifId: String
         let appId: String
         let appSecret: String
     }

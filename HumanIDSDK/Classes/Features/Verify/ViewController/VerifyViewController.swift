@@ -80,14 +80,15 @@ internal class VerifyViewController: UIViewController {
             let countryCode = phoneNumberTextField.selectedCountry?.phoneCode.replacingOccurrences(of: "+", with: ""),
             let phone = phoneNumberTextField.getRawPhoneNumber() else { return }
 
-        guard
-            let appId = KeyChain.retrieveString(key: .appIDKey),
-            let appSecret = KeyChain.retrieveString(key: .appSecretKey) else {
-                router?.presentAlert(message: "appID or appSecret not found")
-                return
-        }
+        let appId = KeyChain.retrieveString(key: .appIDKey) ?? ""
+        let appSecret = KeyChain.retrieveString(key: .appSecretKey) ?? ""
 
-        self.request = .init(countryCode: countryCode, phone: phone, appId: appId, appSecret: appSecret)
+        self.request = .init(
+            countryCode: countryCode,
+            phone: phone,
+            appId: appId,
+            appSecret: appSecret
+        )
         input?.verify(with: self.request!)
     }
 
@@ -116,11 +117,21 @@ extension VerifyViewController: VerifyPresenterOutput {
     }
 
     func success() {
-        self.view.endEditing(true)
+        view.endEditing(true)
         router?.pushRegisterVC(with: self.request!)
     }
 
     func error(with message: String) {
         router?.presentAlert(message: message)
+    }
+}
+
+// MARK: - Register Delegate
+extension VerifyViewController: RegisterDelegate {
+
+    func register(with viewModel: Register.ViewModel) {
+        dismiss(animated: true)
+        // TODO: - Need to persist user hash for revoke access used
+        delegate?.register(with: viewModel.token)
     }
 }
