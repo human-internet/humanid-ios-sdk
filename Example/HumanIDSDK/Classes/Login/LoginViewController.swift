@@ -7,7 +7,6 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         title = "My Application"
 
         btnLogin.layer.cornerRadius = 8
@@ -23,11 +22,9 @@ extension LoginViewController: VerifyDelegate {
 
     func register(with token: String) {
         guard let window = UIApplication.shared.keyWindow else { return }
+        Cache.shared.setToken(with: token)
 
         let rootVC = HomeViewController()
-        rootVC.exchangeToken = token
-
-        let navVC = UINavigationController(rootViewController: rootVC)
-        window.rootViewController = navVC
+        window.rootViewController = UINavigationController(rootViewController: rootVC)
     }
 }
