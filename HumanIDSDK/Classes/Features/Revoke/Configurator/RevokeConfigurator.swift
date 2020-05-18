@@ -3,10 +3,6 @@ import Swinject
 class RevokeConfigurator: Assembly {
 
     func assemble(container: Container) {
-        container.register(Network.self) { _ in
-            return Network()
-        }
-
         container.register(RevokeInteractorOutput.self) { _ in
             return RevokePresenter()
         }

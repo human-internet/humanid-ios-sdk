@@ -3,10 +3,6 @@ import Swinject
 internal class VerifyConfigurator: Assembly {
 
     func assemble(container: Container) {
-        container.register(Network.self) { _ in
-            return Network()
-        }
-
         container.register(VerifyInteractorOutput.self) { (r, output: VerifyPresenterOutput) in
             return VerifyPresenter(output: output)
         }

@@ -3,10 +3,6 @@ import Swinject
 internal class RegisterConfigurator: Assembly {
 
     func assemble(container: Container) {
-        container.register(Network.self) { _ in
-            return Network()
-        }
-
         container.register(RegisterInteractorOutput.self) { (r, output: RegisterPresenterOutput) in
             return RegisterPresenter(output: output)
         }

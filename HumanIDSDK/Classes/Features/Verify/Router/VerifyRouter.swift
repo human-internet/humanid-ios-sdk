@@ -1,5 +1,3 @@
-import Swinject
-
 internal protocol VerifyRoutingLogic {
 
     func presentAlert(message: String)
@@ -23,10 +21,7 @@ internal class VerifyRouter: VerifyRoutingLogic {
     }
 
     func pushRegisterVC(with request: Verify.Request) {
-        let assembler = Assembler()
-        assembler.apply(assembly: RegisterConfigurator())
-
-        let registerVC = assembler.resolver.resolve(RegisterViewController.self)!
+        let registerVC = Injector.shared.resolver.resolve(RegisterViewController.self)!
         registerVC.countryCode = request.countryCode
         registerVC.phoneNumber = request.phone
         registerVC.delegate = self.view
