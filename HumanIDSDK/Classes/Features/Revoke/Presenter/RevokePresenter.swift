@@ -1,6 +1,6 @@
 internal class RevokePresenter: RevokeInteractorOutput {
 
-    func success(with response: Revoke.Response) {
+    func success(with response: BaseResponse<NetworkResponse>) {
         guard
             let isSuccess = response.success,
             let message = response.message else {

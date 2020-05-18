@@ -22,7 +22,7 @@ internal final class Network {
         self.decoder = JSONDecoder()
     }
 
-    func verify(url: URL, request: Verify.Request) -> Observable<Verify.Response> {
+    func verify(url: URL, request: Verify.Request) -> Observable<BaseResponse<NetworkResponse>> {
         let requestBody = try! encoder.encode(request)
 
         var urlRequest = URLRequest(url: url)
@@ -36,12 +36,12 @@ internal final class Network {
             .responseJSON()
             .asObservable()
             .observeOn(scheduler)
-            .map({ (response) -> Verify.Response in
-                return try self.decoder.decode(Verify.Response.self, from: response.data!)
+            .map({ (response) -> BaseResponse<NetworkResponse> in
+                return try self.decoder.decode(BaseResponse<NetworkResponse>.self, from: response.data!)
             })
     }
 
-    func register(url: URL, request: Register.Request) -> Observable<Register.Response> {
+    func register(url: URL, request: Register.Request) -> Observable<BaseResponse<Register.Response>> {
         let requestBody = try! encoder.encode(request)
 
         var urlRequest = URLRequest(url: url)
@@ -55,12 +55,12 @@ internal final class Network {
             .responseJSON()
             .asObservable()
             .observeOn(scheduler)
-            .map({ (response) -> Register.Response in
-                return try self.decoder.decode(Register.Response.self, from: response.data!)
+            .map({ (response) -> BaseResponse<Register.Response> in
+                return try self.decoder.decode(BaseResponse<Register.Response>.self, from: response.data!)
             })
     }
 
-    func revoke(url: URL, request: Revoke.Request, completion: @escaping (NetworkResult<Revoke.Response>) -> Void) {
+    func revoke(url: URL, request: Revoke.Request, completion: @escaping (NetworkResult<BaseResponse<NetworkResponse>>) -> Void) {
         let requestBody = try! encoder.encode(request)
 
         var urlRequest = URLRequest(url: url)
@@ -72,7 +72,7 @@ internal final class Network {
             switch response.result {
             case .success(_):
                 do {
-                    let result = try self.decoder.decode(Revoke.Response.self, from: response.data!)
+                    let result = try self.decoder.decode(BaseResponse<NetworkResponse>.self, from: response.data!)
                     completion(.success(result))
                 } catch {
                     completion(.failure(error as NSError))

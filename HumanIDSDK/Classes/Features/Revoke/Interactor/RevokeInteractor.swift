@@ -5,7 +5,7 @@ internal protocol RevokeInteractorInput {
 
 internal protocol RevokeInteractorOutput {
 
-    func success(with response: Revoke.Response)
+    func success(with response: BaseResponse<NetworkResponse>)
     func error(with error: Error)
 }
 

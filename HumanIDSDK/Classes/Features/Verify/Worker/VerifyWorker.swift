@@ -2,7 +2,7 @@ import RxSwift
 
 internal protocol VerifyWorkerDelegate {
 
-    func verify(with request: Verify.Request) -> Observable<Verify.Response>
+    func verify(with request: Verify.Request) -> Observable<BaseResponse<NetworkResponse>>
 }
 
 internal class VerifyWorker: VerifyWorkerDelegate {
@@ -13,7 +13,7 @@ internal class VerifyWorker: VerifyWorkerDelegate {
         self.datasource = datasource
     }
 
-    func verify(with request: Verify.Request) -> Observable<Verify.Response> {
+    func verify(with request: Verify.Request) -> Observable<BaseResponse<NetworkResponse>> {
         return datasource.verify(url: .verify, request: request)
     }
 }

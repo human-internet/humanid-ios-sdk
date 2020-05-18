@@ -23,7 +23,7 @@ internal class RegisterPresenter: RegisterInteractorOutput {
         output?.hideLoading()
     }
 
-    func successRegister(with response: Register.Response) {
+    func successRegister(with response: BaseResponse<Register.Response>) {
         guard
             let isSuccess = response.success,
             let message = response.message else {
@@ -44,7 +44,7 @@ internal class RegisterPresenter: RegisterInteractorOutput {
         }
     }
 
-    func successVerify(with response: Verify.Response) {
+    func successVerify(with response: BaseResponse<NetworkResponse>) {
         guard
             let isSuccess = response.success,
             let message = response.message else {

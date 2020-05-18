@@ -12,15 +12,8 @@ internal struct Register {
 
     struct Response: Codable {
 
-        let success: Bool?
-        let message: String?
-        let data: Data?
-
-        struct Data: Codable {
-
-            let exchangeToken: String?
-            let userHash: String?
-        }
+        let exchangeToken: String?
+        let userHash: String?
     }
 
     struct ViewModel {

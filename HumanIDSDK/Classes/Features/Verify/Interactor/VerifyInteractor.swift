@@ -9,7 +9,7 @@ internal protocol VerifyInteractorOutput {
 
     func showLoading()
     func hideLoading()
-    func success(with response: Verify.Response)
+    func success(with response: BaseResponse<NetworkResponse>)
     func error(with errorResponse: Error)
 }
 

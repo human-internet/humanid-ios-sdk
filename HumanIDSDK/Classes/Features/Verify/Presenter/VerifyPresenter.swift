@@ -22,7 +22,7 @@ internal class VerifyPresenter: VerifyInteractorOutput {
         output?.hideLoading()
     }
 
-    func success(with response: Verify.Response) {
+    func success(with response: BaseResponse<NetworkResponse>) {
         guard
             let isSuccess = response.success,
             let message = response.message else {

@@ -7,10 +7,4 @@ internal struct Verify {
         let appId: String
         let appSecret: String
     }
-
-    struct Response: Codable {
-
-        let success: Bool?
-        let message: String?
-    }
 }

@@ -10,8 +10,8 @@ internal protocol RegisterInteractorOutput {
 
     func showLoading()
     func hideLoading()
-    func successRegister(with response: Register.Response)
-    func successVerify(with response: Verify.Response)
+    func successRegister(with response: BaseResponse<Register.Response>)
+    func successVerify(with response: BaseResponse<NetworkResponse>)
     func errorRegister(with errorResponse: Error)
     func errorVerify(with errorResponse: Error)
 }

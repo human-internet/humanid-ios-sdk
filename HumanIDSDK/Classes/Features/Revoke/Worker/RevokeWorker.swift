@@ -1,6 +1,6 @@
 internal protocol RevokeWorkerDelegate {
 
-    func revoke(with request: Revoke.Request, completion: @escaping (NetworkResult<Revoke.Response>) -> Void)
+    func revoke(with request: Revoke.Request, completion: @escaping (NetworkResult<BaseResponse<NetworkResponse>>) -> Void)
 }
 
 internal class RevokeWorker: RevokeWorkerDelegate {
@@ -11,7 +11,7 @@ internal class RevokeWorker: RevokeWorkerDelegate {
         self.datasource = datasource
     }
 
-    func revoke(with request: Revoke.Request, completion: @escaping (NetworkResult<Revoke.Response>) -> Void) {
+    func revoke(with request: Revoke.Request, completion: @escaping (NetworkResult<BaseResponse<NetworkResponse>>) -> Void) {
         datasource.revoke(url: .revoke, request: request) { result in
             switch result {
             case .success(let response):
