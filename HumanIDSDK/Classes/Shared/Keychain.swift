@@ -18,6 +18,10 @@ internal class KeyChain {
         }
     }
 
+    internal class func isDeleteSuccess(key: String) -> Bool {
+        return delete(key: key)
+    }
+
     private class func isStoreSuccess(key: String, data: Data) -> Bool {
 
         let query = [
@@ -49,6 +53,20 @@ internal class KeyChain {
             return dataTypeRef as! Data?
         } else {
             return nil
+        }
+    }
+
+    private class func delete(key: String) -> Bool {
+
+        let query = [
+            kSecClass as String       : kSecClassGenericPassword,
+            kSecAttrAccount as String : key ] as [String : Any]
+
+        let status: OSStatus = SecItemDelete(query as CFDictionary)
+        if status == noErr {
+            return true
+        } else {
+            return false
         }
     }
 }

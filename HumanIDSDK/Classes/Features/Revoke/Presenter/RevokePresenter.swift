@@ -9,7 +9,7 @@ internal class RevokePresenter: RevokeInteractorOutput {
 
         switch isSuccess {
         case true:
-            _ = KeyChain.isStoreSuccess(key: .deviceHash, value: "")
+            _ = KeyChain.isDeleteSuccess(key: .deviceHash)
         default:
             print(message)
         }
