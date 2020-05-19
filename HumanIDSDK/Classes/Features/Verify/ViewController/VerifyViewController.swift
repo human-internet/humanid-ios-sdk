@@ -133,7 +133,8 @@ extension VerifyViewController: RegisterDelegate {
         let deviceHash = viewModel.hash
         _ = KeyChain.isStoreSuccess(key: .deviceHash, value: deviceHash)
 
-        dismiss(animated: true)
-        delegate?.register(with: viewModel.token)
+        dismiss(animated: true) {
+            self.delegate?.register(with: viewModel.token)
+        }
     }
 }
