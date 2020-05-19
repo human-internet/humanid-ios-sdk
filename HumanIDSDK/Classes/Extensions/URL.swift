@@ -1,7 +1,7 @@
 internal extension URL {
 
     static var base: URL {
-        return URL(string: "https://humanid.herokuapp.com/")!
+        return URL(string: "https://core.human-id.org/v0.0.1/")!
     }
 
     static var tnc: URL {
