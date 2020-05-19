@@ -1,6 +1,5 @@
 internal protocol VerifyRoutingLogic {
 
-    func presentAlert(message: String)
     func pushRegisterVC(with request: Verify.Request)
     func openTnc()
 }
@@ -11,13 +10,6 @@ internal class VerifyRouter: VerifyRoutingLogic {
 
     init(view: VerifyViewController) {
         self.view = view
-    }
-
-    func presentAlert(message: String) {
-        let alertVC = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "Close", style: .default))
-
-        view?.present(alertVC, animated: true)
     }
 
     func pushRegisterVC(with request: Verify.Request) {

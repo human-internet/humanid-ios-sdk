@@ -170,10 +170,10 @@ extension RegisterViewController: RegisterPresenterOutput {
 
     func errorRegister(with message: String) {
         resetTimerLabel()
-        router?.presentAlert(message: message)
+        alertVC(with: message)
     }
 
     func errorVerify(with message: String) {
-        router?.presentAlert(message: message)
+        alertVC(with: message)
     }
 }

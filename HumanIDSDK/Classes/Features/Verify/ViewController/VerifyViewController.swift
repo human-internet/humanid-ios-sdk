@@ -122,7 +122,7 @@ extension VerifyViewController: VerifyPresenterOutput {
     }
 
     func error(with message: String) {
-        router?.presentAlert(message: message)
+        alertVC(with: message)
     }
 }
 
