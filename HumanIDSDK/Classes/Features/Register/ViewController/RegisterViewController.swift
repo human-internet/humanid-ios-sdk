@@ -164,8 +164,9 @@ extension RegisterViewController: RegisterPresenterOutput {
     }
 
     func successRegister(with viewModel: Register.ViewModel) {
-        dismiss(animated: true)
-        delegate?.register(with: viewModel)
+        dismiss(animated: true) {
+            self.delegate?.register(with: viewModel)
+        }
     }
 
     func errorRegister(with message: String) {
