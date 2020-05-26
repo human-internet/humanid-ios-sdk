@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = 'HumanIDSDK'
-  s.version               = '1.0.2'
+  s.version               = '1.1.0'
   s.summary               = 'HumanIDSDK for iOS.'
 
   s.description           = <<-DESC
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.frameworks            = 'UIKit'
   s.dependency 'Swinject', '~> 2.7.1'
   s.dependency 'RxSwift', '~> 5.1.1'
-  s.dependency 'RxAlamofire', '~> 5.2.0'
+  s.dependency 'RxAlamofire', '~> 5.3.1'
   s.dependency 'FlagPhoneNumber', '~> 0.8.0'
   s.dependency 'VKPinCodeView', '~> 0.4.1'
   s.dependency 'IQKeyboardManager', '~> 6.5.5'
