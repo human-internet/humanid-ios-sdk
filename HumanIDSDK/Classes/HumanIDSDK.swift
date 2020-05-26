@@ -5,12 +5,16 @@ open class HumanIDSDK {
     private init() {}
 
     open func configure(appID: String, appSecret: String) {
-        // MARK: - Retrieve current deviceID automatically
-        let deviceID = UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString.replacingOccurrences(of: "-", with: "").lowercased()
-
         _ = KeyChain.isStoreSuccess(key: .appIDKey, value: appID)
         _ = KeyChain.isStoreSuccess(key: .appSecretKey, value: appSecret)
-        _ = KeyChain.isStoreSuccess(key: .deviceID, value: deviceID)
+
+        // MARK: - Retrieve current deviceID automatically
+        guard let _ = KeyChain.retrieveString(key: .deviceID) else {
+            let deviceID = UIDevice.current.identifierForVendor!.uuidString
+            _ = KeyChain.isStoreSuccess(key: .deviceID, value: deviceID)
+
+            return
+        }
     }
 
     open func verify(view viewController: UIViewController, name appName: String, image appImage: String) {
