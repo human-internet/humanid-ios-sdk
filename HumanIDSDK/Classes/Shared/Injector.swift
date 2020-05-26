@@ -9,8 +9,7 @@ internal class Injector {
         assembler.apply(assemblies: [
             Configurator(),
             VerifyConfigurator(),
-            RegisterConfigurator(),
-            RevokeConfigurator()
+            RegisterConfigurator()
         ])
 
         return assembler

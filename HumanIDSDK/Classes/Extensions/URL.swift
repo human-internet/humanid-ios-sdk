@@ -19,8 +19,4 @@ internal extension URL {
     static var register: URL {
         return URL(string: "register", relativeTo: users)!
     }
-
-    static var revoke: URL {
-        return URL(string: "revokeAccess", relativeTo: users)!
-    }
 }

@@ -26,17 +26,4 @@ open class HumanIDSDK {
 
         viewController.present(verifyVC, animated: true)
     }
-
-    open func revoke() {
-        // MARK: - Revoke humanID sdk access
-        guard
-            let appId = KeyChain.retrieveString(key: .appIDKey),
-            let appSecret = KeyChain.retrieveString(key: .appSecretKey),
-            let deviceHash = KeyChain.retrieveString(key: .deviceHash) else {
-                return
-        }
-
-        let input = Injector.shared.resolver.resolve(RevokeInteractorInput.self)!
-        input.revoke(with: .init(appId: appId, appSecret: appSecret, userHash: deviceHash))
-    }
 }

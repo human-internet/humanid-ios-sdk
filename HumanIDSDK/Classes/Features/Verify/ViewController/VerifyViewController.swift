@@ -130,9 +130,6 @@ extension VerifyViewController: VerifyPresenterOutput {
 extension VerifyViewController: RegisterDelegate {
 
     func register(with viewModel: Register.ViewModel) {
-        let deviceHash = viewModel.hash
-        _ = KeyChain.isStoreSuccess(key: .deviceHash, value: deviceHash)
-
         dismiss(animated: true) {
             self.delegate?.register(with: viewModel.token)
         }

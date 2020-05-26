@@ -1,5 +1,4 @@
 import UIKit
-import HumanIDSDK
 
 class HomeViewController: UIViewController {
 
@@ -14,8 +13,6 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func didLogout(_ sender: Any) {
-        HumanIDSDK.shared.revoke()
-
         guard let window = UIApplication.shared.keyWindow else { return }
         Cache.shared.clear()
 
