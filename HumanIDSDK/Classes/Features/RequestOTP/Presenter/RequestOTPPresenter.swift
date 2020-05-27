@@ -1,4 +1,4 @@
-internal protocol VerifyPresenterOutput: class {
+internal protocol RequestOTPPresenterOutput: class {
 
     func showLoading()
     func hideLoading()
@@ -6,11 +6,11 @@ internal protocol VerifyPresenterOutput: class {
     func error(with message: String)
 }
 
-internal class VerifyPresenter: VerifyInteractorOutput {
+internal class RequestOTPPresenter: RequestOTPInteractorOutput {
 
-    weak var output: VerifyPresenterOutput?
+    weak var output: RequestOTPPresenterOutput?
 
-    init(output: VerifyPresenterOutput) {
+    init(output: RequestOTPPresenterOutput) {
         self.output = output
     }
 

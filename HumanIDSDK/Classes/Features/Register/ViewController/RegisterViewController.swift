@@ -24,7 +24,7 @@ internal class RegisterViewController: UIViewController {
     var delegate: RegisterDelegate?
     var input: RegisterInteractorInput?
     var router: RegisterRoutingLogic?
-    var requestVerify: Verify.Request?
+    var requestVerify: RequestOTP.Request?
     var requestRegister: Register.Request?
 
     lazy var pinView: VKPinCodeView = {

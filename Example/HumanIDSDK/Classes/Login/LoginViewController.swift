@@ -17,11 +17,11 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func didLogin(_ sender: Any) {
-        HumanIDSDK.shared.verify(view: self, name: displayName, image: applicationLogo)
+        HumanIDSDK.shared.requestOtp(view: self, name: displayName, image: applicationLogo)
     }
 }
 
-extension LoginViewController: VerifyDelegate {
+extension LoginViewController: RequestOTPDelegate {
 
     func register(with token: String) {
         guard let window = UIApplication.shared.keyWindow else { return }

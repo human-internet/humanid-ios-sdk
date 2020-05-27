@@ -1,11 +1,11 @@
 import FlagPhoneNumber
 
-public protocol VerifyDelegate {
+public protocol RequestOTPDelegate {
 
     func register(with token: String)
 }
 
-internal class VerifyViewController: UIViewController {
+internal class RequestOTPViewController: UIViewController {
 
     @IBOutlet weak var phoneContainerView: UIView!
     @IBOutlet weak var enterButton: UIButton!
@@ -21,10 +21,10 @@ internal class VerifyViewController: UIViewController {
     var appName = ""
     var appImage = ""
 
-    var delegate: VerifyDelegate?
-    var input: VerifyInteractorInput?
-    var router: VerifyRoutingLogic?
-    var request: Verify.Request?
+    var delegate: RequestOTPDelegate?
+    var input: RequestOTPInteractorInput?
+    var router: RequestOTPRoutingLogic?
+    var request: RequestOTP.Request?
 
     lazy var phoneNumberTextField: FPNTextField = {
         let phoneNumberTextField = FPNTextField(frame: CGRect(x: 0, y: 0, width: phoneContainerView.bounds.width - 16, height: 30))
@@ -38,7 +38,7 @@ internal class VerifyViewController: UIViewController {
     }()
 
     convenience init() {
-        self.init(nibName: "VerifyViewController", bundle: Bundle.humanID)
+        self.init(nibName: "RequestOTPViewController", bundle: Bundle.humanID)
     }
 
     override func viewDidLoad() {
@@ -89,7 +89,7 @@ internal class VerifyViewController: UIViewController {
             appId: appId,
             appSecret: appSecret
         )
-        input?.verify(with: self.request!)
+        input?.requestOtp(with: self.request!)
     }
 
     @IBAction func viewDidDismiss(_ sender: Any) {
@@ -102,7 +102,7 @@ internal class VerifyViewController: UIViewController {
 }
 
 // MARK: - Presenter Delegate
-extension VerifyViewController: VerifyPresenterOutput {
+extension RequestOTPViewController: RequestOTPPresenterOutput {
 
     func showLoading() {
         enterButton.isEnabled = false
@@ -127,7 +127,7 @@ extension VerifyViewController: VerifyPresenterOutput {
 }
 
 // MARK: - Register Delegate
-extension VerifyViewController: RegisterDelegate {
+extension RequestOTPViewController: RegisterDelegate {
 
     func register(with viewModel: Register.ViewModel) {
         dismiss(animated: true) {

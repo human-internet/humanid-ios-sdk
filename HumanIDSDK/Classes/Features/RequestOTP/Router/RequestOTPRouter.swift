@@ -1,18 +1,18 @@
-internal protocol VerifyRoutingLogic {
+internal protocol RequestOTPRoutingLogic {
 
-    func pushRegisterVC(with request: Verify.Request)
+    func pushRegisterVC(with request: RequestOTP.Request)
     func openTnc()
 }
 
-internal class VerifyRouter: VerifyRoutingLogic {
+internal class RequestOTPRouter: RequestOTPRoutingLogic {
 
-    weak var view: VerifyViewController?
+    weak var view: RequestOTPViewController?
 
-    init(view: VerifyViewController) {
+    init(view: RequestOTPViewController) {
         self.view = view
     }
 
-    func pushRegisterVC(with request: Verify.Request) {
+    func pushRegisterVC(with request: RequestOTP.Request) {
         let registerVC = Injector.shared.resolver.resolve(RegisterViewController.self)!
         registerVC.countryCode = request.countryCode
         registerVC.phoneNumber = request.phone

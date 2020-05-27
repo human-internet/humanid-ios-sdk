@@ -3,7 +3,7 @@ import RxSwift
 internal protocol RegisterInteractorInput {
 
     func register(with request: Register.Request)
-    func verify(with request: Verify.Request)
+    func verify(with request: RequestOTP.Request)
 }
 
 internal protocol RegisterInteractorOutput {
@@ -43,7 +43,7 @@ internal class RegisterInteractor: RegisterInteractorInput {
             }).disposed(by: disposeBag)
     }
 
-    func verify(with request: Verify.Request) {
+    func verify(with request: RequestOTP.Request) {
         output?.showLoading()
         worker?.verify(with: request)
             .observeOn(MainScheduler.instance)

@@ -1,7 +1,7 @@
 internal extension URL {
 
     static var base: URL {
-        return URL(string: "https://core.human-id.org/v0.0.1/")!
+        return URL(string: "https://core.human-id.org/v0.0.2/")!
     }
 
     static var tnc: URL {
@@ -12,8 +12,8 @@ internal extension URL {
         return URL(string: "mobile/users/", relativeTo: base)!
     }
 
-    static var verify: URL {
-        return URL(string: "verifyPhone", relativeTo: users)!
+    static var requestOtp: URL {
+        return URL(string: "login/request-otp", relativeTo: users)!
     }
 
     static var register: URL {

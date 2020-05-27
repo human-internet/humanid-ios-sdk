@@ -22,7 +22,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VerifyViewController" customModule="HumanIDSDK" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RequestOTPViewController" customModule="HumanIDSDK" customModuleProvider="target">
             <connections>
                 <outlet property="appLogo" destination="RsC-Qy-ful" id="xVa-06-QnV"/>
                 <outlet property="cancelLabel" destination="AOM-R4-O5E" id="jn2-IG-Y0T"/>

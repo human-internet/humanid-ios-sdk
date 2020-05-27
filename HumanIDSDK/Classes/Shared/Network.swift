@@ -16,7 +16,7 @@ internal final class Network {
         self.decoder = JSONDecoder()
     }
 
-    func verify(url: URL, request: Verify.Request) -> Observable<BaseResponse<NetworkResponse>> {
+    func requestOtp(url: URL, request: RequestOTP.Request) -> Observable<BaseResponse<NetworkResponse>> {
         let requestBody = try! encoder.encode(request)
 
         var urlRequest = URLRequest(url: url)

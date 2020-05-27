@@ -17,13 +17,13 @@ open class HumanIDSDK {
         }
     }
 
-    open func verify(view viewController: UIViewController, name appName: String, image appImage: String) {
+    open func requestOtp(view viewController: UIViewController, name appName: String, image appImage: String) {
         // MARK: - Open humanID verification page
-        let verifyVC = Injector.shared.resolver.resolve(VerifyViewController.self)!
-        verifyVC.appName = appName
-        verifyVC.appImage = appImage
-        verifyVC.delegate = viewController as? VerifyDelegate
+        let requestOtpVC = Injector.shared.resolver.resolve(RequestOTPViewController.self)!
+        requestOtpVC.appName = appName
+        requestOtpVC.appImage = appImage
+        requestOtpVC.delegate = viewController as? RequestOTPDelegate
 
-        viewController.present(verifyVC, animated: true)
+        viewController.present(requestOtpVC, animated: true)
     }
 }

@@ -1,4 +1,4 @@
-internal struct Verify {
+internal struct RequestOTP {
 
     struct Request: Codable {
 

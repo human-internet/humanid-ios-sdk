@@ -8,7 +8,7 @@ internal class Injector {
         let assembler = Assembler()
         assembler.apply(assemblies: [
             Configurator(),
-            VerifyConfigurator(),
+            RequestOTPConfigurator(),
             RegisterConfigurator()
         ])
 

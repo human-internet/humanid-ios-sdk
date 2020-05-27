@@ -1,11 +1,11 @@
 import RxSwift
 
-internal protocol VerifyInteractorInput {
+internal protocol RequestOTPInteractorInput {
 
-    func verify(with request: Verify.Request)
+    func requestOtp(with request: RequestOTP.Request)
 }
 
-internal protocol VerifyInteractorOutput {
+internal protocol RequestOTPInteractorOutput {
 
     func showLoading()
     func hideLoading()
@@ -13,21 +13,21 @@ internal protocol VerifyInteractorOutput {
     func error(with errorResponse: Error)
 }
 
-internal class VerifyInteractor: VerifyInteractorInput {
+internal class RequestOTPInteractor: RequestOTPInteractorInput {
 
-    var output: VerifyInteractorOutput?
-    var worker: VerifyWorkerDelegate?
+    var output: RequestOTPInteractorOutput?
+    var worker: RequestOTPWorkerDelegate?
 
     private let disposeBag = DisposeBag()
 
-    init(output: VerifyInteractorOutput, worker: VerifyWorkerDelegate) {
+    init(output: RequestOTPInteractorOutput, worker: RequestOTPWorkerDelegate) {
         self.output = output
         self.worker = worker
     }
 
-    func verify(with request: Verify.Request) {
+    func requestOtp(with request: RequestOTP.Request) {
         output?.showLoading()
-        worker?.verify(with: request)
+        worker?.requestOtp(with: request)
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: {[weak self] (response) in
