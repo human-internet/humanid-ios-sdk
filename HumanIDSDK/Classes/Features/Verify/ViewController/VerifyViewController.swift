@@ -80,8 +80,8 @@ internal class VerifyViewController: UIViewController {
             let countryCode = phoneNumberTextField.selectedCountry?.phoneCode.replacingOccurrences(of: "+", with: ""),
             let phone = phoneNumberTextField.getRawPhoneNumber() else { return }
 
-        let appId = KeyChain.retrieveString(key: .appIDKey) ?? ""
-        let appSecret = KeyChain.retrieveString(key: .appSecretKey) ?? ""
+        let appId = KeyChain.retrieves(key: .appIDKey) ?? ""
+        let appSecret = KeyChain.retrieves(key: .appSecretKey) ?? ""
 
         self.request = .init(
             countryCode: countryCode,

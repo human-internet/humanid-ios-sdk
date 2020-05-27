@@ -5,4 +5,7 @@ internal struct BaseResponse<T: Codable>: Codable {
     let data: T?
 }
 
-internal struct NetworkResponse: Codable {}
+internal struct NetworkResponse: Codable {
+
+    let code: String?
+}

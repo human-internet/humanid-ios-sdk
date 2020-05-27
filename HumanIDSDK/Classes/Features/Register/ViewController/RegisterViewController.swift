@@ -93,8 +93,8 @@ internal class RegisterViewController: UIViewController {
         setupTimer()
         pinView.resetCode()
 
-        let appId = KeyChain.retrieveString(key: .appIDKey) ?? ""
-        let appSecret = KeyChain.retrieveString(key: .appSecretKey) ?? ""
+        let appId = KeyChain.retrieves(key: .appIDKey) ?? ""
+        let appSecret = KeyChain.retrieves(key: .appSecretKey) ?? ""
 
         self.requestVerify = .init(
             countryCode: self.countryCode,
@@ -123,9 +123,9 @@ internal class RegisterViewController: UIViewController {
     private func register(verificationCode: String) {
         invalidateTimer()
 
-        let appId = KeyChain.retrieveString(key: .appIDKey) ?? ""
-        let appSecret = KeyChain.retrieveString(key: .appSecretKey) ?? ""
-        let deviceId = KeyChain.retrieveString(key: .deviceID) ?? ""
+        let appId = KeyChain.retrieves(key: .appIDKey) ?? ""
+        let appSecret = KeyChain.retrieves(key: .appSecretKey) ?? ""
+        let deviceId = KeyChain.retrieves(key: .deviceID) ?? ""
 
         self.requestRegister = .init(
             countryCode: self.countryCode,

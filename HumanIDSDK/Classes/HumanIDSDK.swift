@@ -9,7 +9,7 @@ open class HumanIDSDK {
         _ = KeyChain.isStoreSuccess(key: .appSecretKey, value: appSecret)
 
         // MARK: - Retrieve current deviceID automatically
-        guard let _ = KeyChain.retrieveString(key: .deviceID) else {
+        guard let _ = KeyChain.retrieves(key: .deviceID) else {
             let deviceID = UIDevice.current.identifierForVendor!.uuidString
             _ = KeyChain.isStoreSuccess(key: .deviceID, value: deviceID)
 

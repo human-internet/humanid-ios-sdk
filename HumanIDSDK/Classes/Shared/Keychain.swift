@@ -9,7 +9,7 @@ internal class KeyChain {
         }
     }
 
-    internal class func retrieveString(key: String) -> String? {
+    internal class func retrieves(key: String) -> String? {
 
         if let data = retrieve(key: key) {
             return String(data: data, encoding: .utf8)
