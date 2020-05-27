@@ -5,16 +5,19 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var btnLogin: UIButton!
 
+    private let displayName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as! String
+    private let applicationLogo = "Logo"
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "My Application"
+        title = displayName
 
         btnLogin.layer.cornerRadius = 8
         btnLogin.clipsToBounds = true
     }
 
     @IBAction func didLogin(_ sender: Any) {
-        HumanIDSDK.shared.verify(view: self, name: "My Application", image: "logo_mdb")
+        HumanIDSDK.shared.verify(view: self, name: displayName, image: applicationLogo)
     }
 }
 
