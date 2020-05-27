@@ -8,6 +8,8 @@ Meet humanID - An anonymous online identity, enabling platforms to offer the spe
 
 <img src="https://user-images.githubusercontent.com/2031493/80385493-4f1b8480-88d0-11ea-8110-ab62c747a997.png" width="200" height="200">
 
+<img src="https://github.com/bluenumberfoundation/humanid-android-sdk/blob/master/humanID%20-%20Login%20Screen%20Number.png" width="200" height="350">    <img src="https://github.com/bluenumberfoundation/humanid-android-sdk/blob/master/humanID%20-%20Login%20Screen%20Code.png" width="200" height="350">  
+
 ## Requirements
 
 * Xcode 11.4+
