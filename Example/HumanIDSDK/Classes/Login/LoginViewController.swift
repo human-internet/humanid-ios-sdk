@@ -5,7 +5,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var btnLogin: UIButton!
 
-    private let displayName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as! String
+    private let displayName = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as! String
     private let applicationLogo = "Logo"
 
     override func viewDidLoad() {
