@@ -1,4 +1,4 @@
-internal struct Register {
+internal struct Login {
 
     struct Request: Codable {
 
@@ -6,8 +6,6 @@ internal struct Register {
         let phone: String
         let deviceId: String
         let verificationCode: String
-        let appId: String
-        let appSecret: String
     }
 
     struct Response: Codable {

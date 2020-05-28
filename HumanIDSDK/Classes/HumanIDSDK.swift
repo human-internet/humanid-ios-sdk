@@ -18,7 +18,7 @@ open class HumanIDSDK {
     }
 
     open func requestOtp(view viewController: UIViewController, name appName: String, image appImage: String) {
-        // MARK: - Open humanID verification page
+        // MARK: - Open humanID requestOtp page
         let requestOtpVC = Injector.shared.resolver.resolve(RequestOTPViewController.self)!
         requestOtpVC.appName = appName
         requestOtpVC.appImage = appImage

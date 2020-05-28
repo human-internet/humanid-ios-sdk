@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: RequestOTPDelegate {
 
-    func register(with token: String) {
+    func login(with token: String) {
         guard let window = UIApplication.shared.keyWindow else { return }
         Cache.shared.setToken(with: token)
 

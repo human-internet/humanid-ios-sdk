@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="HumanIDSDK" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="HumanIDSDK" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="rLb-TF-6Cn" id="Nmb-o1-70T"/>
                 <outlet property="humanIdTnc" destination="SYd-2N-cuv" id="SKk-ih-Sht"/>

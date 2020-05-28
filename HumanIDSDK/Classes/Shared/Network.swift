@@ -37,11 +37,13 @@ internal final class Network {
             })
     }
 
-    func register(url: URL, request: Register.Request) -> Observable<BaseResponse<Register.Response>> {
+    func login(url: URL, header: BaseRequest, request: Login.Request) -> Observable<BaseResponse<Login.Response>> {
         let requestBody = try! encoder.encode(request)
 
         var urlRequest = URLRequest(url: url)
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue(header.clientId, forHTTPHeaderField: "client-id")
+        urlRequest.setValue(header.clientSecret, forHTTPHeaderField: "client-secret")
         urlRequest.method = .post
         urlRequest.httpBody = requestBody
 
@@ -51,8 +53,8 @@ internal final class Network {
             .responseJSON()
             .asObservable()
             .observeOn(scheduler)
-            .map({ (response) -> BaseResponse<Register.Response> in
-                return try self.decoder.decode(BaseResponse<Register.Response>.self, from: response.data!)
+            .map({ (response) -> BaseResponse<Login.Response> in
+                return try self.decoder.decode(BaseResponse<Login.Response>.self, from: response.data!)
             })
     }
 }

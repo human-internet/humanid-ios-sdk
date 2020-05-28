@@ -16,7 +16,7 @@ internal extension URL {
         return URL(string: "login/request-otp", relativeTo: users)!
     }
 
-    static var register: URL {
-        return URL(string: "register", relativeTo: users)!
+    static var login: URL {
+        return URL(string: "login", relativeTo: users)!
     }
 }

@@ -9,7 +9,7 @@ internal class Injector {
         assembler.apply(assemblies: [
             Configurator(),
             RequestOTPConfigurator(),
-            RegisterConfigurator()
+            LoginConfigurator()
         ])
 
         return assembler

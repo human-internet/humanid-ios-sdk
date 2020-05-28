@@ -2,7 +2,7 @@ import FlagPhoneNumber
 
 public protocol RequestOTPDelegate {
 
-    func register(with token: String)
+    func login(with token: String)
 }
 
 internal class RequestOTPViewController: UIViewController {
@@ -114,7 +114,7 @@ extension RequestOTPViewController: RequestOTPPresenterOutput {
 
     func success() {
         view.endEditing(true)
-        router?.pushRegisterVC(with: self.request!)
+        router?.pushLoginVC(with: self.request!)
     }
 
     func error(with message: String) {
@@ -122,12 +122,12 @@ extension RequestOTPViewController: RequestOTPPresenterOutput {
     }
 }
 
-// MARK: - Register Delegate
-extension RequestOTPViewController: RegisterDelegate {
+// MARK: - Login Delegate
+extension RequestOTPViewController: LoginDelegate {
 
-    func register(with viewModel: Register.ViewModel) {
+    func login(with viewModel: Login.ViewModel) {
         dismiss(animated: true) {
-            self.delegate?.register(with: viewModel.token)
+            self.delegate?.login(with: viewModel.token)
         }
     }
 }

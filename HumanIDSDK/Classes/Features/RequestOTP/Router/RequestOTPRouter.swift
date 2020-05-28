@@ -1,6 +1,6 @@
 internal protocol RequestOTPRoutingLogic {
 
-    func pushRegisterVC(with request: RequestOTP.Request)
+    func pushLoginVC(with request: RequestOTP.Request)
     func openTnc()
 }
 
@@ -12,19 +12,19 @@ internal class RequestOTPRouter: RequestOTPRoutingLogic {
         self.view = view
     }
 
-    func pushRegisterVC(with request: RequestOTP.Request) {
-        let registerVC = Injector.shared.resolver.resolve(RegisterViewController.self)!
-        registerVC.countryCode = request.countryCode
-        registerVC.phoneNumber = request.phone
-        registerVC.delegate = self.view
+    func pushLoginVC(with request: RequestOTP.Request) {
+        let loginVC = Injector.shared.resolver.resolve(LoginViewController.self)!
+        loginVC.countryCode = request.countryCode
+        loginVC.phoneNumber = request.phone
+        loginVC.delegate = self.view
 
         if #available(iOS 13.0, *) {
-            registerVC.modalPresentationStyle = .automatic
+            loginVC.modalPresentationStyle = .automatic
         } else {
-            registerVC.modalPresentationStyle = .formSheet
+            loginVC.modalPresentationStyle = .formSheet
         }
 
-        view?.present(registerVC, animated: true)
+        view?.present(loginVC, animated: true)
     }
 
     func openTnc() {

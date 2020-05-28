@@ -1,11 +1,11 @@
 import VKPinCodeView
 
-internal protocol RegisterDelegate {
+internal protocol LoginDelegate {
 
-    func register(with viewModel: Register.ViewModel)
+    func login(with viewModel: Login.ViewModel)
 }
 
-internal class RegisterViewController: UIViewController {
+internal class LoginViewController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var pinContainerView: UIView!
@@ -21,11 +21,11 @@ internal class RegisterViewController: UIViewController {
     var phoneNumber = ""
     var seconds = 30
 
-    var delegate: RegisterDelegate?
-    var input: RegisterInteractorInput?
-    var router: RegisterRoutingLogic?
-    var requestVerify: RequestOTP.Request?
-    var requestRegister: Register.Request?
+    var delegate: LoginDelegate?
+    var input: LoginInteractorInput?
+    var router: LoginRoutingLogic?
+    var requestOtp: RequestOTP.Request?
+    var requestLogin: Login.Request?
 
     lazy var pinView: VKPinCodeView = {
         let pinView = VKPinCodeView()
@@ -35,14 +35,14 @@ internal class RegisterViewController: UIViewController {
         pinView.becomeFirstResponder()
 
         pinView.onComplete = { code, _ in
-            self.register(verificationCode: code)
+            self.login(verificationCode: code)
         }
 
         return pinView
     }()
 
     convenience init() {
-        self.init(nibName: "RegisterViewController", bundle: Bundle.humanID)
+        self.init(nibName: "LoginViewController", bundle: Bundle.humanID)
     }
 
     override func viewDidLoad() {
@@ -93,16 +93,12 @@ internal class RegisterViewController: UIViewController {
         setupTimer()
         pinView.resetCode()
 
-        let appId = KeyChain.retrieves(key: .appIDKey) ?? ""
-        let appSecret = KeyChain.retrieves(key: .appSecretKey) ?? ""
+        let clientId = KeyChain.retrieves(key: .clientID) ?? ""
+        let clientSecret = KeyChain.retrieves(key: .clientSecret) ?? ""
+        let header = BaseRequest(clientId: clientId, clientSecret: clientSecret)
 
-        self.requestVerify = .init(
-            countryCode: self.countryCode,
-            phone: self.phoneNumber,
-            appId: appId,
-            appSecret: appSecret
-        )
-        input?.verify(with: self.requestVerify!)
+        self.requestOtp = .init(countryCode: countryCode, phone: phoneNumber)
+        input?.requestOtp(with: header, request: requestOtp!)
     }
 
     @objc func updateTimer() {
@@ -120,22 +116,22 @@ internal class RegisterViewController: UIViewController {
         }
     }
 
-    private func register(verificationCode: String) {
+    private func login(verificationCode: String) {
         invalidateTimer()
 
-        let appId = KeyChain.retrieves(key: .appIDKey) ?? ""
-        let appSecret = KeyChain.retrieves(key: .appSecretKey) ?? ""
+        let clientId = KeyChain.retrieves(key: .clientID) ?? ""
+        let clientSecret = KeyChain.retrieves(key: .clientSecret) ?? ""
+        let header = BaseRequest(clientId: clientId, clientSecret: clientSecret)
+
         let deviceId = KeyChain.retrieves(key: .deviceID) ?? ""
 
-        self.requestRegister = .init(
+        self.requestLogin = .init(
             countryCode: self.countryCode,
             phone: self.phoneNumber,
             deviceId: deviceId,
-            verificationCode: verificationCode,
-            appId: appId,
-            appSecret: appSecret
+            verificationCode: verificationCode
         )
-        input?.register(with: self.requestRegister!)
+        input?.login(with: header, request: self.requestLogin!)
     }
 
     private func invalidateTimer() {
@@ -151,7 +147,7 @@ internal class RegisterViewController: UIViewController {
 }
 
 // MARK: - Presenter Delegate
-extension RegisterViewController: RegisterPresenterOutput {
+extension LoginViewController: LoginPresenterOutput {
 
     func showLoading() {
         timerLabel.isHidden = true
@@ -163,18 +159,18 @@ extension RegisterViewController: RegisterPresenterOutput {
         loadingView.isHidden = true
     }
 
-    func successRegister(with viewModel: Register.ViewModel) {
+    func successLogin(with viewModel: Login.ViewModel) {
         dismiss(animated: true) {
-            self.delegate?.register(with: viewModel)
+            self.delegate?.login(with: viewModel)
         }
     }
 
-    func errorRegister(with message: String) {
+    func errorLogin(with message: String) {
         resetTimerLabel()
         alertVC(with: message)
     }
 
-    func errorVerify(with message: String) {
+    func errorRequestOtp(with message: String) {
         alertVC(with: message)
     }
 }
