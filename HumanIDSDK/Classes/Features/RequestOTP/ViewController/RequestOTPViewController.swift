@@ -80,16 +80,12 @@ internal class RequestOTPViewController: UIViewController {
             let countryCode = phoneNumberTextField.selectedCountry?.phoneCode.replacingOccurrences(of: "+", with: ""),
             let phone = phoneNumberTextField.getRawPhoneNumber() else { return }
 
-        let appId = KeyChain.retrieves(key: .appIDKey) ?? ""
-        let appSecret = KeyChain.retrieves(key: .appSecretKey) ?? ""
+        let clientId = KeyChain.retrieves(key: .clientID) ?? ""
+        let clientSecret = KeyChain.retrieves(key: .clientSecret) ?? ""
+        let header = BaseRequest(clientId: clientId, clientSecret: clientSecret)
 
-        self.request = .init(
-            countryCode: countryCode,
-            phone: phone,
-            appId: appId,
-            appSecret: appSecret
-        )
-        input?.requestOtp(with: self.request!)
+        self.request = .init(countryCode: countryCode, phone: phone)
+        input?.requestOtp(with: header, request: request!)
     }
 
     @IBAction func viewDidDismiss(_ sender: Any) {

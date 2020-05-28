@@ -8,9 +8,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // MARK: - Retrieve HumanIDSDK appID and appSecret
-        let appID = "DEMO_APP"
-        let appSecret = "2ee4300fd136ed6796a6a507de7c1f49aecd4a11663352fe54e54403c32bd6a0"
-        HumanIDSDK.shared.configure(appID: appID, appSecret: appSecret)
+        let clientID = "MOBILE_m65nshUmT9BDchwFEKdz"
+        let clientSecret = "12FZ3llRg5KFDuJFLftOxlQof1DKBtgL7mZrY4AE1zaM78o1Fvza2IZdKjdxT45Q"
+        HumanIDSDK.shared.configure(clientID: clientID, clientSecret: clientSecret)
 
         let rootVC = getRootVC()
         window = UIWindow(frame: UIScreen.main.bounds)

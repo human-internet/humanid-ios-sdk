@@ -50,7 +50,7 @@ import HumanIDSDK
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-     HumanIDSDK.shared.configure(appID: "YOUR_APP_ID", appSecret: "YOUR_APP_SECRET")
+     HumanIDSDK.shared.configure(clientID: "YOUR_CLIENT_ID", clientSecret: "YOUR_CLIENT_SECRET")
   }
 }
 ```

@@ -2,7 +2,7 @@ import RxSwift
 
 internal protocol RequestOTPInteractorInput {
 
-    func requestOtp(with request: RequestOTP.Request)
+    func requestOtp(with header: BaseRequest, request: RequestOTP.Request)
 }
 
 internal protocol RequestOTPInteractorOutput {
@@ -25,9 +25,9 @@ internal class RequestOTPInteractor: RequestOTPInteractorInput {
         self.worker = worker
     }
 
-    func requestOtp(with request: RequestOTP.Request) {
+    func requestOtp(with header: BaseRequest, request: RequestOTP.Request) {
         output?.showLoading()
-        worker?.requestOtp(with: request)
+        worker?.requestOtp(with: header, request: request)
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: {[weak self] (response) in

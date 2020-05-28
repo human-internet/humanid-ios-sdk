@@ -4,7 +4,5 @@ internal struct RequestOTP {
 
         let countryCode: String
         let phone: String
-        let appId: String
-        let appSecret: String
     }
 }

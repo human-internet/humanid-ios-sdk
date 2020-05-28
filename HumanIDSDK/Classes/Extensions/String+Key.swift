@@ -1,11 +1,11 @@
 internal extension String {
 
-    static var appIDKey: String {
-        return "AppIDKeyForKeyChain"
+    static var clientID: String {
+        return "ClientIDKeyForKeyChain"
     }
 
-    static var appSecretKey: String {
-        return "AppSecretKeyForKeyChain"
+    static var clientSecret: String {
+        return "ClientSecretKeyForKeyChain"
     }
 
     static var deviceID: String {

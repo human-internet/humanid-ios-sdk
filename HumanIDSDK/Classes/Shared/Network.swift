@@ -16,11 +16,13 @@ internal final class Network {
         self.decoder = JSONDecoder()
     }
 
-    func requestOtp(url: URL, request: RequestOTP.Request) -> Observable<BaseResponse<NetworkResponse>> {
+    func requestOtp(url: URL, header: BaseRequest, request: RequestOTP.Request) -> Observable<BaseResponse<NetworkResponse>> {
         let requestBody = try! encoder.encode(request)
 
         var urlRequest = URLRequest(url: url)
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue(header.clientId, forHTTPHeaderField: "client-id")
+        urlRequest.setValue(header.clientSecret, forHTTPHeaderField: "client-secret")
         urlRequest.method = .post
         urlRequest.httpBody = requestBody
 

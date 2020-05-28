@@ -4,9 +4,9 @@ open class HumanIDSDK {
 
     private init() {}
 
-    open func configure(appID: String, appSecret: String) {
-        _ = KeyChain.isStoreSuccess(key: .appIDKey, value: appID)
-        _ = KeyChain.isStoreSuccess(key: .appSecretKey, value: appSecret)
+    open func configure(clientID: String, clientSecret: String) {
+        _ = KeyChain.isStoreSuccess(key: .clientID, value: clientID)
+        _ = KeyChain.isStoreSuccess(key: .clientSecret, value: clientSecret)
 
         // MARK: - Retrieve current deviceID automatically
         guard let _ = KeyChain.retrieves(key: .deviceID) else {
