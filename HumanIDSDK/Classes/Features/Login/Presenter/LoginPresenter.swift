@@ -34,10 +34,9 @@ internal class LoginPresenter: LoginInteractorOutput {
         case true:
             guard
                 let data = response.data,
-                let token = data.exchangeToken,
-                let hash = data.userHash else { return }
+                let token = data.exchangeToken else { return }
 
-            let viewModel = Login.ViewModel(token: token, hash: hash)
+            let viewModel = Login.ViewModel(token: token)
             output?.successLogin(with: viewModel)
         default:
             output?.errorLogin(with: message)

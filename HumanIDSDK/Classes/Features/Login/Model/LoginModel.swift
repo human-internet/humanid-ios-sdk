@@ -11,12 +11,10 @@ internal struct Login {
     struct Response: Codable {
 
         let exchangeToken: String?
-        let userHash: String?
     }
 
     struct ViewModel {
 
         let token: String
-        let hash: String
     }
 }
