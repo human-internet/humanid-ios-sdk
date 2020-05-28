@@ -71,7 +71,7 @@ class YourViewController: UIViewController {
 
 extension YourViewController: RequestOTPDelegate {
 
-  func register(with token: String) {
+  func login(with token: String) {
      // TODO You can persist our token here.
   }
 }
