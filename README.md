@@ -50,7 +50,7 @@ import HumanIDSDK
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-     HumanIDSDK.shared.configure(clientID: "YOUR_CLIENT_ID", clientSecret: "YOUR_CLIENT_SECRET")
+     HumanIDSDK.shared.configure(appID: "YOUR_APP_ID", appSecret: "YOUR_APP_SECRET")
   }
 }
 ```
@@ -65,13 +65,13 @@ import HumanIDSDK
 class YourViewController: UIViewController {
 
   @IBAction func yourLoginAction(_ sender: Any) {
-     HumanIDSDK.shared.requestOtp(view: self, name: "YOUR_APPLICATION_NAME", image: "YOUR_APPLICATION_LOGO")
+     HumanIDSDK.shared.verify(view: self, name: "YOUR_APPLICATION_NAME", image: "YOUR_APPLICATION_LOGO")
   }
 }
 
-extension YourViewController: RequestOTPDelegate {
+extension YourViewController: VerifyDelegate {
 
-  func login(with token: String) {
+  func register(with token: String) {
      // TODO You can persist our token here.
   }
 }
