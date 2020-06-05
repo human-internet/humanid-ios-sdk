@@ -4,11 +4,16 @@
 
 # humanID iOS SDK
 
-Meet humanID - An anonymous online identity, enabling platforms to offer the speed and comfort of social logins, while guaranteeing absolute privacy and protecting our communities by permanently blocking bots, spams, and trolls.
 
+<p align="center">
 <img src="https://user-images.githubusercontent.com/2031493/80385493-4f1b8480-88d0-11ea-8110-ab62c747a997.png" width="200" height="200">
 
-<img src="https://user-images.githubusercontent.com/2031493/83101798-57d4c580-a0dd-11ea-805c-dd1e973eda1a.png" width="200" height="350">    <img src="https://user-images.githubusercontent.com/2031493/83101825-68853b80-a0dd-11ea-8893-f3bdc7f2b18c.png" width="200" height="350">  
+<p align="center">
+<a href="https://github.com/bluenumberfoundation/humanid-ios-sdk/wiki">Wiki</a> • 
+<a href="https://github.com/bluenumberfoundation/humanid-ios-sdk/wiki/contributing">Contributing</a> • <a href="https://github.com/bluenumberfoundation/humanid-ios-sdk/wiki/gallery">Gallery</a> • <a href="https://github.com/bluenumberfoundation/humanid-ios-sdk/wiki/faq">FAQ</a> • <a href="https://github.com/bluenumberfoundation/humanid-ios-sdk/wiki/integration">Integration</a>
+
+<p align="center">
+Meet humanID - An anonymous online identity, enabling platforms to offer the speed and comfort of social logins, while guaranteeing absolute privacy and protecting our communities by permanently blocking bots, spams, and trolls.</p>
 
 ## Requirements
 
@@ -37,7 +42,7 @@ pod 'HumanIDSDK'
 
 ## Get the credentials access
 
-Get the appId and appSecret by filling up this form or drop us an email [developers@human-id.org](mailto:developers@human-id.org).
+Get the clientId and clientSecret by dropping us an email [developers@human-id.org](mailto:developers@human-id.org).
 
 ## Configuration
 
@@ -50,12 +55,12 @@ import HumanIDSDK
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-     HumanIDSDK.shared.configure(appID: "YOUR_APP_ID", appSecret: "YOUR_APP_SECRET")
+     HumanIDSDK.shared.configure(clientID: "YOUR_CLIENT_ID", clientSecret: "YOUR_CLIENT_SECRET")
   }
 }
 ```
 
-## How Do I Use humanID iOS SDK
+## How do I use iOS SDK
 
 Add these codes into your ViewController file, we recommend you wrap this in a function that handles the login button.
 
@@ -65,13 +70,13 @@ import HumanIDSDK
 class YourViewController: UIViewController {
 
   @IBAction func yourLoginAction(_ sender: Any) {
-     HumanIDSDK.shared.verify(view: self, name: "YOUR_APPLICATION_NAME", image: "YOUR_APPLICATION_LOGO")
+     HumanIDSDK.shared.requestOtp(view: self, name: "YOUR_APPLICATION_NAME", image: "YOUR_APPLICATION_LOGO")
   }
 }
 
-extension YourViewController: VerifyDelegate {
+extension YourViewController: RequestOTPDelegate {
 
-  func register(with token: String) {
+  func login(with token: String) {
      // TODO You can persist our token here.
   }
 }
