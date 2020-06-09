@@ -13,7 +13,9 @@
 <a href="https://github.com/bluenumberfoundation/humanid-ios-sdk/wiki/contributing">Contributing</a> • <a href="https://github.com/bluenumberfoundation/humanid-ios-sdk/wiki/gallery">Gallery</a> • <a href="https://github.com/bluenumberfoundation/humanid-ios-sdk/wiki/faq">FAQ</a> • <a href="https://github.com/bluenumberfoundation/humanid-ios-sdk/wiki/integration">Integration</a>
 
 <p align="center">
-Meet humanID - An anonymous online identity, enabling platforms to offer the speed and comfort of social logins, while guaranteeing absolute privacy and protecting our communities by permanently blocking bots, spams, and trolls.</p>
+Meet humanID - An anonymous online identity, enabling platforms to offer the speed and comfort of social logins, while guaranteeing absolute privacy and protecting our communities by permanently blocking bots, spams, and trolls.
+<p align="center">
+Please make sure to update to the latest SDK!</p>
 
 ## Requirements
 
