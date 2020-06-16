@@ -76,6 +76,8 @@ internal class RequestOTPViewController: UIViewController {
     }
 
     @IBAction func showOTPModal(_ sender: Any) {
+        view.endEditing(true)
+
         guard
             let countryCode = phoneNumberTextField.selectedCountry?.phoneCode.replacingOccurrences(of: "+", with: ""),
             let phone = phoneNumberTextField.getRawPhoneNumber() else { return }
@@ -113,7 +115,6 @@ extension RequestOTPViewController: RequestOTPPresenterOutput {
     }
 
     func success() {
-        view.endEditing(true)
         router?.pushLoginVC(with: self.request!)
     }
 

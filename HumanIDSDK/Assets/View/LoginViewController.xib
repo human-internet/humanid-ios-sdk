@@ -18,7 +18,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="HumanIDSDK" customModuleProvider="target">
             <connections>
+                <outlet property="bgView" destination="RgB-Im-okE" id="jWB-B5-hNV"/>
                 <outlet property="containerView" destination="rLb-TF-6Cn" id="Nmb-o1-70T"/>
+                <outlet property="containerViewBottom" destination="hg4-dh-O3z" id="5Jx-Oc-yqo"/>
+                <outlet property="containerViewHeight" destination="YAH-vT-tGK" id="RRW-db-J4B"/>
                 <outlet property="humanIdTnc" destination="SYd-2N-cuv" id="SKk-ih-Sht"/>
                 <outlet property="loadingView" destination="pgC-tr-suV" id="o5H-Qv-OFF"/>
                 <outlet property="pinContainerView" destination="4T6-6Q-LTU" id="027-Nv-7Vx"/>
@@ -32,6 +35,11 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RgB-Im-okE">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <gestureRecognizers/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rLb-TF-6Cn" customClass="UIControl">
                     <rect key="frame" x="0.0" y="515" width="414" height="381"/>
                     <subviews>
@@ -90,6 +98,7 @@
                         </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="4T6-6Q-LTU" secondAttribute="trailing" constant="58" id="1E3-fZ-FnX"/>
                         <constraint firstAttribute="bottom" secondItem="pgC-tr-suV" secondAttribute="bottom" constant="47" id="5Zj-9c-Lrk"/>
@@ -118,18 +127,28 @@
                     </constraints>
                     <connections>
                         <action selector="dismissKeyboard:" destination="-1" eventType="touchUpInside" id="dGO-VH-A91"/>
+                        <outletCollection property="gestureRecognizers" destination="Nlc-Cn-ino" appends="YES" id="9Ob-zA-W5E"/>
                     </connections>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="RgB-Im-okE" secondAttribute="bottom" id="3J5-a1-EYg"/>
+                <constraint firstItem="RgB-Im-okE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="C8Q-gb-7Mz"/>
+                <constraint firstItem="RgB-Im-okE" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ugo-J0-bWZ"/>
                 <constraint firstItem="rLb-TF-6Cn" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="YAH-vT-tGK"/>
                 <constraint firstAttribute="bottom" secondItem="rLb-TF-6Cn" secondAttribute="bottom" id="hg4-dh-O3z"/>
                 <constraint firstItem="rLb-TF-6Cn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lY8-hj-g4R"/>
+                <constraint firstItem="RgB-Im-okE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nBH-nc-6A8"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="132" y="113.79310344827587"/>
+            <point key="canvasLocation" x="131.8840579710145" y="113.16964285714285"/>
         </view>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="Nlc-Cn-ino">
+            <connections>
+                <action selector="swipeDown:" destination="-1" id="yjG-f1-U8f"/>
+            </connections>
+        </panGestureRecognizer>
     </objects>
     <resources>
         <image name="Icon" width="95" height="28"/>

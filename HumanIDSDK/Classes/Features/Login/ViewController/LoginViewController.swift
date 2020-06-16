@@ -7,12 +7,15 @@ internal protocol LoginDelegate {
 
 internal class LoginViewController: UIViewController {
 
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var pinContainerView: UIView!
     @IBOutlet weak var humanIdTnc: UILabel!
     @IBOutlet weak var verificationInfo: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var loadingView: UIActivityIndicatorView!
+    @IBOutlet weak var containerViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var containerViewBottom: NSLayoutConstraint!
 
     var timer: Timer?
     var timerTap: UITapGestureRecognizer?
@@ -20,6 +23,15 @@ internal class LoginViewController: UIViewController {
     var countryCode = ""
     var phoneNumber = ""
     var seconds = 30
+
+    var bottomSheetViewHeight: CGFloat = UIScreen.main.bounds.size.height * 0.30 {
+        didSet {
+            containerViewHeight.constant = bottomSheetViewHeight
+            containerViewBottom.constant = bottomSheetViewHeight * -1.0
+        }
+    }
+
+    var bottomSheetTouchPoint: CGPoint = CGPoint(x: 0, y: 0)
 
     var delegate: LoginDelegate?
     var input: LoginInteractorInput?
@@ -32,7 +44,6 @@ internal class LoginViewController: UIViewController {
         pinView.translatesAutoresizingMaskIntoConstraints = false
         pinView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         pinView.onSettingStyle = { UnderlineStyle() }
-        pinView.becomeFirstResponder()
 
         pinView.onComplete = { code, _ in
             self.login(verificationCode: code)
@@ -52,7 +63,19 @@ internal class LoginViewController: UIViewController {
         setupTimer()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        containerViewBottom.constant = 0.0
+        UIView.animate(withDuration: 0.25, animations: {
+            self.bgView.alpha = 0.4
+            self.view.layoutIfNeeded()
+        })
+    }
+
     func configureViews() {
+        self.view.backgroundColor = .clear
+        bgView.alpha = 0.0
         loadingView.isHidden = true
 
         containerView.layer.cornerRadius = 10
@@ -82,6 +105,39 @@ internal class LoginViewController: UIViewController {
 
     @IBAction func dismissKeyboard(_ sender: Any) {
         view.endEditing(true)
+    }
+
+    @IBAction func swipeDown(_ sender: UIPanGestureRecognizer) {
+        let touchPoint = sender.location(in: containerView.window)
+
+        switch sender.state {
+        case .began:
+            bottomSheetTouchPoint = touchPoint
+        case .changed:
+            if touchPoint.y - bottomSheetTouchPoint.y > 0 {
+                containerView.frame = CGRect(
+                    x: 0,
+                    y: touchPoint.y,
+                    width: containerView.frame.size.width,
+                    height: containerView.frame.size.height
+                )
+            }
+        case .ended:
+            if touchPoint.y - bottomSheetTouchPoint.y > 100 {
+                self.dismiss(animated: false)
+            } else {
+                UIView.animate(withDuration: 0.25, animations: {
+                    self.containerView.frame = CGRect(
+                        x: 0,
+                        y: touchPoint.y,
+                        width: self.containerView.frame.size.width,
+                        height: self.bottomSheetViewHeight - self.containerView.frame.size.height
+                    )
+                })
+            }
+        default:
+            break
+        }
     }
 
     @objc func viewDidShowTnc(_ sender: UITapGestureRecognizer) {

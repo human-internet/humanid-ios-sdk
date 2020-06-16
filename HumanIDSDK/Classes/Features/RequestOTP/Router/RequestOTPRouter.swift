@@ -14,15 +14,10 @@ internal class RequestOTPRouter: RequestOTPRoutingLogic {
 
     func pushLoginVC(with request: RequestOTP.Request) {
         let loginVC = Injector.shared.resolver.resolve(LoginViewController.self)!
+        loginVC.modalPresentationStyle = .overFullScreen
         loginVC.countryCode = request.countryCode
         loginVC.phoneNumber = request.phone
         loginVC.delegate = self.view
-
-        if #available(iOS 13.0, *) {
-            loginVC.modalPresentationStyle = .automatic
-        } else {
-            loginVC.modalPresentationStyle = .formSheet
-        }
 
         view?.present(loginVC, animated: true)
     }
