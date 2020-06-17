@@ -146,7 +146,7 @@ internal class LoginViewController: UIViewController {
         containerViewBottom.constant = isDismiss ? (bottomSheetViewHeight * -1.0) : 0.0
 
         UIView.animate(withDuration: 0.25, animations: {
-            self.bgView.alpha = isDismiss ? 0.0 : 0.5
+            self.bgView.alpha = isDismiss ? 0.0 : 0.3
             self.view.layoutIfNeeded()
         }) { (_) in
             if isDismiss {
