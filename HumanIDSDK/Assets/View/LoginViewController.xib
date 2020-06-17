@@ -39,6 +39,9 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="FJW-Io-UOJ" appends="YES" id="bM6-Wu-lr1"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rLb-TF-6Cn" customClass="UIControl">
                     <rect key="frame" x="0.0" y="515" width="414" height="381"/>
@@ -149,6 +152,11 @@
                 <action selector="swipeDown:" destination="-1" id="yjG-f1-U8f"/>
             </connections>
         </panGestureRecognizer>
+        <tapGestureRecognizer id="FJW-Io-UOJ">
+            <connections>
+                <action selector="dismiss:" destination="-1" id="zpF-EE-rKj"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="Icon" width="95" height="28"/>

@@ -24,7 +24,7 @@ internal class LoginViewController: UIViewController {
     var phoneNumber = ""
     var seconds = 30
 
-    var bottomSheetViewHeight: CGFloat = UIScreen.main.bounds.size.height * 0.30 {
+    var bottomSheetViewHeight: CGFloat = UIScreen.main.bounds.size.height * 0.40 {
         didSet {
             containerViewHeight.constant = bottomSheetViewHeight
             containerViewBottom.constant = bottomSheetViewHeight * -1.0
@@ -65,22 +65,18 @@ internal class LoginViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        containerViewBottom.constant = 0.0
-        UIView.animate(withDuration: 0.25, animations: {
-            self.bgView.alpha = 0.4
-            self.view.layoutIfNeeded()
-        })
+        showAnimation(isDismiss: false)
     }
 
     func configureViews() {
         self.view.backgroundColor = .clear
-        bgView.alpha = 0.0
-        loadingView.isHidden = true
 
+        bgView.alpha = 0.0
         containerView.layer.cornerRadius = 10
         containerView.clipsToBounds = true
-        containerView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        containerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+
+        loadingView.isHidden = true
 
         pinContainerView.addSubview(pinView)
         pinView.leadingAnchor.constraint(equalTo: pinContainerView.leadingAnchor, constant: 40).isActive = true
@@ -107,6 +103,10 @@ internal class LoginViewController: UIViewController {
         view.endEditing(true)
     }
 
+    @IBAction func dismiss(_ sender: UITapGestureRecognizer) {
+        showAnimation(isDismiss: true)
+    }
+
     @IBAction func swipeDown(_ sender: UIPanGestureRecognizer) {
         let touchPoint = sender.location(in: containerView.window)
 
@@ -122,9 +122,11 @@ internal class LoginViewController: UIViewController {
                     height: containerView.frame.size.height
                 )
             }
-        case .ended:
+        case .ended, .cancelled:
             if touchPoint.y - bottomSheetTouchPoint.y > 100 {
-                self.dismiss(animated: false)
+                self.bgView.alpha = 0.0
+                self.view.layoutIfNeeded()
+                self.dismiss(animated: true)
             } else {
                 UIView.animate(withDuration: 0.25, animations: {
                     self.containerView.frame = CGRect(
@@ -137,6 +139,19 @@ internal class LoginViewController: UIViewController {
             }
         default:
             break
+        }
+    }
+
+    private func showAnimation(isDismiss: Bool) {
+        containerViewBottom.constant = isDismiss ? (bottomSheetViewHeight * -1.0) : 0.0
+
+        UIView.animate(withDuration: 0.25, animations: {
+            self.bgView.alpha = isDismiss ? 0.0 : 0.5
+            self.view.layoutIfNeeded()
+        }) { (_) in
+            if isDismiss {
+                self.dismiss(animated: true)
+            }
         }
     }
 
