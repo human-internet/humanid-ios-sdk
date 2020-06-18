@@ -44,6 +44,7 @@ internal class LoginViewController: UIViewController {
         pinView.translatesAutoresizingMaskIntoConstraints = false
         pinView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         pinView.onSettingStyle = { UnderlineStyle() }
+        pinView.becomeFirstResponder()
 
         pinView.onComplete = { code, _ in
             self.login(verificationCode: code)
@@ -115,6 +116,7 @@ internal class LoginViewController: UIViewController {
             bottomSheetTouchPoint = touchPoint
         case .changed:
             if touchPoint.y - bottomSheetTouchPoint.y > 0 {
+                view.endEditing(true)
                 containerView.frame = CGRect(
                     x: 0,
                     y: touchPoint.y,
@@ -236,6 +238,10 @@ extension LoginViewController: LoginPresenterOutput {
         }
     }
 
+    func successRequestOtp() {
+        pinView.becomeFirstResponder()
+    }
+
     func errorLogin(with message: String) {
         alertVCCompletion(with: message, completion: { _ in
             self.pinView.resetCode()
@@ -244,6 +250,9 @@ extension LoginViewController: LoginPresenterOutput {
     }
 
     func errorRequestOtp(with message: String) {
-        alertVC(with: message)
+        alertVCCompletion(with: message, completion: { _ in
+            self.invalidateTimer()
+            self.resetTimerLabel()
+        })
     }
 }

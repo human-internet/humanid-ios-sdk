@@ -3,6 +3,7 @@ internal protocol LoginPresenterOutput: class {
     func showLoading()
     func hideLoading()
     func successLogin(with viewModel: Login.ViewModel)
+    func successRequestOtp()
     func errorLogin(with message: String)
     func errorRequestOtp(with message: String)
 }
@@ -51,10 +52,10 @@ internal class LoginPresenter: LoginInteractorOutput {
         }
 
         switch isSuccess {
-        case false:
-            output?.errorRequestOtp(with: message)
+        case true:
+            output?.successRequestOtp()
         default:
-            break
+            output?.errorRequestOtp(with: message)
         }
     }
 
