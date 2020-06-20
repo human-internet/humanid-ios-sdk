@@ -4,7 +4,6 @@
 
 # humanID iOS SDK
 
-
 <p align="center">
 <img src="https://user-images.githubusercontent.com/2031493/80385493-4f1b8480-88d0-11ea-8110-ab62c747a997.png" width="200" height="200">
 
@@ -14,7 +13,6 @@
 <a href="https://github.com/bluenumberfoundation/humanid-ios-sdk/wiki/contributing">Contributing</a> • 
 <a href="https://github.com/bluenumberfoundation/humanid-ios-sdk/wiki/gallery">Gallery</a> • 
 <a href="https://github.com/bluenumberfoundation/humanid-ios-sdk/wiki/faq">FAQ</a>
-
 
 <p align="center">
 Meet humanID - An anonymous online identity, enabling platforms to offer the speed and comfort of social logins, while guaranteeing absolute privacy and protecting our communities by permanently blocking bots, spams, and trolls.
@@ -41,7 +39,7 @@ Here's what makes humanID so great:
 * Swift 5.0
 * iOS 11.0+
 
-<p>Please update to the latest SDK!</p>
+***Please update to the latest SDK!***
 
 ## Built with
 
