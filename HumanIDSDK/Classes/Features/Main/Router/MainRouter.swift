@@ -11,14 +11,13 @@ internal class MainRouter: MainRoutingLogic {
     weak var parentVC: UIViewController?
     weak var view: MainViewController?
 
-    private var navVC: UINavigationController? { parentVC?.navigationController }
-
     init(view: MainViewController) {
         self.view = view
     }
 
     func pushRequestOtpVC(with appName: String) {
         let requestOtpVC = Injector.shared.resolver.resolve(RequestOTPViewController.self)!
+        requestOtpVC.modalPresentationStyle = .overCurrentContext
         requestOtpVC.clientName = appName
         requestOtpVC.delegate = parentVC as? RequestOTPDelegate
 
@@ -27,7 +26,7 @@ internal class MainRouter: MainRoutingLogic {
             self.view?.view.layoutIfNeeded()
         }) { (_) in
             self.view?.dismiss(animated: true) {
-                self.navVC?.pushViewController(requestOtpVC, animated: true)
+                self.parentVC?.present(requestOtpVC, animated: true)
             }
         }
     }

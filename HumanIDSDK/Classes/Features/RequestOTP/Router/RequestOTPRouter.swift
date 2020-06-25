@@ -1,15 +1,12 @@
 internal protocol RequestOTPRoutingLogic {
 
     func pushLoginVC(with request: RequestOTP.Request)
-    func popCurrentVC()
     func openTnc()
 }
 
 internal class RequestOTPRouter: RequestOTPRoutingLogic {
 
     weak var view: RequestOTPViewController?
-
-    private var navVC: UINavigationController? { view?.navigationController }
 
     init(view: RequestOTPViewController) {
         self.view = view
@@ -23,10 +20,6 @@ internal class RequestOTPRouter: RequestOTPRoutingLogic {
         loginVC.delegate = self.view
 
         view?.present(loginVC, animated: true)
-    }
-
-    func popCurrentVC() {
-        navVC?.popViewController(animated: true)
     }
 
     func openTnc() {

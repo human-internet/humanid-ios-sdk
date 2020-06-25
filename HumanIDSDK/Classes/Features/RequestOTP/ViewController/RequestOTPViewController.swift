@@ -16,10 +16,6 @@ internal class RequestOTPViewController: UIViewController {
     @IBOutlet weak var cancelLabel: UIButton!
     @IBOutlet weak var loadingView: UIActivityIndicatorView!
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-
     var listController: FPNCountryListViewController = FPNCountryListViewController(style: .grouped)
 
     var clientName = ""
@@ -144,7 +140,7 @@ internal class RequestOTPViewController: UIViewController {
     }
 
     @IBAction func viewDidDismiss(_ sender: Any) {
-        router?.popCurrentVC()
+        dismiss(animated: true)
     }
 
     @objc func viewDidShowTnc(_ sender: UITapGestureRecognizer) {
@@ -209,7 +205,8 @@ extension RequestOTPViewController: FPNTextFieldDelegate {
 extension RequestOTPViewController: LoginDelegate {
 
     func login(with viewModel: Login.ViewModel) {
-        router?.popCurrentVC()
-        delegate?.login(with: viewModel.token)
+        dismiss(animated: true) {
+            self.delegate?.login(with: viewModel.token)
+        }
     }
 }
