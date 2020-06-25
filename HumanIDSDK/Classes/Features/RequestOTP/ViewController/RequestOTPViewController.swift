@@ -31,7 +31,6 @@ internal class RequestOTPViewController: UIViewController {
         phoneNumberTextField.textColor = .white
         phoneNumberTextField.displayMode = .list
         phoneNumberTextField.delegate = self
-        phoneNumberTextField.attributedPlaceholder = NSAttributedString(string: "Enter Phone Number", attributes: [.foregroundColor: UIColor.gray])
         phoneNumberTextField.tintColor = .white
         phoneNumberTextField.becomeFirstResponder()
 
@@ -62,6 +61,9 @@ internal class RequestOTPViewController: UIViewController {
         view.backgroundColor = .twilightBlue
 
         loadingView.isHidden = true
+
+        phoneNumberTextField.placeholder = "Enter Phone Number"
+        phoneNumberTextField.attributedPlaceholder = NSAttributedString(string: phoneNumberTextField.placeholder ?? "", attributes: [.foregroundColor: UIColor.gray])
 
         listController.setup(repository: phoneNumberTextField.countryRepository)
         listController.didSelect = { [weak self] country in
