@@ -38,6 +38,7 @@ Here's what makes humanID so great:
 * Xcode 11.4+
 * Swift 5.0
 * iOS 11.0+
+* [Clean Swift](https://clean-swift.com) VIP architecture
 
 ***Please update to the latest SDK!***
 
