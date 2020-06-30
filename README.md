@@ -33,6 +33,8 @@ Here's what makes humanID so great:
 	<li>Gives platforms the ability to turn privacy and trust into a competitive advantage</li>
 </ul>
 
+For more information, see our <a href="https://github.com/bluenumberfoundation/humanid-documentation/blob/master/humanIDWhitePaper.pdf">Whitepaper</a>
+
 ## Requirements
 
 * Xcode 11.4+
