@@ -176,7 +176,7 @@ internal class LoginViewController: UIViewController {
         let keyboardFrame = keyboardSize.cgRectValue
         let keyboardHeight = keyboardFrame.height
 
-        containerViewBottom.constant = keyboardHeight
+        containerViewBottom.constant = keyboardHeight - 40
     }
 
     @objc func hideKeyboard(notification: NSNotification) {
@@ -249,12 +249,11 @@ extension LoginViewController: LoginPresenterOutput {
     }
 
     func errorLogin(with message: String) {
-        containerViewBottom.constant = 0
-        pinView.becomeFirstResponder()
-
         alertVC(with: message, completion: { _ in
             self.pinView.resetCode()
+            self.pinView.becomeFirstResponder()
             self.resetTimerLabel()
+            self.containerViewBottom.constant = 50
         })
     }
 
