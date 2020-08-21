@@ -57,6 +57,10 @@ internal final class LoginViewController: UIViewController {
         self.init(nibName: "LoginViewController", bundle: Bundle.humanID)
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     override func viewDidLoad() {
         configureViews()
         setupListener()
