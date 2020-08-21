@@ -148,7 +148,7 @@ internal final class RequestOTPViewController: UIViewController {
         dismiss(animated: true)
     }
 
-    @objc func viewDidShowTnc(_ sender: UITapGestureRecognizer) {
+    @objc private func viewDidShowTnc(_ sender: UITapGestureRecognizer) {
         router.openTnc()
     }
 

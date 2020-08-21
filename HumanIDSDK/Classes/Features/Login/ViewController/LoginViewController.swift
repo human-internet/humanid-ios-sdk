@@ -143,11 +143,11 @@ internal final class LoginViewController: UIViewController {
         }
     }
 
-    @objc func viewDidShowTnc(_ sender: UITapGestureRecognizer) {
+    @objc private func viewDidShowTnc(_ sender: UITapGestureRecognizer) {
         router.openTnc()
     }
 
-    @objc func viewDidResendCode(_ sender: UITapGestureRecognizer) {
+    @objc private func viewDidResendCode(_ sender: UITapGestureRecognizer) {
         pinView.resetCode()
         view.endEditing(true)
 
@@ -161,7 +161,7 @@ internal final class LoginViewController: UIViewController {
         )
     }
 
-    @objc func updateTimer() {
+    @objc private func updateTimer() {
         seconds -= 1
 
         switch seconds {
@@ -176,7 +176,7 @@ internal final class LoginViewController: UIViewController {
         }
     }
 
-    @objc func showKeyboard(notification: NSNotification) {
+    @objc private func showKeyboard(notification: NSNotification) {
         guard let userInfo = notification.userInfo else { return }
         guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
 
@@ -186,7 +186,7 @@ internal final class LoginViewController: UIViewController {
         containerViewBottom.constant = keyboardHeight - 40
     }
 
-    @objc func hideKeyboard(notification: NSNotification) {
+    @objc private func hideKeyboard(notification: NSNotification) {
         containerViewBottom.constant = 0
     }
 
