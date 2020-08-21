@@ -550,7 +550,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = org.bluenumberfoundation.humanid;
 				PRODUCT_NAME = Example;
-				PROVISIONING_PROFILE_SPECIFIER = "HumanID Development";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 			};
@@ -570,7 +570,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = org.bluenumberfoundation.humanid;
 				PRODUCT_NAME = Example;
-				PROVISIONING_PROFILE_SPECIFIER = "HumanID Development";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 			};
