@@ -54,10 +54,6 @@ internal final class RequestOTPViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
-        input.dispose()
-    }
-
     func configureViews() {
         view.backgroundColor = .twilightBlue
 
@@ -126,7 +122,7 @@ internal final class RequestOTPViewController: UIViewController {
         }
         .share(replay: 1)
         .distinctUntilChanged()
-        phoneValid.bind(to: enterButton.rx.isEnabled).disposed(by: input.disposeBag!)
+        phoneValid.bind(to: enterButton.rx.isEnabled).disposed(by: input.disposeBag)
     }
 
     @IBAction func showOTPModal(_ sender: Any) {

@@ -2,9 +2,8 @@ import RxSwift
 
 internal protocol RequestOTPInteractorInput: AnyObject {
 
-    var disposeBag: DisposeBag? { get }
+    var disposeBag: DisposeBag { get }
 
-    func dispose()
     func requestOtp(with header: BaseRequest, and request: RequestOTP.Request)
 }
 
@@ -21,11 +20,7 @@ internal final class RequestOTPInteractor: RequestOTPInteractorInput {
     var output: RequestOTPInteractorOutput!
     var worker: RequestOTPWorkerProtocol!
 
-    var disposeBag: DisposeBag?
-
-    func dispose() {
-        disposeBag = nil
-    }
+    var disposeBag: DisposeBag = DisposeBag()
 
     func requestOtp(with header: BaseRequest, and request: RequestOTP.Request) {
         output.showLoading()
@@ -39,6 +34,6 @@ internal final class RequestOTPInteractor: RequestOTPInteractorInput {
                 onError: {[weak self] (error) in
                     self?.output.hideLoading()
                     self?.output.error(with: error)
-            }).disposed(by: disposeBag!)
+            }).disposed(by: disposeBag)
     }
 }

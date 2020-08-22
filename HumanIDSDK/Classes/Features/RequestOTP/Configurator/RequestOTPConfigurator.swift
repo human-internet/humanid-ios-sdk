@@ -1,4 +1,3 @@
-import RxSwift
 import Swinject
 
 internal final class RequestOTPConfigurator: Assembly {
@@ -27,8 +26,6 @@ internal final class RequestOTPConfigurator: Assembly {
 
             interactor.output = output
             interactor.worker = worker
-
-            interactor.disposeBag = DisposeBag()
 
             return interactor
         }

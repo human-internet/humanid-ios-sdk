@@ -2,9 +2,8 @@ import RxSwift
 
 internal protocol LoginInteractorInput: AnyObject {
 
-    var disposeBag: DisposeBag? { get }
+    var disposeBag: DisposeBag { get }
 
-    func dispose()
     func login(with header: BaseRequest, and request: Login.Request)
     func requestOtp(with header: BaseRequest, and request: RequestOTP.Request)
 }
@@ -24,11 +23,7 @@ internal final class LoginInteractor: LoginInteractorInput {
     var output: LoginInteractorOutput!
     var worker: LoginWorkerProtocol!
 
-    var disposeBag: DisposeBag?
-
-    func dispose() {
-        disposeBag = nil
-    }
+    var disposeBag: DisposeBag = DisposeBag()
 
     func login(with header: BaseRequest, and request: Login.Request) {
         output.showLoading()
@@ -42,7 +37,7 @@ internal final class LoginInteractor: LoginInteractorInput {
                 onError: {[weak self] (error) in
                     self?.output.hideLoading()
                     self?.output.errorLogin(with: error)
-            }).disposed(by: disposeBag!)
+            }).disposed(by: disposeBag)
     }
 
     func requestOtp(with header: BaseRequest, and request: RequestOTP.Request) {
@@ -57,6 +52,6 @@ internal final class LoginInteractor: LoginInteractorInput {
                 onError: {[weak self] (error) in
                     self?.output.hideLoading()
                     self?.output.errorRequestOtp(with: error)
-            }).disposed(by: disposeBag!)
+            }).disposed(by: disposeBag)
     }
 }

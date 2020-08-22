@@ -71,10 +71,6 @@ internal final class LoginViewController: UIViewController {
         showAnimation(isDismiss: false)
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
-        input.dispose()
-    }
-
     func configureViews() {
         view.backgroundColor = .clear
 
