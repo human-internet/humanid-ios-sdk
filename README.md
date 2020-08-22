@@ -59,7 +59,7 @@ Add these codes into your `AppDelegate.swift` and make sure all value is fulfill
 import HumanIDSDK
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+final class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
      HumanIDSDK.shared.configure(clientID: "YOUR_CLIENT_ID", clientSecret: "YOUR_CLIENT_SECRET")
@@ -74,7 +74,7 @@ Add these codes into your ViewController file, we recommend you wrap this in a f
 ```swift
 import HumanIDSDK
 
-class YourViewController: UIViewController {
+final class YourViewController: UIViewController {
 
   @IBAction func yourLoginAction(_ sender: Any) {
      HumanIDSDK.shared.requestOtp(from: self, name: "YOUR_APPLICATION_NAME", image: "YOUR_APPLICATION_LOGO")
