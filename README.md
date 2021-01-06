@@ -21,9 +21,9 @@ Meet humanID - An anonymous online identity, enabling platforms to offer the spe
 
 ## Requirements
 
-* Xcode 11.0+
+* Xcode 12.0+
 * Swift 5.0+
-* iOS 11.0+
+* iOS 12.0+
 * [Clean Swift](https://clean-swift.com) VIP architecture
 
 ***Please update to the latest SDK!***

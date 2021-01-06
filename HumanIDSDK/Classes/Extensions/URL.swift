@@ -1,12 +1,12 @@
 internal extension URL {
 
     static var base: URL {
-        let path = HumanIDSDK.isSandbox ? Information.key(.sandbox) : Information.key(.base)
+        let path = HumanIDSDK.isSandbox ? "https://sandbox.human-id.org/v0.0.3/" : "https://core.human-id.org/v0.0.3/"
         return URL(string: path)!
     }
 
     static var tnc: URL {
-        return URL(string: Information.key(.web))!
+        return URL(string: "https://human-id.org/#how-we-protect/")!
     }
 
     static var users: URL {
