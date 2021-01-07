@@ -15,12 +15,18 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '12.0'
   s.swift_version         = '5.0'
 
-  s.subspec 'Sources' do |spec|
+  s.subspec 'Classes' do |spec|
     spec.source_files     = 'HumanIDSDK/Classes/**/*.{swift}'
   end
 
-  s.subspec 'Resources' do |spec|
-    spec.resource_bundles = { 'HumanIDSDK' => ['HumanIDSDK/Assets/**/*.{ttf,xcassets,xib,strings}'] }
+  s.subspec 'Assets' do |spec|
+    spec.resource_bundles = { 'HumanIDSDK' => [
+      'HumanIDSDK/Assets/*.xcassets',
+      'HumanIDSDK/Assets/*.xib',
+      'HumanIDSDK/Assets/Font/*.ttf',
+      'HumanIDSDK/Assets/Localization/*.lproj/*.strings'
+    ]
+  }
   end
 
   s.frameworks            = 'UIKit'
