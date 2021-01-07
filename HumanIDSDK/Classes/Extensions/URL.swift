@@ -14,7 +14,8 @@ internal extension URL {
     }
 
     static var requestOtp: URL {
-        return URL(string: "login/request-otp", relativeTo: users)!
+        let locale = Locale.current.regionCode?.lowercased() ?? "en"
+        return URL(string: "login/request-otp?lang=\(locale)", relativeTo: users)!
     }
 
     static var login: URL {
