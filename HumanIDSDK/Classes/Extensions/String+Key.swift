@@ -13,6 +13,6 @@ internal extension String {
     }
 
     func localized() -> String {
-        return NSLocalizedString(self, bundle: Bundle.humanID, comment: "")
+        return NSLocalizedString(self, bundle: .humanID, comment: "")
     }
 }
