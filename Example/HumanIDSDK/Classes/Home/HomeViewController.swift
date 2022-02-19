@@ -12,11 +12,16 @@ final class HomeViewController: UIViewController {
     }
 
     @IBAction func didLogout(_ sender: Any) {
-        guard let window = UIApplication.shared.keyWindow else { return }
+        let keyWindow = UIApplication.shared.connectedScenes
+            .filter { $0.activationState == .foregroundActive }
+            .map { $0 as? UIWindowScene }
+            .compactMap { $0 }.first?.windows
+            .filter { $0.isKeyWindow }.first
+
         Cache.shared.clear()
 
         let rootVC = LoginViewController()
         let navVC = UINavigationController(rootViewController: rootVC)
-        window.rootViewController = navVC
+        keyWindow?.rootViewController = navVC
     }
 }

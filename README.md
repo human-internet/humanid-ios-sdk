@@ -9,10 +9,10 @@
 
 <p align="center">
 <a href="https://github.com/bluenumberfoundation/humanid-documentation">General Documentation</a> •
-<a href="https://github.com/bluenumberfoundation/humanid-ios-sdk/wiki">Wiki</a> • 
-<a href="https://github.com/bluenumberfoundation/humanid-ios-sdk/wiki/integration">Integration</a> • 
-<a href="https://github.com/bluenumberfoundation/humanid-documentation/blob/master/contributing.md">Contributing</a> • 
-<a href="https://github.com/bluenumberfoundation/humanid-documentation/blob/master/gallery.md">Gallery</a> • 
+<a href="https://github.com/bluenumberfoundation/humanid-ios-sdk/wiki">Wiki</a> •
+<a href="https://github.com/bluenumberfoundation/humanid-ios-sdk/wiki/integration">Integration</a> •
+<a href="https://github.com/bluenumberfoundation/humanid-documentation/blob/master/contributing.md">Contributing</a> •
+<a href="https://github.com/bluenumberfoundation/humanid-documentation/blob/master/gallery.md">Gallery</a> •
 <a href="https://github.com/bluenumberfoundation/humanid-documentation/blob/master/faq.md">FAQ</a>
 
 <p align="center">
@@ -21,9 +21,9 @@ Meet humanID - An anonymous online identity, enabling platforms to offer the spe
 
 ## Requirements
 
-* Xcode 12.0+
+* Xcode 13.0+
 * Swift 5.0+
-* iOS 12.0+
+* iOS 15.0+
 * [Clean Swift](https://clean-swift.com) VIP architecture
 
 ***Please update to the latest SDK!***
@@ -111,5 +111,5 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## License
 
-Copyright 2019-2020 Bluenumber Foundation\
+Copyright 2022 Bluenumber Foundation\
 Licensed under the GNU General Public License v3.0 [(LICENSE)](https://github.com/bluenumberfoundation/humanid-ios-sdk/blob/master/LICENSE)
