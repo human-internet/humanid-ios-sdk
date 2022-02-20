@@ -1,9 +1,11 @@
+import Alamofire
 import RxAlamofire
 import RxSwift
 
 internal final class Network {
 
     private let scheduler: ConcurrentDispatchQueueScheduler
+    private let encoding: URLEncoding
     private let encoder: JSONEncoder
     private let decoder: JSONDecoder
 
@@ -12,6 +14,7 @@ internal final class Network {
         let qos = DispatchQoS(qosClass: dispatchQoS, relativePriority: 1)
 
         self.scheduler = ConcurrentDispatchQueueScheduler(qos: qos)
+        self.encoding = URLEncoding(destination: .queryString, arrayEncoding: .brackets)
         self.encoder = JSONEncoder()
         self.decoder = JSONDecoder()
     }
@@ -56,5 +59,28 @@ internal final class Network {
             .map({ (response) -> BaseResponse<Login.Response> in
                 return try self.decoder.decode(BaseResponse<Login.Response>.self, from: response.data!)
             })
+    }
+
+    func webLogin(path: String, header: BaseRequest, request: WebLogin.Request) -> Observable<BaseResponse<WebLogin.Response>> {
+        let params = request.param
+        let headers = HTTPHeaders([
+            "Content-Type": "application/json",
+            "client-id": header.clientId,
+            "client-secret": header.clientSecret
+        ])
+
+        return RxAlamofire.request(
+            .post,
+            path,
+            parameters: params,
+            encoding: encoding,
+            headers: headers)
+            .asObservable()
+            .observeOn(scheduler)
+            .validate(statusCode: 200..<500)
+            .responseJSON()
+            .map { (response) -> BaseResponse<WebLogin.Response> in
+                return try self.decoder.decode(BaseResponse<WebLogin.Response>.self, from: response.data ?? Data())
+            }
     }
 }

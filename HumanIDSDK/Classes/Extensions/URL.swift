@@ -5,6 +5,11 @@ internal extension URL {
         return URL(string: path)!
     }
 
+    static var baseV2: URL {
+        let path = HumanIDSDKV2.isStaging ? "https://core.human-id.org/staging/" : "https://core.human-id.org/"
+        return URL(string: path)!
+    }
+
     static var tnc: URL {
         return URL(string: "https://human-id.org/#how-we-protect/")!
     }

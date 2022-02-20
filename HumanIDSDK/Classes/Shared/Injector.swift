@@ -8,9 +8,7 @@ internal final class Injector {
         let assembler = Assembler()
         assembler.apply(assemblies: [
             Configurator(),
-            MainConfigurator(),
-            RequestOTPConfigurator(),
-            LoginConfigurator()
+            WebLoginConfigurator()
         ])
 
         return assembler.resolver
