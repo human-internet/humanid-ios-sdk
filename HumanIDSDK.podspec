@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.author                = { 'Bluenumber Foundation' => 'developers@human-id.org' }
   s.source                = { :git => 'https://github.com/bluenumberfoundation/humanid-ios-sdk.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '15.0'
+  s.ios.deployment_target = '13.0'
   s.swift_version         = '5.0'
 
   s.source_files          = 'HumanIDSDK/Classes/**/*.swift'

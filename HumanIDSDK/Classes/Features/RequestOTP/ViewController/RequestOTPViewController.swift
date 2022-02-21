@@ -110,7 +110,7 @@ internal final class RequestOTPViewController: UIViewController {
 
         enterButton.backgroundColor = .lightMusrad
         enterButton.tintColor = .twilightBlue
-        enterButton.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12)
+        enterButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
     }
 
     func setupListener() {
