@@ -20,6 +20,8 @@ internal final class WebLoginPresenter: WebLoginInteractorOutput {
 
     func success(with response: BaseResponse<WebLogin.Response>) {
         guard let url = response.data?.webLoginURL else {
+            output.hideLoading()
+
             return output.error(with: "Web Login Not Found!")
         }
 

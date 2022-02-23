@@ -2,10 +2,10 @@ import WebKit
 
 internal final class WebLoginViewController: UIViewController {
 
+    @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var loadingView: UIActivityIndicatorView!
 
-    var root: UIViewController!
     var input: WebLoginInteractorInput!
 
     convenience init() {
@@ -14,16 +14,18 @@ internal final class WebLoginViewController: UIViewController {
 
     override func viewDidLoad() {
         configureViews()
-    }
-
-    func configureViews() {
-        loadingView.isHidden = true
-
-        // TODO: - Refactoring this later
         webLogin()
     }
 
-    private func webLogin() {
+    func configureViews() {
+        let closeButton = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(close))
+        navigationBar.topItem?.leftBarButtonItem = closeButton
+
+        webView.navigationDelegate = self
+        loadingView.isHidden = true
+    }
+
+    func webLogin() {
         let clientId = KeyChain.retrieves(key: .clientID) ?? ""
         let clientSecret = KeyChain.retrieves(key: .clientSecret) ?? ""
         let header = BaseRequest(clientId: clientId, clientSecret: clientSecret)
@@ -32,6 +34,26 @@ internal final class WebLoginViewController: UIViewController {
             language: "en",
             priorityCodes: ["US", "DE", "FR"])
         )
+    }
+
+    @objc private func close() {
+        dismiss(animated: true)
+    }
+}
+
+// MARK: WKWebView Delegate
+extension WebLoginViewController: WKNavigationDelegate {
+
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        input.hideLoading()
+    }
+
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        input.hideLoading()
+
+        alertVC(with: error.localizedDescription) { _ in
+            self.dismiss(animated: true)
+        }
     }
 }
 
@@ -47,11 +69,12 @@ extension WebLoginViewController: WebLoginPresenterOutput {
     }
 
     func success(with url: String) {
-        // TODO: - Implement show web view
-        print("Open \(url)")
+        webView.load(.init(url: .init(string: url)!))
     }
 
     func error(with message: String) {
-        alertVC(with: message)
+        alertVC(with: message) { _ in
+            self.dismiss(animated: true)
+        }
     }
 }

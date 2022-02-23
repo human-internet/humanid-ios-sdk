@@ -14,8 +14,7 @@ open class HumanIDSDKV2 {
         HumanIDSDKV2.isStaging = isStaging
 
         let controller = Injector.shared.resolve(WebLoginViewController.self)!
-        controller.modalPresentationStyle = .overFullScreen
-        controller.root = target
+        controller.modalPresentationStyle = .fullScreen
 
         target.present(controller, animated: true)
     }
