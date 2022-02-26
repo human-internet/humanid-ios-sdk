@@ -9,7 +9,7 @@ internal struct WebLogin {
             get {
                 return [
                     "lang": language,
-                    "priority_country": priorityCodes
+                    "priority_country": priorityCodes.joined(separator: ",")
                 ]
             }
         }

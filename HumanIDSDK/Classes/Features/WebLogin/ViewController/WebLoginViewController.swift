@@ -30,9 +30,13 @@ internal final class WebLoginViewController: UIViewController {
         let clientSecret = KeyChain.retrieves(key: .clientSecret) ?? ""
         let header = BaseRequest(clientId: clientId, clientSecret: clientSecret)
 
+        // TODO: - Replace with default language and country codes from client application
+        let defaultLanguage = "en"
+        let priorityCountryCodes = ["US","DE","FR"]
+
         input.webLogin(with: header, and: .init(
-            language: "en",
-            priorityCodes: ["US", "DE", "FR"])
+            language: defaultLanguage,
+            priorityCodes: priorityCountryCodes)
         )
     }
 
