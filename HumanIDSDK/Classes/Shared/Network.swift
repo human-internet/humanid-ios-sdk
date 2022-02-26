@@ -14,7 +14,7 @@ internal final class Network {
         let qos = DispatchQoS(qosClass: dispatchQoS, relativePriority: 1)
 
         self.scheduler = ConcurrentDispatchQueueScheduler(qos: qos)
-        self.encoding = URLEncoding(destination: .queryString, arrayEncoding: .brackets)
+        self.encoding = URLEncoding(destination: .queryString)
         self.encoder = JSONEncoder()
         self.decoder = JSONDecoder()
     }
@@ -75,12 +75,12 @@ internal final class Network {
             parameters: params,
             encoding: encoding,
             headers: headers)
+            .validate(statusCode: 200..<401)
+            .responseJSON()
             .asObservable()
             .observeOn(scheduler)
-            .validate(statusCode: 200..<500)
-            .responseJSON()
-            .map { (response) -> BaseResponse<WebLogin.Response> in
-                return try self.decoder.decode(BaseResponse<WebLogin.Response>.self, from: response.data ?? Data())
-            }
+            .map({ (response) -> BaseResponse<WebLogin.Response> in
+                return try self.decoder.decode(BaseResponse<WebLogin.Response>.self, from: response.data!)
+            })
     }
 }

@@ -11,7 +11,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WebLoginViewController" customModule="HumanIDSDKResources" customModuleProvider="target">
             <connections>
                 <outlet property="loadingView" destination="WL3-v4-GBj" id="B5w-hV-tKU"/>
-                <outlet property="navigationBar" destination="BqO-xA-6js" id="Sk2-JT-yae"/>
                 <outlet property="view" destination="iN0-l3-epB" id="6V4-vR-9eQ"/>
                 <outlet property="webView" destination="dJ8-Ue-qnn" id="NBG-r6-dVu"/>
             </connections>
@@ -22,10 +21,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RW6-y0-21g">
-                    <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <wkWebView clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dJ8-Ue-qnn">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <wkWebViewConfiguration key="configuration">
                                 <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -33,53 +32,30 @@
                             </wkWebViewConfiguration>
                         </wkWebView>
                         <activityIndicatorView opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="WL3-v4-GBj">
-                            <rect key="frame" x="197" y="394" width="20" height="20"/>
+                            <rect key="frame" x="197" y="438" width="20" height="20"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </activityIndicatorView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="dJ8-Ue-qnn" firstAttribute="leading" secondItem="RW6-y0-21g" secondAttribute="leading" id="2Pc-Ja-E3p"/>
-                        <constraint firstItem="WL3-v4-GBj" firstAttribute="centerX" secondItem="RW6-y0-21g" secondAttribute="centerX" id="HKl-ji-PeJ"/>
-                        <constraint firstItem="dJ8-Ue-qnn" firstAttribute="top" secondItem="RW6-y0-21g" secondAttribute="top" id="KhU-y3-Epz"/>
-                        <constraint firstItem="WL3-v4-GBj" firstAttribute="centerY" secondItem="RW6-y0-21g" secondAttribute="centerY" id="YeX-4N-5Yq"/>
-                        <constraint firstAttribute="trailing" secondItem="dJ8-Ue-qnn" secondAttribute="trailing" id="aye-4b-IvJ"/>
-                        <constraint firstAttribute="bottom" secondItem="dJ8-Ue-qnn" secondAttribute="bottom" id="g3W-qN-wQT"/>
+                        <constraint firstAttribute="bottom" secondItem="dJ8-Ue-qnn" secondAttribute="bottom" id="3ok-Ye-rVH"/>
+                        <constraint firstItem="WL3-v4-GBj" firstAttribute="centerX" secondItem="RW6-y0-21g" secondAttribute="centerX" id="5Lm-gj-lOD"/>
+                        <constraint firstItem="dJ8-Ue-qnn" firstAttribute="leading" secondItem="RW6-y0-21g" secondAttribute="leading" id="EAh-QS-eug"/>
+                        <constraint firstItem="WL3-v4-GBj" firstAttribute="centerY" secondItem="RW6-y0-21g" secondAttribute="centerY" id="JZe-WQ-xyl"/>
+                        <constraint firstItem="dJ8-Ue-qnn" firstAttribute="top" secondItem="RW6-y0-21g" secondAttribute="top" id="R8x-OS-yfx"/>
+                        <constraint firstAttribute="trailing" secondItem="dJ8-Ue-qnn" secondAttribute="trailing" id="zrF-pi-Zrc"/>
                     </constraints>
                 </view>
-                <navigationBar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BqO-xA-6js">
-                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="NQv-e3-0Ih"/>
-                    </constraints>
-                    <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <textAttributes key="titleTextAttributes">
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </textAttributes>
-                    <textAttributes key="largeTitleTextAttributes">
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </textAttributes>
-                    <items>
-                        <navigationItem largeTitleDisplayMode="never" id="3xE-mb-QWP"/>
-                    </items>
-                </navigationBar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="BqO-xA-6js" secondAttribute="trailing" id="DDp-9F-3dI"/>
-                <constraint firstItem="BqO-xA-6js" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="44" id="M3X-Ss-ig4"/>
-                <constraint firstItem="RW6-y0-21g" firstAttribute="top" secondItem="BqO-xA-6js" secondAttribute="bottom" id="TuE-tc-bAw"/>
-                <constraint firstItem="RW6-y0-21g" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="WzV-om-EMm"/>
-                <constraint firstItem="BqO-xA-6js" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XXe-rC-S6V"/>
-                <constraint firstItem="RW6-y0-21g" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="dWQ-vq-m2M"/>
-                <constraint firstItem="RW6-y0-21g" firstAttribute="top" secondItem="BqO-xA-6js" secondAttribute="bottom" id="toD-8z-crz"/>
-                <constraint firstAttribute="bottom" secondItem="RW6-y0-21g" secondAttribute="bottom" id="yR6-ZY-3FE"/>
+                <constraint firstItem="RW6-y0-21g" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HRt-EL-wmz"/>
+                <constraint firstAttribute="bottom" secondItem="RW6-y0-21g" secondAttribute="bottom" id="Rcr-8z-IEz"/>
+                <constraint firstItem="RW6-y0-21g" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="XBV-Ow-eVy"/>
+                <constraint firstItem="RW6-y0-21g" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="jgV-G6-Ehp"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="100.44642857142857"/>
         </view>

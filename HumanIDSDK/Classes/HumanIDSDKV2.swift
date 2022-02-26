@@ -6,7 +6,7 @@ open class HumanIDSDKV2 {
 
     private init() {}
 
-    open func webLogin(from target: UIViewController, with clientID: String, and clientSecret: String, staging isStaging: Bool = false) {
+    open func webLogin(with clientID: String, and clientSecret: String, isTesting isStaging: Bool = false) {
         _ = KeyChain.isStoreSuccess(key: .clientID, value: clientID)
         _ = KeyChain.isStoreSuccess(key: .clientSecret, value: clientSecret)
 
@@ -14,8 +14,10 @@ open class HumanIDSDKV2 {
         HumanIDSDKV2.isStaging = isStaging
 
         let controller = Injector.shared.resolve(WebLoginViewController.self)!
-        controller.modalPresentationStyle = .fullScreen
+        controller.modalPresentationStyle = .overFullScreen
 
-        target.present(controller, animated: true)
+        let navigation = UINavigationController(rootViewController: controller)
+        let root = UIApplication.topViewController()
+        root?.present(navigation, animated: true)
     }
 }

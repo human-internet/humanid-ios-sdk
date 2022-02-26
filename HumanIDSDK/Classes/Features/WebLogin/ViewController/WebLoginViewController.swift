@@ -2,7 +2,6 @@ import WebKit
 
 internal final class WebLoginViewController: UIViewController {
 
-    @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var loadingView: UIActivityIndicatorView!
 
@@ -19,7 +18,8 @@ internal final class WebLoginViewController: UIViewController {
 
     func configureViews() {
         let closeButton = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(close))
-        navigationBar.topItem?.leftBarButtonItem = closeButton
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.topItem?.leftBarButtonItem = closeButton
 
         webView.navigationDelegate = self
         loadingView.isHidden = true

@@ -18,6 +18,6 @@ final class LoginViewController: UIViewController {
         // MARK: - Retrieve HumanIDSDK appID and appSecret
         let clientID = "MOBILE_VMLS7FS4PVEEKTRWF22379"
         let clientSecret = "Qk1CC.H0ou9f0D5yhVNyWCeo1MKyg7-0D7fBndUfo7TtUFOdmDWLO9_x5m70ROmt"
-        HumanIDSDKV2.shared.webLogin(from: self, with: clientID, and: clientSecret, staging: true)
+        HumanIDSDKV2.shared.webLogin(with: clientID, and: clientSecret, isTesting: true)
     }
 }
