@@ -21,3 +21,14 @@ final class LoginViewController: UIViewController {
         HumanIDSDK.shared.webLogin(with: clientID, and: clientSecret)
     }
 }
+
+extension LoginViewController: WebLoginDelegate {
+
+    func login(with token: String) {
+        Cache.shared.setToken(with: token)
+
+        let rootVC = HomeViewController()
+        let navVC = UINavigationController(rootViewController: rootVC)
+        UIApplication.shared.windows.filter { window in window.isKeyWindow }.first?.rootViewController = navVC
+    }
+}

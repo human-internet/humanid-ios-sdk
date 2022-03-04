@@ -15,6 +15,8 @@ open class HumanIDSDK {
 
         let navigation = UINavigationController(rootViewController: controller)
         let root = UIApplication.topViewController()
+        controller.delegate = root as? WebLoginDelegate
+
         root?.present(navigation, animated: true)
     }
 }

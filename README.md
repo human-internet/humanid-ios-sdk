@@ -63,13 +63,13 @@ final class YourViewController: UIViewController {
 
 extension YourViewController: WebLoginDelegate {
 
-  func login(token: String) {
-     // TODO You can persist our token here
+  func login(with token: String) {
+     // TODO: - You can persist our token here
   }
 }
 ```
 
-***(Optional) You can also pass optional parameters to support default language and priority countries selection, by using the following step***
+***(Optional) You can also pass optional parameters to support default language and/or priority countries selection, by using the following step***
 
 ```swift
 import HumanIDSDK

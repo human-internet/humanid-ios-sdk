@@ -23,9 +23,4 @@ internal struct WebLogin {
             case webLoginURL = "webLoginUrl"
         }
     }
-
-    struct ViewModel {
-
-        let exchangeToken: String
-    }
 }

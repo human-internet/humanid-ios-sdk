@@ -1,5 +1,10 @@
 import WebKit
 
+public protocol WebLoginDelegate: AnyObject {
+
+    func login(with token: String)
+}
+
 internal final class WebLoginViewController: UIViewController {
 
     @IBOutlet weak var webView: WKWebView!
@@ -9,6 +14,8 @@ internal final class WebLoginViewController: UIViewController {
     var request: WebLogin.Request!
 
     var input: WebLoginInteractorInput!
+
+    var delegate: WebLoginDelegate?
 
     convenience init() {
         self.init(nibName: "WebLoginViewController", bundle: Bundle.humanID)
@@ -25,6 +32,8 @@ internal final class WebLoginViewController: UIViewController {
         navigationController?.navigationBar.topItem?.leftBarButtonItem = closeButton
 
         webView.navigationDelegate = self
+        webView.configuration.websiteDataStore = .nonPersistent()
+
         loadingView.isHidden = true
     }
 
@@ -40,11 +49,47 @@ internal final class WebLoginViewController: UIViewController {
 // MARK: - WKWebView Delegate
 extension WebLoginViewController: WKNavigationDelegate {
 
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        var action: WKNavigationActionPolicy?
+
+        defer {
+            decisionHandler(action ?? .allow)
+        }
+
+        if let requestUrl = navigationAction.request.url {
+            let webUrl = requestUrl.absoluteString.lowercased()
+
+            switch webUrl {
+                case _ where webUrl.starts(with: "https://"):
+                    action = .allow
+
+                    break
+                default:
+                    guard let exchangeToken = webUrl.getQueryParameter(from: "et"), !exchangeToken.isEmpty else { return action = .none }
+                    action = .cancel
+
+                    dismiss(animated: true) {
+                        self.delegate?.login(with: exchangeToken)
+                    }
+
+                    break
+            }
+        }
+    }
+
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         input.hideLoading()
     }
 
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        input.hideLoading()
+
+        alertVC(with: error.localizedDescription) { _ in
+            self.dismiss(animated: true)
+        }
+    }
+
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         input.hideLoading()
 
         alertVC(with: error.localizedDescription) { _ in
