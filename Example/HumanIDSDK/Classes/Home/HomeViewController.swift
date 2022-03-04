@@ -3,12 +3,17 @@ import UIKit
 final class HomeViewController: UIViewController {
 
     @IBOutlet weak var btnLogout: UIButton!
+    @IBOutlet weak var tokenLabel: UILabel!
 
     override func viewDidLoad() {
         title = "Home"
 
         btnLogout.layer.cornerRadius = 8
         btnLogout.clipsToBounds = true
+
+        if let token = Cache.shared.getToken() {
+            tokenLabel.text = "Your token is \(token)"
+        }
     }
 
     @IBAction func didLogout(_ sender: Any) {
