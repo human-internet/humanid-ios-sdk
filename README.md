@@ -77,7 +77,7 @@ import HumanIDSDK
 final class YourViewController: UIViewController {
 
   @IBAction func didLoginAction(_ sender: Any) {
-     HumanIDSDK.shared.webLogin(with: "YOUR_CLIENT_ID", and: "YOUR_CLIENT_SECRET", language: "YOUR_DEFAULT_LANGUAGE", countries: ["YOUR_PRIORITY_COUNTRIES"])
+     HumanIDSDK.shared.webLogin(with: "YOUR_CLIENT_ID", and: "YOUR_CLIENT_SECRET", language: SupportedLanguage.ENGLISH_US, countries: [CountryCode.UNITED_STATES])
   }
 }
 ```
