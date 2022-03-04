@@ -1,5 +1,4 @@
 import UIKit
-import HumanIDSDK
 
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -1,5 +1,5 @@
 internal struct BaseRequest: Codable {
 
-    let clientId: String
+    let clientID: String
     let clientSecret: String
 }

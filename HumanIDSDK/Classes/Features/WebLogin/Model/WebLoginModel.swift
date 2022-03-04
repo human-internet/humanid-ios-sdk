@@ -3,13 +3,13 @@ internal struct WebLogin {
     struct Request {
 
         let language: String
-        let priorityCodes: [String]
+        let priorityCountries: [String]
 
         var param: [String: Any] {
             get {
                 return [
                     "lang": language,
-                    "priority_country": priorityCodes.joined(separator: ",")
+                    "priority_country": priorityCountries.joined(separator: ",")
                 ]
             }
         }

@@ -6,6 +6,7 @@
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/2031493/80385493-4f1b8480-88d0-11ea-8110-ab62c747a997.png" width="200" height="200">
+</p>
 
 <p align="center">
 <a href="https://github.com/bluenumberfoundation/humanid-documentation">General Documentation</a> •
@@ -14,9 +15,10 @@
 <a href="https://github.com/bluenumberfoundation/humanid-documentation/blob/master/contributing.md">Contributing</a> •
 <a href="https://github.com/bluenumberfoundation/humanid-documentation/blob/master/gallery.md">Gallery</a> •
 <a href="https://github.com/bluenumberfoundation/humanid-documentation/blob/master/faq.md">FAQ</a>
+</p>
 
 <p align="center">
-Meet humanID - An anonymous online identity, enabling platforms to offer the speed and comfort of social logins, while guaranteeing absolute privacy and protecting our communities by permanently blocking bots, spams, and trolls.
+Meet humanID - An anonymous online identity, enabling platforms to offer the speed and comfort of social logins, while guaranteeing absolute privacy and protecting our communities by permanently blocking bots, spams and trolls
 </p>
 
 ## Requirements
@@ -26,20 +28,15 @@ Meet humanID - An anonymous online identity, enabling platforms to offer the spe
 * iOS 13.0+
 * [Clean Swift](https://clean-swift.com) VIP architecture
 
-***Please update to the latest SDK!***
-
 ## Built with
 
 * [Swinject](https://github.com/Swinject/Swinject) - Dependency injection framework for Swift with iOS/macOS/Linux
 * [RxAlamofire](https://github.com/RxSwiftCommunity/RxAlamofire) - RxSwift wrapper around the elegant HTTP networking in Swift Alamofire
 * [RxSwift](https://github.com/ReactiveX/RxSwift) - Reactive Programming in Swift
-* [FlagPhoneNumber](https://github.com/chronotruck/FlagPhoneNumber) - A formatted phone number UITextField with country flag picker.
-* [IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager) - Codeless drop-in universal library allows to prevent issues of keyboard sliding up and cover UITextField/UITextView. Neither need to write any code nor any setup required and much more.
-* [VKPinCodeView](https://github.com/Sunspension/VKPinCodeView) - VKPinCodeView is simple and elegant UI component for input PIN. You can easily customise appearance and get auto fill (OTP) iOS 12 feature right from the box.
 
 ## Installation
 
-HumanIDSDK is available through [CocoaPods](https://cocoapods.org).\
+HumanIDSDK is available through [CocoaPods](https://cocoapods.org)\
 To install it, simply add the following line to your Podfile:
 
 ```ruby
@@ -48,66 +45,50 @@ pod 'HumanIDSDK'
 
 ## Get the credentials access
 
-Get the clientId and clientSecret by dropping us an email [developers@human-id.org](mailto:developers@human-id.org).
-
-## Configuration
-
-Add these codes into your `AppDelegate.swift` and make sure all value is fulfilled.
-
-```swift
-import HumanIDSDK
-
-@UIApplicationMain
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-     HumanIDSDK.shared.configure(clientID: "YOUR_CLIENT_ID", clientSecret: "YOUR_CLIENT_SECRET")
-  }
-}
-```
-
-***(Optional) for Sandbox environment***
-
-```swift
-import HumanIDSDK
-
-@UIApplicationMain
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-     HumanIDSDK.shared.configure(clientID: "YOUR_CLIENT_ID", clientSecret: "YOUR_CLIENT_SECRET", isSandbox: true)
-  }
-}
-```
+Get the ```clientID``` and ```clientSecret``` by dropping us an email [developers@human-id.org](mailto:developers@human-id.org)
 
 ## How do I use iOS SDK
 
-Add these codes into your ViewController file, we recommend you wrap this in a function that handles the login button.
+Add these codes into your ```ViewController``` class, we recommend you wrap this in a function that handles the login button
 
 ```swift
 import HumanIDSDK
 
 final class YourViewController: UIViewController {
 
-  @IBAction func yourLoginAction(_ sender: Any) {
-     HumanIDSDK.shared.requestOtp(name: "YOUR_APPLICATION_NAME", image: "YOUR_APPLICATION_LOGO")
+  @IBAction func didLoginAction(_ sender: Any) {
+     HumanIDSDK.shared.webLogin(with: "YOUR_CLIENT_ID", and: "YOUR_CLIENT_SECRET")
   }
 }
 
-extension YourViewController: RequestOTPDelegate {
+extension YourViewController: WebLoginDelegate {
 
-  func login(with token: String) {
-     // TODO You can persist our token here.
+  func login(token: String) {
+     // TODO You can persist our token here
+  }
+}
+```
+
+***(Optional) You can also pass optional parameters to support default language and priority countries selection, by using the following step***
+
+```swift
+import HumanIDSDK
+
+final class YourViewController: UIViewController {
+
+  @IBAction func didLoginAction(_ sender: Any) {
+     HumanIDSDK.shared.webLogin(with: "YOUR_CLIENT_ID", and: "YOUR_CLIENT_SECRET", language: "YOUR_DEFAULT_LANGUAGE", countries: ["YOUR_PRIORITY_COUNTRIES"])
   }
 }
 ```
 
 ## You are set!
 
-Now you can integrate your iOS app to humanID. See the full [sample](https://github.com/bluenumberfoundation/humanid-ios-sdk/tree/master/Example) here to learn more.
+Now you can integrate your iOS app to humanID\
+See the full [sample](https://github.com/bluenumberfoundation/humanid-ios-sdk/tree/master/Example) here to learn more
 
 **Warning!**
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project, clone the repo and run `pod install` from the Example directory first
 
 ## License
 

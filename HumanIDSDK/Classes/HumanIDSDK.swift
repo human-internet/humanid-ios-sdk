@@ -1,37 +1,20 @@
 open class HumanIDSDK {
 
-    internal static var isSandbox = false
+    // FIXME: - Use this for development purpose!
+    internal static var isStaging = true
 
     public static let shared = HumanIDSDK()
 
     private init() {}
 
-    open func configure(clientID: String, clientSecret: String, isSandbox: Bool = false) {
-        _ = KeyChain.isStoreSuccess(key: .clientID, value: clientID)
-        _ = KeyChain.isStoreSuccess(key: .clientSecret, value: clientSecret)
-
-        /// Sandbox server flag
-        HumanIDSDK.isSandbox = isSandbox
-
-        /// Retrieve current deviceID automatically
-        guard let _ = KeyChain.retrieves(key: .deviceID) else {
-            let deviceID = UIDevice.current.identifierForVendor!.uuidString
-            _ = KeyChain.isStoreSuccess(key: .deviceID, value: deviceID)
-
-            return
-        }
-    }
-
-    open func requestOtp(name appName: String, image appImage: String) {
-        /// Open humanID main page
-        let root = UIApplication.topViewController()
-
-        let controller = Injector.shared.resolve(MainViewController.self)!
+    open func webLogin(with clientID: String, and clientSecret: String, language: String = "en", countries: [String] = ["US,UK"]) {
+        let controller = Injector.shared.resolve(WebLoginViewController.self)!
         controller.modalPresentationStyle = .overFullScreen
-        controller.root = root
-        controller.clientName = appName
-        controller.clientLogo = appImage
+        controller.header = .init(clientID: clientID, clientSecret: clientSecret)
+        controller.request = .init(language: language, priorityCountries: countries)
 
-        root?.present(controller, animated: true)
+        let navigation = UINavigationController(rootViewController: controller)
+        let root = UIApplication.topViewController()
+        root?.present(navigation, animated: true)
     }
 }

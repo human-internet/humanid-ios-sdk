@@ -11,7 +11,6 @@
 		1FD4771924446A3400688A9E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD4771724446A3400688A9E /* LoginViewController.swift */; };
 		1FD4771A24446A3400688A9E /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FD4771824446A3400688A9E /* LoginViewController.xib */; };
 		1FD6836225218D3E0018D7FC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FD6836125218D3D0018D7FC /* LaunchScreen.xib */; };
-		1FD6836525218D4F0018D7FC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FD6836325218D4F0018D7FC /* Localizable.strings */; };
 		1FFF6192245135B000D83F35 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF6190245135B000D83F35 /* HomeViewController.swift */; };
 		1FFF6193245135B000D83F35 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FFF6191245135B000D83F35 /* HomeViewController.xib */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -37,7 +36,6 @@
 		1FD4771724446A3400688A9E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1FD4771824446A3400688A9E /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		1FD6836125218D3D0018D7FC /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		1FD6836425218D4F0018D7FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1FFF6190245135B000D83F35 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1FFF6191245135B000D83F35 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		285CBCA914E4C88A8623F2FA /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,7 +145,6 @@
 				1FD4771624446A1E00688A9E /* Classes */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				1FD6836125218D3D0018D7FC /* LaunchScreen.xib */,
-				1FD6836325218D4F0018D7FC /* Localizable.strings */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
@@ -290,7 +287,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FD6836525218D4F0018D7FC /* Localizable.strings in Resources */,
 				1FD6836225218D3E0018D7FC /* LaunchScreen.xib in Resources */,
 				1FD4771A24446A3400688A9E /* LoginViewController.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
@@ -338,28 +334,22 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/FlagPhoneNumber/FlagPhoneNumber.framework",
 				"${BUILT_PRODUCTS_DIR}/HumanIDSDK/HumanIDSDK.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
-				"${BUILT_PRODUCTS_DIR}/VKPinCodeView/VKPinCodeView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlagPhoneNumber.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HumanIDSDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VKPinCodeView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -418,17 +408,6 @@
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		1FD6836325218D4F0018D7FC /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1FD6836425218D4F0018D7FC /* Base */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		607FACED1AFB9204008FA782 /* Debug */ = {

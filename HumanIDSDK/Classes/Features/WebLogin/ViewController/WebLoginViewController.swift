@@ -5,6 +5,9 @@ internal final class WebLoginViewController: UIViewController {
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var loadingView: UIActivityIndicatorView!
 
+    var header: BaseRequest!
+    var request: WebLogin.Request!
+
     var input: WebLoginInteractorInput!
 
     convenience init() {
@@ -26,18 +29,7 @@ internal final class WebLoginViewController: UIViewController {
     }
 
     func webLogin() {
-        let clientId = KeyChain.retrieves(key: .clientID) ?? ""
-        let clientSecret = KeyChain.retrieves(key: .clientSecret) ?? ""
-        let header = BaseRequest(clientId: clientId, clientSecret: clientSecret)
-
-        // TODO: - Replace with default language and country codes from client application
-        let defaultLanguage = "en"
-        let priorityCountryCodes = ["US","DE","FR"]
-
-        input.webLogin(with: header, and: .init(
-            language: defaultLanguage,
-            priorityCodes: priorityCountryCodes)
-        )
+        input.webLogin(with: header, and: request)
     }
 
     @objc private func close() {
@@ -45,7 +37,7 @@ internal final class WebLoginViewController: UIViewController {
     }
 }
 
-// MARK: WKWebView Delegate
+// MARK: - WKWebView Delegate
 extension WebLoginViewController: WKNavigationDelegate {
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

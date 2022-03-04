@@ -1,18 +1,7 @@
 internal extension String {
 
-    static var clientID: String {
-        return "client_id"
-    }
-
-    static var clientSecret: String {
-        return "client_secret"
-    }
-
-    static var deviceID: String {
-        return "device_id"
-    }
-
-    func localized() -> String {
-        return NSLocalizedString(self, bundle: .humanID, comment: "")
+    static var webLoginPath: String {
+        let version = "v0.0.3"
+        return HumanIDSDK.isStaging ? "/mobile/users/web-login" : "\(version)/mobile/users/web-login"
     }
 }
