@@ -4,13 +4,13 @@ Pod::Spec.new do |s|
   s.summary               = 'HumanIDSDK for iOS'
 
   s.description           = <<-DESC
-  Bluenumber Foundation humanID SDK for iOS platform
+  Human Internet humanID SDK for iOS platform
                             DESC
 
-  s.homepage              = 'https://github.com/bluenumberfoundation/humanid-ios-sdk'
+  s.homepage              = 'https://github.com/human-internet/humanid-ios-sdk'
   s.license               = { :type => 'GPL', :file => 'LICENSE' }
-  s.author                = { 'Bluenumber Foundation' => 'developers@human-id.org' }
-  s.source                = { :git => 'https://github.com/bluenumberfoundation/humanid-ios-sdk.git', :tag => s.version.to_s }
+  s.author                = { 'Human Internet' => 'developers@human-id.org' }
+  s.source                = { :git => 'https://github.com/human-internet/humanid-ios-sdk.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '13.0'
   s.swift_version         = '5.0'

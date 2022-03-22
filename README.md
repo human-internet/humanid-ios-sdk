@@ -9,12 +9,12 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/bluenumberfoundation/humanid-documentation">General Documentation</a> •
-<a href="https://github.com/bluenumberfoundation/humanid-ios-sdk/wiki">Wiki</a> •
-<a href="https://github.com/bluenumberfoundation/humanid-ios-sdk/wiki/integration">Integration</a> •
-<a href="https://github.com/bluenumberfoundation/humanid-documentation/blob/master/contributing.md">Contributing</a> •
-<a href="https://github.com/bluenumberfoundation/humanid-documentation/blob/master/gallery.md">Gallery</a> •
-<a href="https://github.com/bluenumberfoundation/humanid-documentation/blob/master/faq.md">FAQ</a>
+<a href="https://github.com/human-internet/humanid-documentation">General Documentation</a> •
+<a href="https://github.com/human-internet/humanid-ios-sdk/wiki">Wiki</a> •
+<a href="https://github.com/human-internet/humanid-ios-sdk/wiki/integration">Integration</a> •
+<a href="https://github.com/human-internet/humanid-documentation/blob/master/contributing.md">Contributing</a> •
+<a href="https://github.com/human-internet/humanid-documentation/blob/master/gallery.md">Gallery</a> •
+<a href="https://github.com/human-internet/humanid-documentation/blob/master/faq.md">FAQ</a>
 </p>
 
 <p align="center">
@@ -69,7 +69,7 @@ extension YourViewController: WebLoginDelegate {
 }
 ```
 
-***(Optional) You can also pass optional parameters to support default language and/or priority countries selection, by using the following step***
+***(Optional) You can also pass the optional parameters to support default language and/or priority countries selection using the following step***
 
 ```swift
 import HumanIDSDK
@@ -85,12 +85,12 @@ final class YourViewController: UIViewController {
 ## You are set!
 
 Now you can integrate your iOS app to humanID\
-See the full [sample](https://github.com/bluenumberfoundation/humanid-ios-sdk/tree/master/Example) here to learn more
+See the full [sample](https://github.com/human-internet/humanid-ios-sdk/tree/master/Example) here to learn more
 
 **Warning!**
 To run the example project, clone the repo and run `pod install` from the Example directory first
 
 ## License
 
-Copyright 2022 Bluenumber Foundation\
-Licensed under the GNU General Public License v3.0 [(LICENSE)](https://github.com/bluenumberfoundation/humanid-ios-sdk/blob/master/LICENSE)
+Copyright 2022 Human Internet\
+Licensed under the GNU General Public License v3.0 [(LICENSE)](https://github.com/human-internet/humanid-ios-sdk/blob/master/LICENSE)
