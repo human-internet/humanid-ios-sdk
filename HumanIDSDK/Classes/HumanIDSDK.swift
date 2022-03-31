@@ -1,8 +1,5 @@
 open class HumanIDSDK {
 
-    // FIXME: - Use this for development purpose!
-    internal static var isStaging = true
-
     public static let shared = HumanIDSDK()
 
     private init() {}
